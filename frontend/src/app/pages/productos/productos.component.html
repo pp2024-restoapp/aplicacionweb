@@ -1,0 +1,243 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<main class="productsSection">
+
+  <button type="button" class="btn btn-success productosButton" data-bs-toggle="modal" data-bs-target="#modal-2">
+    Agregar Producto
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade productos" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Agrega un producto</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="productForm" class="form-profile" onsubmit="" novalidate>
+            <div class="row mb-3 mt-4 d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger">
+                  <div *ngIf="nombre.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="descripcion" type="text" class="form-control" id="descripcion"
+                  placeholder="Descripción">
+                <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)" class="text-danger">
+                  <div *ngIf="descripcion.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="precio" type="number" class="form-control" id="precio" placeholder="Precio"
+                  max="10000">
+                <div *ngIf="precio.invalid && (precio.dirty || precio.touched)" class="text-danger">
+                  <div *ngIf="precio.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="stock" type="number" class="form-control" id="stock" placeholder="Stock"
+                  max="100">
+                <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="text-danger">
+                  <div *ngIf="stock.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="imagen" type="text" class="form-control" id="imagen" placeholder="Imagen">
+                <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)" class="text-danger">
+                  <div *ngIf="imagen.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="activo" type="checkbox" id="activo">
+                <label for="activo">Activo</label>
+                <div *ngIf="activo.invalid && (activo.dirty || activo.touched)" class="text-danger">
+                  <div *ngIf="activo.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4d-flex justify-content-center">
+              <div class="col-sm-10">
+                <input formControlName="categoria" type="text" class="form-control" id="categoria"
+                  placeholder="Categoría">
+                <div *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)" class="text-danger">
+                  <div *ngIf="categoria.errors?.['required']">
+                    Campo requerido.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" (click)="crearProducto()">Crear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card" *ngFor="let product of products; let i = index">
+      <img [src]="product.imagen" alt="Imagen del producto" />
+      <h2>{{ product.nombre }}</h2>
+      <p>{{ product.descripcion }}</p>
+      <p>Precio: {{ product.precio }}</p>
+      <p>Stock: {{ product.stock }}</p>
+      <p>Activo: {{ product.activo }}</p>
+      <p>Categoría: {{ product.categoria }}</p>
+
+      <div class="card-body d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+          data-bs-target="#modalEditarProducto">Editar</button>
+        <!-- Modal -->
+        <div class="modal fade productos" id="modalEditarProducto" tabindex="-1" role="dialog"
+          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Agrega un producto</h5>
+                <button type="button" class="close" data-bs-dismiss="modal1" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="productForm" class="form-profile" onsubmit="" novalidate>
+                  <div class="row mb-3 mt-4 d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+                      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger">
+                        <div *ngIf="nombre.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="descripcion" type="text" class="form-control" id="descripcion"
+                        placeholder="Descripción">
+                      <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)"
+                        class="text-danger">
+                        <div *ngIf="descripcion.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="precio" type="number" class="form-control" id="precio"
+                        placeholder="Precio" max="10000">
+                      <div *ngIf="precio.invalid && (precio.dirty || precio.touched)" class="text-danger">
+                        <div *ngIf="precio.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="stock" type="number" class="form-control" id="stock" placeholder="Stock"
+                        max="100">
+                      <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="text-danger">
+                        <div *ngIf="stock.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="imagen" type="text" class="form-control" id="imagen" placeholder="Imagen">
+                      <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)" class="text-danger">
+                        <div *ngIf="imagen.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="activo" type="checkbox" id="activo">
+                      <label for="activo">Activo</label>
+                      <div *ngIf="activo.invalid && (activo.dirty || activo.touched)" class="text-danger">
+                        <div *ngIf="activo.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4d-flex justify-content-center">
+                    <div class="col-sm-10">
+                      <input formControlName="categoria" type="text" class="form-control" id="categoria"
+                        placeholder="Categoría">
+                      <div *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)" class="text-danger">
+                        <div *ngIf="categoria.errors?.['required']">
+                          Campo requerido.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal1">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="crearProducto()">Crear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct(product)">Eliminar</button>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</main>
