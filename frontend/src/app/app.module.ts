@@ -17,6 +17,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
+import { AppMovilComponent } from './app-movil/app-movil.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PedidosComponent } from './pages/pedidos/pedidos.component';
     SignupComponent,
     ProductosComponent,
     PagoComponent,
-    PedidosComponent
+    PedidosComponent,
+    AppMovilComponent
   ],
   imports: [
     BrowserModule,
