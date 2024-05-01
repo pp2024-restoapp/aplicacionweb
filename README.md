@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Front
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Restobar Aplicación Web 🍔
+![Sin título](https://github.com/pp2024-restoapp/aplicacionweb/assets/105678923/7d84b153-01c8-4c47-bdd8-7237a1f0b016)
+>>>>>>> 56e5c2c31f62fb98a8d9e34e5b263bf7abc84ff7
