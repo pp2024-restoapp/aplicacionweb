@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --color1: #e38b29;
+    --color2: #f1a661;
+    --color3: #ffd8a9;
+    --color4: #fdeedc;
+    --color5: #0c0f0e;
+    --color7: #a1a0a4;
+    --color7: #f1b272;
+    --color8:#deac66;
+    --bg-opacity: rgba(255, 255, 0, 0.341);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+  }
+
+  body {
+    background-color: var(--color4) !important;
+  }
+
+  /* LINKS */
+
+a {
+  text-decoration: none !important;
+  color: #000000 !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.ng-valid:not(form).ng-touched {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form).ng-touched {
+  border-left: 5px solid #A94442;
+}
+
+  
+  
+  
+  
+ 
+  
+  
+  
+  

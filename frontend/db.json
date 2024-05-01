@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Hamburguesa Doble con Cheddar y Bacon",
+      "description": "Doble medallón de carne",
+      "srcImage": "https://img.cybercook.com.br/receitas/107/hamburguer-com-bacon-queijo-cheddar-e-molho-barbecue.jpeg"
+    },
+    {
+      "name": "Ensalada César",
+      "description": "Ensalada César con pollo",
+      "srcImage": "https://comeryrascar.com/wp-content/uploads/2022/02/175_1.jpg"
+    },
+    {
+      "name": "Milanesas de soja con ensalada",
+      "description": "Milanesas de soja con ensalada de lechuca, tomate y albahaca",
+      "srcImage": "https://cloudfront-us-east-1.images.arcpublishing.com/artear/MR5KJB5KZBFB5DQGM4DTKQ4VCA.jpeg"
+    }
+  ]
+}
