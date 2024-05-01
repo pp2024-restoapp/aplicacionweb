@@ -10,6 +10,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { authGuard } from './guards/auth.guard';
+import { AppMovilComponent } from './pages/app-movil/app-movil.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/home', pathMatch:'full'},
@@ -21,7 +22,9 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'productos', component:ProductosComponent, canActivate:[authGuard]},
   {path: 'pago', component:PagoComponent},
-  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]}
+  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
+  {path: 'App-movil', component: AppMovilComponent},
+
 ];
 
 @NgModule({

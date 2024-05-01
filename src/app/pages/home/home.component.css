@@ -113,7 +113,9 @@
 .local-button a:hover {
   color: #000000;
 }
-
+local-button {
+  margin-bottom: 10px; 
+}
 /* CAROUSEL */
 
 .carousel-item {
