@@ -6,13 +6,17 @@
 
 
 .accordion-item {
-  border-radius: 25px; /* Redondea los bordes de cada elemento */
-  border: 1px solid #ccc; /* Añade un borde para resaltar los elementos */
-  margin-bottom: 10px; /* Espacio entre elementos */
+  border-radius: 25px; 
+  /* Redondea los bordes de cada elemento */
+  border: 1px solid var(--accordion-border-color);
+  /* Añade un borde para resaltar los elementos */
+  margin-bottom: 10px; 
+  /* Espacio entre elementos */
 }
 .accordion-header {
   padding: 10px;
-  background-color: #f0f0f0; /* Color de fondo para el encabezado */
+  background-color: var(--accordion-header-bg); 
+  /* Color de fondo para el encabezado */
   cursor: pointer;
 }
 
@@ -97,6 +101,7 @@
   font-size: 1.5rem !important;
   font-weight: bold;
   display: flex;
+  color: var(--accordion-button-text-color);
  
 
 }
