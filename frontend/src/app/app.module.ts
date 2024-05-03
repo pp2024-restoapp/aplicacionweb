@@ -17,7 +17,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
-import { AppMovilComponent } from './app-movil/app-movil.component';
+import { AppMovilComponent } from './pages/app-movil/app-movil.component';
+import { ShowsComponent } from './pages/shows/shows.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AppMovilComponent } from './app-movil/app-movil.component';
     ProductosComponent,
     PagoComponent,
     PedidosComponent,
-    AppMovilComponent
+    AppMovilComponent,
+    ShowsComponent
   ],
   imports: [
     BrowserModule,
