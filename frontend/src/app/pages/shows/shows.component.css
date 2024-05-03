@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    font-weight: 500;
     margin-bottom: 10vh;
     color: #f2f2f2;
     width: 100%;
@@ -34,8 +35,13 @@
     position: relative;
     background-color: #E1C688;
     min-height: 360px;
-    color: #000
+    color: #000;
+    box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.9); /* Agrega una sombra suave */
+    transition: transform 0.3s ease;
 
+  }
+  .show-card:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la tarjeta al pasar el mouse sobre ella */
   }
   
   .show-card img {
@@ -82,6 +88,7 @@
 }
 .subtitulo{
     text-align: center;
+    font-weight: bold;
         
 }
 .show-card img {
@@ -106,6 +113,8 @@
   padding: 20px;
   border-radius: 5px;
   z-index: 999;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+  
 }
 
 .popup.visible {
@@ -113,7 +122,8 @@
 }
 
 .popup-content {
-  /* Ajusta los estilos según necesites */
+  width: 400px; /* Ancho fijo */
+  height: 400px; /* Alto fijo */
 }
 
 .popup-image {
@@ -122,17 +132,35 @@
 }
 
 .popup-title {
-  /* Estilos para el título del espectáculo */
+  font-size: 24px;
+  font-weight: bold; 
+  margin-bottom: 10px; 
 }
 
 .popup-date {
-  /* Estilos para la fecha del espectáculo */
+  font-style: italic; 
+  margin-bottom: 10px; 
 }
 
 .popup-description {
-  /* Estilos para la descripción del espectáculo */
+  line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+  margin-bottom: 20px; /* Espacio al final de la descripción */
 }
 
+
 .close-button {
-  /* Estilos para el botón de cerrar */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ff0000; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #cc0000; 
+
 }
