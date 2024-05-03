@@ -1,0 +1,81 @@
+
+
+  .banner{
+    height: 45vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 5vh;
+  }
+  .banner h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 10vh;
+    color: #f2f2f2;
+    width: 100%;
+    height: 12vh;
+    background-color: #00000080;
+  }
+  .aboutUs-img {
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    z-index: -1;
+  }
+  /* Estilos para las tarjetas de los shows */
+  .show-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .show-card img {
+    width: 100%; /* Ajustar la imagen al ancho de la tarjeta */
+    border-radius: 5px 5px 0 0; /* Redondear solo las esquinas superiores */
+  }
+  
+  .show-card h3 {
+    margin-top: 0;
+  }
+  
+  .show-card p {
+    margin-bottom: 10px; /* Espacio entre cada línea de texto */
+  }
+  
+  .details-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .details-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para la cuadrícula de las tarjetas */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustar tamaño de las columnas automáticamente */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+  }
+  .container {
+    padding-top: 100px; /* Utiliza relleno superior en lugar de margen superior */
+    position: relative; /* Establece una posición relativa */
+}
+.subtitulo{
+    text-align: center;
+        
+}
+.show-card img {
+  width: 100%;
+  height: 200px; /* Establecer una altura fija para todas las imágenes */
+  object-fit: cover; /* Ajustar la imagen sin distorsionarla */
+  border-radius: 5px; 
+}
