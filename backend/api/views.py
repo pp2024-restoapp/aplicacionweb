@@ -17,9 +17,11 @@ def listaUsuarios(request):
 
 def listadoProductos(request):
     productos = list(Producto.objects.values())
-    
-       
+         
     return JsonResponse(productos, safe=False)
+
+
+
 
 
 
