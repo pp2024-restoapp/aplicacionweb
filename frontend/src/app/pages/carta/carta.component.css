@@ -1,3 +1,9 @@
+
+.text-rojo {
+  color: red;
+}
+
+
 .accordion {
   border-radius: 25px; /* Redondea los bordes del acordeón */
   overflow: hidden; /* Oculta cualquier contenido adicional que pueda desbordar */

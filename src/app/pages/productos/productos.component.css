@@ -1,0 +1,91 @@
+.productsSection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15vh;
+  align-items: center;
+}
+
+.productosButton {
+  width: fit-content;
+  margin: auto;
+}
+/* Estilo del riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo del riel */
+}
+
+/* Estilo del pulgar de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color del pulgar de la barra */
+}
+
+/* Estilo del pulgar de la barra de desplazamiento al pasar el cursor sobre él */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del pulgar al pasar el cursor sobre él */
+}
+
+.scroll-container {
+  height: 1800px; /* Altura deseada del contenedor */
+  overflow-y: auto; 
+  justify-content: space-between;
+}
+.modalEditarProducto {
+  position: fixed;
+  background: rgba(0,0,0,0.7);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.card {
+  width: 230px;
+  height: 200 px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-block: 35px;
+  border-color: burlywood;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 48%; /* Ajusta el ancho según tus necesidades */
+    max-width: none;
+  }
+}
