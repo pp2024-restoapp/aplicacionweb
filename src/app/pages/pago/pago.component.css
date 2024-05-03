@@ -1,0 +1,7 @@
+.paymentSection {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 15vh;
+  align-items: center;
+}

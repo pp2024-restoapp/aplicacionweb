@@ -1,0 +1,74 @@
+<main class="main-profile">
+  <h2>Registrarme</h2>
+  <form [formGroup]="registerForm" class="form-profile">
+    <div class="form-buttons d-flex justify-content-center">
+      <button type="button" class="btn btn-warning m-2" [routerLink]="['/login']" routerLinkActive="router-link-active">
+        Iniciar Sesión
+      </button>
+      <button type="button" class="btn btn-warning m-2 active">Registrarme</button>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+          <div *ngIf="email.errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="email.errors?.['email']">
+            Email format is invalid.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <input formControlName="username" type="text" class="form-control" id="inputUsername" placeholder="Username">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+          <div *ngIf="username.errors?.['required']">
+            Username is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <input formControlName="first_name" type="text" class="form-control" id="inputFirstname" placeholder="Firstname">
+        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="text-danger">
+          <div *ngIf="first_name.errors?.['required']">
+            Firstname is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <input formControlName="last_name" type="text" class="form-control" id="inputLastname" placeholder="Lastname">
+        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="text-danger">
+          <div *ngIf="last_name.errors?.['required']">
+            Lastname is required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <input formControlName="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+        <div *ngIf="password.errors?.['required']">
+          Password is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Retype Password">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+        <div *ngIf="password.errors?.['required']">
+          Retype password is required.
+        </div>
+      </div>
+    </div>
+
+    <button (click)="signup()" type="submit" class="btn btn-warning mt-4">Registrarme</button>
+  </form>
+</main>
