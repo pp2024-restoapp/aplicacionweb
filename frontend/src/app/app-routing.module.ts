@@ -11,6 +11,8 @@ import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { authGuard } from './guards/auth.guard';
 import { ShowsComponent } from './pages/shows/shows.component';
+import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
+
 
 const routes: Routes = [
   {path: '', redirectTo:'/home', pathMatch:'full'},
@@ -23,7 +25,8 @@ const routes: Routes = [
   {path: 'productos', component:ProductosComponent, canActivate:[authGuard]},
   {path: 'pago', component:PagoComponent},
   {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
-  { path: 'shows', component: ShowsComponent }
+  { path: 'shows', component: ShowsComponent },
+  { path: 'nuestraApp', component: NuestraAppComponent }
 ];
 
 @NgModule({
