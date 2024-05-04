@@ -19,6 +19,7 @@ import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { AppMovilComponent } from './pages/app-movil/app-movil.component';
 import { ShowsComponent } from './pages/shows/shows.component';
+import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ShowsComponent } from './pages/shows/shows.component';
     PagoComponent,
     PedidosComponent,
     AppMovilComponent,
-    ShowsComponent
+    ShowsComponent,
+    NuestraAppComponent
   ],
   imports: [
     BrowserModule,
