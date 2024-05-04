@@ -2,32 +2,58 @@
 
 .banner {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     background-image: url('../../../assets/img/PageNuestraApp/banner.png');
-    background-size:cover;
+    background-size:contain;
     background-position: center;
     background-color:chocolate;
     color: white;
     text-align: left;
     padding: 100px 100px;
+    background-repeat: no-repeat;
 }
 
-.parte {
-    margin-bottom: 20px;
+.parte h2{
+    font-size: 24px;
+}
+
+.parte p{
+    font-size: 24px;
+}
+
+.datos-app{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+
+}
+
+.datos-app h3{
+    font-size: 50px;
 }
 
 .logo {
-    width: 150px; /* Ancho del logo */
-    height: auto;
+    width: 100px !important; 
+    height: 100px !important;
+    border-radius: 15px;
+    margin-right: 2vw;
+}
+
+.boton{
+    margin-top: 5vh;
 }
 
 .boton-descarga {
-    background-color: #007bff; /* Color del botón de descarga */
-    color: white;
-    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff !important;
+    font-weight: bold;
+    padding: 15px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -60,7 +86,52 @@
 }
 
 .image img {
-    width: 100%;
     height: 60vh;
     width: 20vw;
+}
+
+/* RESERVAS */
+
+.reservation-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.reservation-content {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.reservation-content h2 {
+    font-size: 36px;
+}
+
+.reservation-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.reservation-features {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.feature {
+    flex: 1;
+}
+
+.feature img {
+    height: 60vh;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
 }
