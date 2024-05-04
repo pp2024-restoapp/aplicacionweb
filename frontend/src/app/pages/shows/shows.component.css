@@ -1,0 +1,166 @@
+
+
+  .banner{
+    height: 45vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 5vh;
+  }
+  .banner h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10vh;
+    color: #f2f2f2;
+    width: 100%;
+    height: 12vh;
+    background-color: #00000080;
+  }
+  .aboutUs-img {
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    z-index: -1;
+  }
+  /* Estilos para las tarjetas de los shows */
+  .show-card {
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: #E1C688;
+    min-height: 360px;
+    color: #000;
+    box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.9); /* Agrega una sombra suave */
+    transition: transform 0.3s ease;
+
+  }
+  .show-card:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la tarjeta al pasar el mouse sobre ella */
+  }
+  
+  .show-card img {
+    width: 100%; /* Ajustar la imagen al ancho de la tarjeta */
+    border-radius: 5px ; 
+    }
+  
+  .show-card h3 {
+    margin-top: 0;
+  }
+  
+  .show-card p {
+    margin-bottom: 10px; /* Espacio entre cada línea de texto */
+    position: relative; /* Cambia a posición relativa */
+    margin-top: 10px; /* Ajusta el margen superior para separarla de la fecha */
+  }
+  
+  .details-button {
+    background-color: #133050;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .details-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos para la cuadrícula de las tarjetas */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustar tamaño de las columnas automáticamente */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+    margin-top:10vh;
+  }
+  .container {
+    padding-top: 100px; /* Utiliza relleno superior en lugar de margen superior */
+    position: relative; /* Establece una posición relativa */
+}
+.subtitulo{
+    text-align: center;
+    font-weight: bold;
+        
+}
+.show-card img {
+  width: 100%;
+  height: 200px; /* Establecer una altura fija para todas las imágenes */
+  object-fit: cover; /* Ajustar la imagen sin distorsionarla */
+  border-radius: 5px; 
+}
+.show-card p{
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 999;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+  
+}
+
+.popup.visible {
+  display: block;
+}
+
+.popup-content {
+  width: 400px; /* Ancho fijo */
+  height: 400px; /* Alto fijo */
+}
+
+.popup-image {
+  width: 100%;
+  max-height: 300px;
+}
+
+.popup-title {
+  font-size: 24px;
+  font-weight: bold; 
+  margin-bottom: 10px; 
+}
+
+.popup-date {
+  font-style: italic; 
+  margin-bottom: 10px; 
+}
+
+.popup-description {
+  line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+  margin-bottom: 20px; /* Espacio al final de la descripción */
+}
+
+
+.close-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #ff0000; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #cc0000; 
+
+}
