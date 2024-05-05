@@ -10,6 +10,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { authGuard } from './guards/auth.guard';
+import { ShowsComponent } from './pages/shows/shows.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/home', pathMatch:'full'},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'productos', component:ProductosComponent, canActivate:[authGuard]},
   {path: 'pago', component:PagoComponent},
-  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]}
+  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
+  { path: 'shows', component: ShowsComponent }
 ];
 
 @NgModule({
