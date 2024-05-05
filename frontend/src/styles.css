@@ -54,17 +54,17 @@ background-color: var(--accordion-bg-color);
 
 a {
 text-decoration: none !important;
-color: #000000 !important;
+color: var(--accordion-text-color);
 }
 
 a:hover {
 text-decoration: none;
-color: #000000;
+color: var(--accordion-text-color);
 }
 
 a:visited {
 text-decoration: none;
-color: #000000;
+color: var(--accordion-text-color);
 }
 
 .ng-valid:not(form).ng-touched {

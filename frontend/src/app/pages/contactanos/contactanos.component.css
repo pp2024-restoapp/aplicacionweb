@@ -1,6 +1,10 @@
 .main-menu {
     padding: 2rem;
   }
+
+.contact-info{
+  color: var();
+}
   
   .contact-container {
     height: 45vw;
