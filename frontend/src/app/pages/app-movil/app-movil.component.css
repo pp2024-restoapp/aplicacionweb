@@ -1,0 +1,47 @@
+.appmovil-container {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family1);
+  margin: auto;
+  width: 100%;
+}
+
+.welcome-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.banner {
+  background-color: #f7f7f7;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.banner-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.banner-content h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.app-image,
+.qr-code {
+  margin-top: 20px; 
+  display: flex;
+  justify-content: center;
+}
+
+.image-50 {
+  max-width: 50%;
+  height: auto;
+}
