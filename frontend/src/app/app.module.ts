@@ -20,6 +20,7 @@ import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { AppMovilComponent } from './pages/app-movil/app-movil.component';
 import { ShowsComponent } from './pages/shows/shows.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
