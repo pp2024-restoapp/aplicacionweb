@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetProductsService } from 'src/app/services/get-products.service';
+import { GetProductsEntradasService } from 'src/app/services/get-products-entradas.service';
 
 @Component({
   selector: 'app-carta',
@@ -9,10 +10,11 @@ import { GetProductsService } from 'src/app/services/get-products.service';
 })
 export class CartaComponent implements OnInit {
   products: any;
+  productsEntradas: any;
   productsOnCart: any[] = [];
   subtotal: any;
 
-  constructor(private products_service: GetProductsService, private router: Router) {
+  constructor(private products_service: GetProductsService,private products_entradas_service: GetProductsEntradasService, private router: Router) {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
         this.products = productsData
@@ -22,7 +24,21 @@ export class CartaComponent implements OnInit {
         console.error(errorData);
       }
     })
+     /*** inicio entradas  ***/
+    this.products_entradas_service.getProductsEntradas().subscribe({
+      next: (Data) => {
+        this.productsEntradas = Data
+        console.log(Data)
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      }
+    })
+      /*** fin entradas  ***/
   }
+
+
+
 
   ngOnInit(): void {
     this.products_service.loadProductsInCart();
