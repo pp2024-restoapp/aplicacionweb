@@ -1,3 +1,9 @@
+.nuestra-app-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* BANNER */
 
 .banner {
@@ -63,33 +69,6 @@
     width: 50px;
 }
 
-/* CATEGORIAS */
-
-.categorias-container {
-    display: flex;
-    height: 80vh;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px;
-}
-
-.categorias-content {
-    flex: 2;
-    padding: 20px;
-}
-.categorias-content p{
-    width: 80%;
-}
-
-.image {
-    flex: 1;
-}
-
-.image img {
-    height: 60vh;
-    width: 20vw;
-}
-
 /* RESERVAS */
 
 .reservation-section {
@@ -134,4 +113,79 @@
 
 .feature p {
     font-size: 16px;
+}
+
+/* CATEGORIAS */
+
+.categorias-container {
+    display: flex;
+    height: 70vh;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 100px; */
+    width: 70%;
+
+}
+
+.categorias-content {
+    flex: 2;
+    padding: 20px;
+}
+.categorias-content p{
+    width: 80%;
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    height: 60vh;
+    width: 250px;
+}
+
+
+/* SUCURSALES */
+
+.sucursales-container {
+    display: flex;
+    height: 70vh;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.sucursales-content {
+    flex: 2;
+    padding: 20px;
+}
+.sucursales-content p{
+    width: 80%;
+}
+
+.image-sucursales{
+    width: 210px !important;
+}
+
+/* CONTACTO */
+
+.contacto-container {
+    display: flex;
+    height: 70vh;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 100px; */
+    width: 70%;
+}
+
+.contacto-content {
+    flex: 2;
+    padding: 20px;
+}
+.contacto-content p{
+    width: 80%;
+}
+
+.image-contact{
+    width: 210px !important;
 }
