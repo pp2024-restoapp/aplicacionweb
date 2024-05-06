@@ -9,14 +9,12 @@
         <div class="row mb-3 mt-4 d-flex justify-content-center">
             <div class="col-sm-10">
                 <input formControlName="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
-
-                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
-
-                    <div *ngIf="email.errors?.['required']">
-                        Email is required.
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="login-alert">
+                    <div *ngIf="email.errors?.['required']" >
+                        El correo electrónico es obligatorio.
                     </div>
                     <div *ngIf="email.errors?.['email']">
-                        Email format is invalid.
+                        El formato del correo electrónico no es valido.
                     </div>
                 </div>
             </div>
