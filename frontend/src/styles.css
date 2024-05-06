@@ -7,7 +7,7 @@
   --color5: #0c0f0e;
   --color7: #a1a0a4;
   --color7: #f1b272;
-  --color8:#deac66;
+  --color8: #deac66;
   --accordion-bg-color: #f1e6ce;
   --accordion-button-text-color: #000;
   --bg-opacity: rgba(255, 255, 0, 0.341);
@@ -23,10 +23,12 @@
 body {
   background-color: var(--color4) !important;
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
 /* LINKS */
-:root[data-theme='oscuro'] {
+:root[data-theme="oscuro"] {
   --color1: #e38b29;
   --color2: #191b22;
   --color3: #ffd8a9;
@@ -34,7 +36,7 @@ body {
   --color5: #0c0f0e;
   --color7: #a1a0a4;
   --color7: #f1b272;
-  --color8:#deac66;
+  --color8: #deac66;
   --text-color: #fff;
   --bg-opacity: rgba(255, 255, 0, 0.341);
   --accordion-header-bg: #333;
@@ -44,12 +46,12 @@ body {
 }
 
 .accordion-header {
-background-color: var(--accordion-header-bg);
+  background-color: var(--accordion-header-bg);
 }
 
 .accordion-body {
-color: var(--accordion-text-color);
-background-color: var(--accordion-bg-color);
+  color: var(--accordion-text-color);
+  background-color: var(--accordion-bg-color);
 }
 
 a {
@@ -68,14 +70,9 @@ color: var(--accordion-text-color);
 }
 
 .ng-valid:not(form).ng-touched {
-border-left: 5px solid #42A948;
+  border-left: 5px solid #42a948;
 }
 
 .ng-invalid:not(form).ng-touched {
-border-left: 5px solid #A94442;
+  border-left: 5px solid #a94442;
 }
-
-
-
-
-
