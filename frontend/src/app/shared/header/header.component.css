@@ -12,7 +12,7 @@
   .checkbox-label {
     background-color: #424242;
     width: 50px;
-    height: 26px;
+    height: 30px;
     border-radius: 50px;
     position: relative;
     padding: 5px;
@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 1rem;
   }
   
   .fa-moon {color: #f1c40f;}
@@ -29,7 +30,7 @@
   .checkbox-label .ball {
     background-color: #fff;
     width: 22px;
-    height: 22px;
+    height: 26px;
     position: absolute;
     left: 2px;
     top: 2px;
@@ -96,7 +97,6 @@
     }
     
     .nav-item .nav-link {
-      color: var(--color4) !important;
       font-size: 18px;
     }
   

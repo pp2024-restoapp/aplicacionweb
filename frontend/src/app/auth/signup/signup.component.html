@@ -51,23 +51,43 @@
       </div>
     </div>
 
-    <div class="col-md-12">
-      <input formControlName="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="singup-alert">
-        <div *ngIf="password.errors?.['required']">
-          La contraseña es obligatoria
-        </div>
-      </div>
-    </div>
 
-    <div class="col-md-12">
-      <input type="password" class="form-control" id="inputPassword2" placeholder="Retype Password">
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="singup-alert">
-        <div *ngIf="password.errors?.['required']">
-          Reescribir la contraseña es obligatorio
-        </div>
+<div>
+  <div class="col-sm-12">
+    <div class="input-group">
+      <input formControlName="password" [type]="passwordFieldType" class="form-control" id="inputPassword" placeholder="Password" maxlength="10">
+      <div class="input-group-append">
+        <span class="input-group-text" style="height: 38px;" (click)="togglePasswordVisibility()">
+          <i class="fa" [ngClass]="{'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible}"></i>
+        </span>
       </div>
     </div>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="singup-alert">
+      <div *ngIf="password.errors?.['required']">
+        La contraseña es obligatoria.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div>
+  <div class="col-sm-12">
+    <div class="input-group">
+      <input formControlName="confirmPassword" [type]="confirmPasswordFieldType" class="form-control" id="inputPassword2" placeholder="Confirm password" maxlength="10">
+      <div class="input-group-append">
+        <span class="input-group-text" style="height: 38px;" (click)="toggleConfirmPasswordVisibility()">
+          <i class="fa" [ngClass]="{'fa-eye': confirmPasswordVisible, 'fa-eye-slash': !confirmPasswordVisible}"></i>
+        </span>
+      </div>
+    </div>
+    <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="singup-alert">
+      <div *ngIf="confirmPassword.errors?.['required']">
+        Confirmar la contraseña es obligatorio
+      </div>
+    </div>
+  </div>
+</div>
 
     <button (click)="signup()" type="submit" class="btn btn-warning mt-4">Registrarme</button>
   </form>
