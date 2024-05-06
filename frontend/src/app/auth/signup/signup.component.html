@@ -11,21 +11,21 @@
     <div class="row">
       <div class="col-md-6">
         <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
-        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="singup-alert">
           <div *ngIf="email.errors?.['required']">
-            Email is required.
+            El correo electrónico es obligatorio.
           </div>
           <div *ngIf="email.errors?.['email']">
-            Email format is invalid.
+            El formato del correo electrónico no es valido.
           </div>
         </div>
       </div>
 
       <div class="col-md-6">
         <input formControlName="username" type="text" class="form-control" id="inputUsername" placeholder="Username">
-        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-danger">
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="singup-alert">
           <div *ngIf="username.errors?.['required']">
-            Username is required.
+            El nombre de usuario es obligatorio
           </div>
         </div>
       </div>
@@ -34,18 +34,18 @@
     <div class="row">
       <div class="col-md-6">
         <input formControlName="first_name" type="text" class="form-control" id="inputFirstname" placeholder="Firstname">
-        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="text-danger">
+        <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="singup-alert">
           <div *ngIf="first_name.errors?.['required']">
-            Firstname is required.
+            El nombre es obligatorio
           </div>
         </div>
       </div>
 
       <div class="col-md-6">
         <input formControlName="last_name" type="text" class="form-control" id="inputLastname" placeholder="Lastname">
-        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="text-danger">
+        <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="singup-alert">
           <div *ngIf="last_name.errors?.['required']">
-            Lastname is required.
+            El apellido es obligatorio
           </div>
         </div>
       </div>
@@ -53,18 +53,18 @@
 
     <div class="col-md-12">
       <input formControlName="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="singup-alert">
         <div *ngIf="password.errors?.['required']">
-          Password is required.
+          La contraseña es obligatoria
         </div>
       </div>
     </div>
 
     <div class="col-md-12">
       <input type="password" class="form-control" id="inputPassword2" placeholder="Retype Password">
-      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)" class="singup-alert">
         <div *ngIf="password.errors?.['required']">
-          Retype password is required.
+          Reescribir la contraseña es obligatorio
         </div>
       </div>
     </div>
