@@ -16,8 +16,14 @@ export class SignupComponent {
     first_name:['',Validators.required],
     last_name:['',Validators.required],
     password: ['', Validators.required],
+    confirmPassword: ['', Validators.required],
     is_staff: ['false']
   });
+
+  passwordFieldType: string = 'password';
+  confirmPasswordFieldType: string = 'password';
+  passwordVisible: boolean = false;
+  confirmPasswordVisible: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,12 +46,20 @@ export class SignupComponent {
   get password() {
     return this.registerForm.controls.password;
   }
+  get confirmPassword() {
+    return this.registerForm.controls.confirmPassword;
+  }
   get is_staff() {
     return this.registerForm.controls.is_staff;
   }
 
   signup() {
     if (this.registerForm.valid) {
+
+      if (this.password.value !== this.confirmPassword.value) {
+        alert('Las contraseñas no coinciden.');
+        return;
+      }
       this.authService.signup(this.registerForm.value as SignupRequest).subscribe({
         error: (errorData) => {
           alert('Email o Password erroneo.');
@@ -61,6 +75,17 @@ export class SignupComponent {
       this.registerForm.markAllAsTouched();
       alert('No se permiten campos vacios.');
     }
+  }
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+    this.passwordFieldType = this.passwordVisible ? 'text' : 'password';
+  }
+
+
+  toggleConfirmPasswordVisibility() {
+    this.confirmPasswordVisible = !this.confirmPasswordVisible;
+    this.confirmPasswordFieldType = this.confirmPasswordVisible ? 'text' : 'password';
   }
 
 }

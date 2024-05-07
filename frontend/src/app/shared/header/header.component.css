@@ -1,8 +1,7 @@
  /* BARRA DE NAVEGACION */
  header {
-    position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 1;
   }
 
   .checkbox {
@@ -13,7 +12,7 @@
   .checkbox-label {
     background-color: #424242;
     width: 50px;
-    height: 26px;
+    height: 30px;
     border-radius: 50px;
     position: relative;
     padding: 5px;
@@ -21,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 1rem;
   }
   
   .fa-moon {color: #f1c40f;}
@@ -30,7 +30,7 @@
   .checkbox-label .ball {
     background-color: #fff;
     width: 22px;
-    height: 22px;
+    height: 26px;
     position: absolute;
     left: 2px;
     top: 2px;
@@ -41,7 +41,6 @@
   .checkbox:checked + .checkbox-label .ball {
     transform: translateX(24px);
   }
-  
   
   .navbar {
     background-color: var(--color5);
@@ -92,15 +91,12 @@
     }
   
     .navbar-collapse {
-      display: flex;
-      justify-content: center;
       text-align: center;
       z-index: 999;
       background-color: var(--color5);
-      height: 20vh;
     }
+    
     .nav-item .nav-link {
-      color: var(--color4) !important;
       font-size: 18px;
     }
   

@@ -34,14 +34,16 @@
   margin-bottom: 20px;
 }
 
-.app-image,
-.qr-code {
-  margin-top: 20px; 
-  display: flex;
-  justify-content: center;
-}
-
 .image-50 {
   max-width: 50%;
   height: auto;
 }
+
+.app-image,
+.qr-code {
+  margin-top: 40px; 
+  display: flex;
+  justify-content: center;
+  
+}
+
