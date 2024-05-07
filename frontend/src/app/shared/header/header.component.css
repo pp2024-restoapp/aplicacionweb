@@ -54,7 +54,13 @@
     color: white !important;
     font-weight: bold;
   }
-  
+  .button-app{
+    background-color: #F26333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
   .nav-item a:hover {
     color: var(--color1) !important;
   }
