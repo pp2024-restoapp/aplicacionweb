@@ -11,26 +11,33 @@ import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { authGuard } from './guards/auth.guard';
 import { ShowsComponent } from './pages/shows/shows.component';
+import { PremiosComponent } from './pages/premios/premios.component';
 import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo:'/home', pathMatch:'full'},
-  {path: 'home', component:HomeComponent},
-  {path: 'nosotros', component:NosotrosComponent},
-  {path: 'contactanos', component:ContactanosComponent},
-  {path: 'carta', component:CartaComponent},
-  {path: 'login', component:LoginComponent},
-  {path: 'signup', component:SignupComponent},
-  {path: 'productos', component:ProductosComponent, canActivate:[authGuard]},
-  {path: 'pago', component:PagoComponent},
-  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'nosotros', component: NosotrosComponent },
+  { path: 'contactanos', component: ContactanosComponent },
+  { path: 'carta', component: CartaComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'premios', component: PremiosComponent },
+
+  {
+    path: 'productos',
+    component: ProductosComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'pago', component: PagoComponent },
+  { path: 'pedidos', component: PedidosComponent, canActivate: [authGuard] },
   { path: 'shows', component: ShowsComponent },
   { path: 'nuestraApp', component: NuestraAppComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
