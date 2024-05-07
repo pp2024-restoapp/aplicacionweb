@@ -13,22 +13,25 @@ import { authGuard } from './guards/auth.guard';
 import { AppMovilComponent } from './pages/app-movil/app-movil.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'/home', pathMatch:'full'},
-  {path: 'home', component:HomeComponent},
-  {path: 'nosotros', component:NosotrosComponent},
-  {path: 'contactanos', component:ContactanosComponent},
-  {path: 'carta', component:CartaComponent},
-  {path: 'login', component:LoginComponent},
-  {path: 'signup', component:SignupComponent},
-  {path: 'productos', component:ProductosComponent, canActivate:[authGuard]},
-  {path: 'pago', component:PagoComponent},
-  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
-  {path: 'App-movil', component: AppMovilComponent},
-
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'nosotros', component: NosotrosComponent },
+  { path: 'contactanos', component: ContactanosComponent },
+  { path: 'carta', component: CartaComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  {
+    path: 'productos',
+    component: ProductosComponent,
+    canActivate: [authGuard],
+  },
+  { path: 'pago', component: PagoComponent },
+  { path: 'pedidos', component: PedidosComponent, canActivate: [authGuard] },
+  { path: 'App-movil', component: AppMovilComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

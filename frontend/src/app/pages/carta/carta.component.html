@@ -1179,39 +1179,250 @@
                 <h2 class="accordion-header" id="flush-headingFive">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    <img src="/assets/img/postres.png" width="70" height="70" alt="postres">
+                    <img src="/assets/img/postres.png" width="70" height="70" alt="bebidas">
+
                     Postres
                   </button>
                 </h2>
                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
                   data-bs-parent="#accordionFlushExample">
                   <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
+                    <div class="row g-3">
+                      
+  <div class="col-md-3">
+    <div class="card">
+      <img src="./assets/img/mousse_chocolate.png" class="card-img-top" alt="mousse_chocolate" width="180" height="180">
+      <div class="card-body">
+        <h5 class="card-title text-center fw-bold text-dark">Mousse de chocolate</h5>
+        <p class="card-text text-center text-dark">Crema de chocolate, suave y espumosa</p>
+        <p class="card-text text-center text-rojo">Precio: $2.300</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+          <!-- Botón Detalles que abre el modal 26 -->
+          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal26">
+            Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 26 -->
+  <div class="modal fade" id="detalleModal26" tabindex="-1" aria-labelledby="detalleModalLabel26" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleModalLabel26">Mousse de chocolate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="modal-image-container">
+            <img src="./assets/img/mousse_chocolate.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+          </div>
+          <p class="text-dark"> Esta crema de chocolate se deshace en tu boca</p>
+          <p class="card-text text-center text-rojo">Precio: $2.300</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card">
+      <img src="./assets/img/shot_frutilla.png" class="card-img-top" alt="shot_de_frutilla" width="180" height="180">
+      <div class="card-body">
+        <h5 class="card-title text-center fw-bold text-dark">Shot de frutilla</h5>
+        <p class="card-text text-center text-dark"> Shot tradicional de crema y mermelada de frutilla</p>
+        <p class="card-text text-center text-rojo">Precio: $2.800</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+          <!-- Botón Detalles que abre el modal 27-->
+          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal27">
+            Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 27 -->
+  <div class="modal fade" id="detalleModal27" tabindex="-1" aria-labelledby="detalleModalLabel27" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleModalLabel27">Shot de frutilla</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="modal-image-container">
+            <img src="./assets/img/shot_frutilla.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+          </div>
+          <p class="text-dark">Un disparo de crema y sabor</p>
+          <p class="card-text text-center text-rojo">Precio: $2.800</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="./assets/img/mini_lemon_pie.png" class="card-img-top" alt="mini_lemon_pie" width="180" height="180">
+      <div class="card-body">
+        <h5 class="card-title text-center fw-bold text-dark">Mini lemon pie</h5>
+        <p class="card-text text-center text-dark">Versión mini de la famosa torta de limón</p>
+        <p class="card-text text-center text-rojo">Precio: $2.800</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+          <!-- Botón Detalles que abre el modal 28 -->
+          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal28">
+            Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 28 -->
+  <div class="modal fade" id="detalleModal28" tabindex="-1" aria-labelledby="detalleModalLabel28" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleModalLabel28">Mini lemon pie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="modal-image-container">
+            <img src="./assets/img/mini_lemon_pie.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+          </div>
+          <p class="text-dark">Corteza de masa quebrada, relleno de crema de limón, y un esponjoso merengue</p>
+          <p class="card-text text-center text-rojo">Precio: $2.800</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    <div class="card">
+      <img src="./assets/img/trufa_de_coco.png" class="card-img-top" alt="trufa_de_coco" width="180" height="180">
+      <div class="card-body">
+        <h5 class="card-title text-center fw-bold text-dark">Trufas de coco </h5>
+        <p class="card-text text-center text-dark">Bocaditos dulces</p>
+        <p class="card-text text-center text-rojo">Precio: $3.200</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+          <!-- Botón Detalles que abre el modal 29 -->
+          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal29">
+            Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal 29 -->
+  <div class="modal fade" id="detalleModal29" tabindex="-1" aria-labelledby="detalleModalLabel29" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleModalLabel29">Trufas de coco</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="modal-image-container">
+            <img src="./assets/img/trufa_de_coco.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+          </div>
+          <p class="text-dark">Trufas de coco bañado en chocolate blanco</p>
+          <p class="card-text text-center text-rojo">Precio: $3.200</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+<div class="col-md-3">
+  <div class="card">
+    <img src="./assets/img/shot_tiramisu.png" class="card-img-top" alt="shot_tiramisu" width="180" height="180">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold text-dark">Shot de tiramisú</h5>
+      <p class="card-text text-center text-dark">Café y chocolate juntos</p>
+      <p class="card-text text-center text-rojo">Precio: $3.200</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+        <!-- Botón Detalles que abre el modal 30 -->
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal30">
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 30 -->
+<div class="modal fade" id="detalleModal30" tabindex="-1" aria-labelledby="detalleModalLabel30" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleModalLabel30">Shot de tiramisú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="modal-image-container">
+          <img src="./assets/img/shot_tiramisu.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+        </div>
+        <p class="text-dark">Detonante postre frío</p>
+        <p class="card-text text-center text-rojo">Precio: $3.200</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
-                        </div>
-                      </div>
-                    </div>
-                 
+<div class="col-md-3">
+  <div class="card">
+    <img src="./assets/img/shot_caramelo.png" class="card-img-top" alt="shot_de_caramelo" width="180" height="180">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold text-dark">Shot de caramelo</h5>
+      <p class="card-text text-center text-dark">Masa tradicional de vainilla</p>
+      <p class="card-text text-center text-rojo">Precio: $3.100</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+        <!-- Botón Detalles que abre el modal 31 -->
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal31">
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 31 -->
+<div class="modal fade" id="detalleModal31" tabindex="-1" aria-labelledby="detalleModalLabel31" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleModalLabel31">Shot de caramelo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="modal-image-container">
+          <img src="./assets/img/shot_caramelo.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+        </div>
+        <p class="text-dark">Opción caramelo y baileys</p>
+        <p class="card-text text-center text-rojo">Precio: $3.100</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>                          
+                      
 
                   </div>
                 </div>
@@ -1219,97 +1430,441 @@
             </div>
           </div>
         </div>
-        <div class="accordion">
-          <div class="product-container">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    <img src="/assets/img/pastas.png" width="70" height="70" alt="pastas">
+      </div>
+      <div class="accordion">
+        <div class="product-container">
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                  <img src="/assets/img/pastas.png" width="70" height="70" alt="pastas">
 
-                    Pastas
-                  </button>
-                </h2>
-
-                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
-                  data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
-
-
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
-                        </div>
-                      </div>
-                    </div>
+                  Pastas
+                </button>
+              </h2>
+              <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="row g-3">
                     
-                  </div>
+<div class="col-md-3">
+  <div class="card">
+    <img src="./assets/img/sorrentini_parisien.png" class="card-img-top" alt="sorrentini_parisien" width="180" height="180">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold text-dark">Sorrentini parisien</h5>
+      <p class="card-text text-center text-dark">De ricota, mozzarella y jamón, con salsa de crema con jamón y champiñones</p>
+      <p class="card-text text-center text-rojo">Precio: $12.000</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+        <!-- Botón Detalles que abre el modal 32 -->
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal32">
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 32 -->
+<div class="modal fade" id="detalleModal32" tabindex="-1" aria-labelledby="detalleModalLabel32" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleModalLabel32">Sorrentini parisien</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="modal-image-container">
+          <img src="./assets/img/sorrentini_parisien.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+        </div>
+        <p class="text-dark">De ricota, mozzarella y jamón, con salsa de crema con jamón y champiñones</p>
+        <p class="card-text text-center text-rojo">Precio: $12.000</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card">
+    <img src="./assets/img/rigatoni_pomodoro_e_basilico.png" class="card-img-top" alt="rigatoni_pomodoro_e_basilico" width="180" height="180">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold text-dark">Rigatoni pomodoro e basilico</h5>
+      <p class="card-text text-center text-dark">Con salsa de tomates frescos y albahaca</p>
+      <p class="card-text text-center text-rojo">Precio: $12.000</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+        <!-- Botón Detalles que abre el modal 33 -->
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal33">
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 33 -->
+<div class="modal fade" id="detalleModal33" tabindex="-1" aria-labelledby="detalleModalLabel33" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleModalLabel33">Rigatoni pomodoro e basilico</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="modal-image-container">
+          <img src="./assets/img/rigatoni_pomodoro_e_basilico.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+        </div>
+        <p class="text-dark">Con salsa de tomates frescos y albahaca</p>
+        <p class="card-text text-center text-rojo">Precio: $12.000</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3">
+  <div class="card">
+    <img src="./assets/img/ravioli.jpeg" class="card-img-top" alt="ravioli" width="180" height="180">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold text-dark">Ravioli</h5>
+      <p class="card-text text-center text-dark">De ricota y espinaca, con salsa boloñesa</p>
+      <p class="card-text text-center text-rojo">Precio: $12.000</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+        <!-- Botón Detalles que abre el modal 34 -->
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal34">
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 34 -->
+<div class="modal fade" id="detalleModal34" tabindex="-1" aria-labelledby="detalleModalLabel34" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleModalLabel34">Ravioli</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="modal-image-container">
+          <img src="./assets/img/ravioli.jpeg" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+        </div>
+        <p class="text-dark">De ricota y espinaca, con salsa boloñesa</p>
+        <p class="card-text text-center text-rojo">Precio: $12.000</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="card">
+    <img src="./assets/img/cappelletti.png" class="card-img-top" alt="cappelletti" width="180" height="180">
+    <div class="card-body">
+      <h5 class="card-title text-center fw-bold text-dark">Cappelletti</h5>
+      <p class="card-text text-center text-dark">Pasta rellena de lomo, mortadela italiana y jamón crudo, con salsa de tomates frescos</p>
+      <p class="card-text text-center text-rojo">Precio: $14.000</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+        <!-- Botón Detalles que abre el modal 35 -->
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal35">
+          Detalles
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal 35 -->
+<div class="modal fade" id="detalleModal35" tabindex="-1" aria-labelledby="detalleModalLabel35" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleModalLabel35">Cappelletti</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="modal-image-container">
+          <img src="./assets/img/cappelletti.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+        </div>
+        <p class="text-dark">Pasta rellena de lomo, mortadela italiana y jamón crudo, con salsa de tomates frescos</p>
+        <p class="card-text text-center text-rojo">Precio: $14.000</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+          
+<div class="col-md-3">
+<div class="card">
+  <img src="./assets/img/pappardelle_aum_aum.png" class="card-img-top" alt="pappardelle" width="180" height="180">
+  <div class="card-body">
+    <h5 class="card-title text-center fw-bold text-dark">Pappardelle aum aum</h5>
+    <p class="card-text text-center text-dark">Cintas anchas al huevo, con salsa de tomates, berenjenas, mozzarella de búfala y albóndigas de carne</p>
+    <p class="card-text text-center text-rojo">Precio: $14.000</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+      <!-- Botón Detalles que abre el modal 36 -->
+      <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal36">
+        Detalles
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modal 36 -->
+<div class="modal fade" id="detalleModal36" tabindex="-1" aria-labelledby="detalleModalLabel36" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="detalleModalLabel30">Pappardelle aum aum</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body text-center">
+      <div class="modal-image-container">
+        <img src="./assets/img/pappardelle_aum_aum.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+      </div>
+      <p class="text-dark">Cintas anchas al huevo, con salsa de tomates, berenjenas, mozzarella de búfala y albóndigas de carne</p>
+      <p class="card-text text-center text-rojo">Precio: $14.000</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card">
+  <img src="./assets/img/gnocchi_spinaci.png" class="card-img-top" alt="gnocchi" width="180" height="180">
+  <div class="card-body">
+    <h5 class="card-title text-center fw-bold text-dark">Gnocchi spinaci</h5>
+    <p class="card-text text-center text-dark">Ñoquis de espinaca fresca gratinados, con cuatro variedades de queso</p>
+    <p class="card-text text-center text-rojo">Precio: $12.000</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+      <!-- Botón Detalles que abre el modal 37 -->
+      <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal37">
+        Detalles
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modal 37 -->
+<div class="modal fade" id="detalleModal37" tabindex="-1" aria-labelledby="detalleModalLabel37" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="detalleModalLabel37">Gnocchi spinaci</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body text-center">
+      <div class="modal-image-container">
+        <img src="./assets/img/gnocchi_spinaci.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+      </div>
+      <p class="text-dark">Ñoquis de espinaca fresca gratinados, con cuatro variedades de queso</p>
+      <p class="card-text text-center text-rojo">Precio: $12.000</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>                          
+                    
+
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion">
-          <div class="product-container">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingSeven">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                    <img src="/assets/img/ensaladas.png" width="70" height="70" alt="ensaladas">
-                    Ensaladas
-                  </button>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="product-container">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                <img src="/assets/img/ensaladas.png" width="70" height="70" alt="ensaladas">
 
-                </h2>
+                Ensaladas
+              </button>
+            </h2>
+            <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <div class="row g-3">
 
-                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
-                  data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
+<div class="col-md-3">
+<div class="card">
+  <img src="./assets/img/blu.png" class="card-img-top" alt="blu" width="180" height="180">
+  <div class="card-body">
+    <h5 class="card-title text-center fw-bold text-dark">Blu</h5>
+    <p class="card-text text-center text-dark">Hojas de estación, semillas, peras frescas, queso azul y crutones</p>
+    <p class="card-text text-center text-rojo">Precio: $14.000</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+      <!-- Botón Detalles que abre el modal 38 -->
+      <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal38">
+        Detalles
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modal 38 -->
+<div class="modal fade" id="detalleModal38" tabindex="-1" aria-labelledby="detalleModalLabel38" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="detalleModalLabel38">Blu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body text-center">
+      <div class="modal-image-container">
+        <img src="./assets/img/blu.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+      </div>
+      <p class="text-dark">Hojas de estación, semillas, peras frescas, queso azul y crutones</p>
+      <p class="card-text text-center text-rojo">Precio: $14.000</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
 
+<div class="col-md-3">
+<div class="card">
+  <img src="./assets/img/bruxelles.png" class="card-img-top" alt="bruxelles" width="180" height="180">
+  <div class="card-body">
+    <h5 class="card-title text-center fw-bold text-dark">Bruxelles</h5>
+    <p class="card-text text-center text-dark">Queso Brie, espinaca y langostinos salteados, con aderezo de mayonesa, aceite de oliva y ciboulette</p>
+    <p class="card-text text-center text-rojo">Precio: $14.000</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+      <!-- Botón Detalles que abre el modal 39 -->
+      <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal39">
+        Detalles
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Modal 39 -->
+<div class="modal fade" id="detalleModal39" tabindex="-1" aria-labelledby="detalleModalLabel39" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="detalleModalLabel39">Bruxelles</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body text-center">
+      <div class="modal-image-container">
+        <img src="./assets/img/bruxelles.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+      </div>
+      <p class="text-dark">Queso Brie, espinaca y langostinos salteados, con aderezo de mayonesa, aceite de oliva y ciboulette</p>
+      <p class="card-text text-center text-rojo">Precio: $14.000</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+</div>
+</div>
+        
+<div class="col-md-3">
+<div class="card">
+<img src="./assets/img/cesar_con_pollo.png" class="card-img-top" alt="cesar_con_pollo" width="180" height="180">
+<div class="card-body">
+  <h5 class="card-title text-center fw-bold text-dark">Cesar con pollo</h5>
+  <p class="card-text text-center text-dark">Hojas verdes, pechuga de pollo, láminas de queso parmesano, crutones y aderezo César (anchoas, queso parmesano, aceite de oliva y vinagre)</p>
+  <p class="card-text text-center text-rojo">Precio: $12.000</p>
+  <div class="d-flex justify-content-between align-items-center">
+    <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+    <!-- Botón Detalles que abre el modal 40 -->
+    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal40">
+      Detalles
+    </button>
+  </div>
+</div>
+</div>
+</div>
+<!-- Modal 40 -->
+<div class="modal fade" id="detalleModal40" tabindex="-1" aria-labelledby="detalleModalLabel40" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="detalleModalLabel40">Cesar con pollo</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body text-center">
+    <div class="modal-image-container">
+      <img src="./assets/img/cesar_con_pollo.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+    </div>
+    <p class="text-dark">CHojas verdes, pechuga de pollo, láminas de queso parmesano, crutones y aderezo César (anchoas, queso parmesano, aceite de oliva y vinagre)</p>
+    <p class="card-text text-center text-rojo">Precio: $12.000</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+  </div>
+</div>
+</div>
+</div>
 
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<div class="col-md-3">
+<div class="card">
+<img src="./assets/img/caprese.png" class="card-img-top" alt="caprese" width="180" height="180">
+<div class="card-body">
+  <h5 class="card-title text-center fw-bold text-dark">Caprese</h5>
+  <p class="card-text text-center text-dark">Mozzarella de búfala, tomates, albahaca y aceite de oliva</p>
+  <p class="card-text text-center text-rojo">Precio: $12.000</p>
+  <div class="d-flex justify-content-between align-items-center">
+    <button type="submit" class="btn btn-primary btn-sm">Agregar</button>
+    <!-- Botón Detalles que abre el modal 41 -->
+    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal41">
+      Detalles
+    </button>
+  </div>
+</div>
+</div>
+</div>
+<!-- Modal 41 -->
+<div class="modal fade" id="detalleModal41" tabindex="-1" aria-labelledby="detalleModalLabel41" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="detalleModalLabel41">Caprese</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body text-center">
+    <div class="modal-image-container">
+      <img src="./assets/img/caprese.png" class="img-fluid" alt="Detalle de la tarjeta" width="400" height="400">
+    </div>
+    <p class="text-dark">Mozzarella de búfala, tomates, albahaca y aceite de oliva</p>
+    <p class="card-text text-center text-rojo">Precio: $12.000</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+  </div>
+</div>
+</div>
+</div>
+</div>                          
+                  
+
               </div>
             </div>
           </div>

@@ -27,6 +27,10 @@
   border-radius: 40px;
 }
 
+.download-button a{
+  color: black !important;
+}
+
 .welcome-home h3 {
   color: var(--color1);
   font-size: 1.5rem;
