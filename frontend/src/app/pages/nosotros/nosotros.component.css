@@ -62,9 +62,9 @@
   }
   
   .history-section .text-container{
-    background-color: #e38b29;
+    background-color: var(--color1);
     padding: 2rem;
-    color: #f2f2f2;
+    color: var(--color5);
   }
 
   .history-section .text-container h3{
@@ -111,7 +111,7 @@
   }
 
   .card-body h6{
-    color: #0c0f0e80;
+    color: #050709;
   }
   .chefCard-img {
     width: 100%;
@@ -129,7 +129,7 @@
     font-size: 20px;
     margin-right: 10px;
     transition: transform .5s;
-    color:#0c0f0e80;
+    color:#2E343B;
   }
 
   i.fa:hover{
