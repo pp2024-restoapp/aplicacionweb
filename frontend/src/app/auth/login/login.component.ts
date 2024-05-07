@@ -13,7 +13,11 @@ export class LoginComponent {
   loginForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
+    
   });
+
+  passwordVisible: boolean = false;
+  passwordFieldType: string = 'password';
   
   constructor(
     private formBuilder: FormBuilder,
@@ -48,4 +52,10 @@ export class LoginComponent {
       alert('No se permiten campos vacios.');
     }
   }
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+    this.passwordFieldType = this.passwordVisible ? 'text' : 'password';
+  }
+
 }

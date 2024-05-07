@@ -1,6 +1,10 @@
 .main-menu {
     padding: 2rem;
   }
+
+.contact-info{
+  color: var();
+}
   
   .contact-container {
     height: 45vw;
@@ -32,6 +36,18 @@
   
   .contact-form {
     margin-top: 60px !important;
+  }
+
+  .form-control{
+    margin: .7em 0;
+  }
+
+  .contactForm-alert{
+    padding: .3em;
+    background-color:#a94442;
+    color: white;
+    display: inline-block;
+    border-radius: 5px;
   }
   
   .responsive-map {
@@ -73,12 +89,13 @@
   
   .suscription-form {
     display: flex;
-      align-items: center;
+    align-items: center;
   }
   
   .suscription-form button {
     margin-left: 10px;
   }
+
   
   @media only screen and (max-width: 1248px) {
     .contact-container {
