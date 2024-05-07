@@ -3,6 +3,26 @@
 <head>
   <meta charset="utf-8">
   <title>Carta Digital</title>
+
+  
+
+ <script type="text/javascript">
+  // @ts-nocheck
+    (function (d, s, id) {
+      var js, el = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.async = true;
+      js.src = 'https://s3.ap-south-1.amazonaws.com/conferbot.defaults/dist/v1/widget.min.js';
+      js.id = id;
+      js.charset = 'UTF-8';
+      el.parentNode.insertBefore(js, el);
+      js.onload = function () {
+        // @ts-ignore
+        var w = window.ConferbotWidget("663995a1bfe59abc0c9ea4fa", "live_chat");
+      };
+    })(document, 'script', 'conferbot-js');
+  </script>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
