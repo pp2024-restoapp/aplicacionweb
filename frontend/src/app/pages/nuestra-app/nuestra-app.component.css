@@ -16,7 +16,7 @@
     background-image: url('../../../assets/img/PageNuestraApp/banner.png');
     background-size:contain;
     background-position: center;
-    background-color:chocolate;
+    background-color:#F26333;
     color: white;
     text-align: left;
     padding: 100px 100px;
@@ -54,14 +54,21 @@
 }
 
 .boton-descarga {
-    background-color: #007bff; 
-    color: #fff !important;
+    background-color: #fff; 
+    color: #F26333 !important;
     font-weight: bold;
     padding: 15px 25px;
+    height: 8vh;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.boton-descarga:hover{
+    background-color: #f2f2f2;
+    color: #d3582f;
 }
 
 .logo{
@@ -115,21 +122,46 @@
     font-size: 16px;
 }
 
+/* CARDS */
+
+.cards {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.slide-in-left {
+    opacity: 1;
+    transform: translateX(-10%);
+    transition: opacity 0.5s, transform 1.5s;
+}
+
+.slide-in-right {
+    opacity: 1;
+    transform: translateX(10%);
+    transition: opacity 0.5s, transform 1.5s;
+}
+
 /* CATEGORIAS */
 
 .categorias-container {
     display: flex;
-    height: 70vh;
-    justify-content: space-between;
+    height: 400px;
     align-items: center;
-    /* padding: 100px; */
     width: 70%;
-
 }
 
 .categorias-content {
     flex: 2;
     padding: 20px;
+    background-color: #F26333;
+    border-radius: 10px;
+    color: #fff;
 }
 .categorias-content p{
     width: 80%;
@@ -149,8 +181,7 @@
 
 .sucursales-container {
     display: flex;
-    height: 70vh;
-    justify-content: space-between;
+    height: 400px;
     align-items: center;
     width: 70%;
 }
@@ -158,6 +189,10 @@
 .sucursales-content {
     flex: 2;
     padding: 20px;
+    background-color: #F26333;
+    border-radius: 10px;
+    color: #fff;
+
 }
 .sucursales-content p{
     width: 80%;
@@ -171,21 +206,60 @@
 
 .contacto-container {
     display: flex;
-    height: 70vh;
-    justify-content: space-between;
+    height: 400px;
     align-items: center;
-    /* padding: 100px; */
     width: 70%;
 }
 
 .contacto-content {
     flex: 2;
     padding: 20px;
+    background-color: #F26333;
+    border-radius: 10px;
+    color: #fff;
+    margin-right: 2vw;
 }
 .contacto-content p{
     width: 80%;
 }
 
 .image-contact{
-    width: 210px !important;
+    width: 200px !important;
+}
+
+
+/* CTO */
+
+.cto-container{
+    background-color: #F26333;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+
+}
+
+.cto-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+    width: 50%;
+}
+
+.cto-content p{
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.qr-image{
+    height: 12vh;
+    width: 6vw;
+}
+
+.boton-descarga a{
+    color:#F26333 !important;
 }
