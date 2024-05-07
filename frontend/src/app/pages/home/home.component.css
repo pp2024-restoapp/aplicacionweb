@@ -1,5 +1,4 @@
 /* HOME */
-
 .home-container {
   display: flex;
   flex-direction: column;
@@ -56,6 +55,7 @@
   width: 25%;
   margin: 8vh 0 2vh 0;
 }
+
 .delivery-button::before {
   content: "";
   width: 0;
@@ -120,8 +120,12 @@
 
 /* CAROUSEL */
 
+.carousel{
+  border: solid 1px red;
+  max-width: 100%;
+}
+
 .carousel-item {
-  z-index: -1;
   position: relative;
 }
 
