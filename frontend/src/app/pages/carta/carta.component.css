@@ -1,5 +1,5 @@
 .text-rojo {
-  color: red;
+  color: #600000;
 }
 
 .accordion {
@@ -103,6 +103,8 @@
   display: flex;
   color: var(--accordion-button-text-color);
 }
+
+
 
 .img-card {
   height: 90%;
@@ -487,6 +489,17 @@
   font-size: 1.5rem !important;
   font-weight: bold;
   display: flex;
+}
+
+
+.accordion-button:not(.collapsed){
+  color: #b50000;
+  
+}
+
+.btn.btn-outline-buscar {
+  background-color: #f89019;
+  color: #000000;
 }
 
 .img-card {
