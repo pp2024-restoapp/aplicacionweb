@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetProductsService } from 'src/app/services/get-products.service';
 import { GetProductsEntradasService } from 'src/app/services/get-products-entradas.service';
+import { GetProductsBebidasService } from 'src/app/services/get-products-bebidas.service';
+import { GetProductsPrincipalesService } from 'src/app/services/get-products-principales.service';
 
 @Component({
   selector: 'app-carta',
@@ -11,10 +13,12 @@ import { GetProductsEntradasService } from 'src/app/services/get-products-entrad
 export class CartaComponent implements OnInit {
   products: any;
   productsEntradas: any;
+  productsBebidas : any;
+  productsPrincipales : any;
   productsOnCart: any[] = [];
   subtotal: any;
 
-  constructor(private products_service: GetProductsService,private products_entradas_service: GetProductsEntradasService, private router: Router) {
+  constructor(private products_service: GetProductsService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService , private router: Router) {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
         this.products = productsData
@@ -35,6 +39,34 @@ export class CartaComponent implements OnInit {
       }
     })
       /*** fin entradas  ***/
+       
+      /*** inicio bebidas  ***/
+    this.products_bebidas_service.getProductsBebidas().subscribe({
+      next: (Data) => {
+        this.productsBebidas = Data
+        console.log(Data)
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      }
+    })
+      /*** fin bebidas  ***/
+      /*** inicio de principales  ***/
+      this.products_principales_service.getProductsPrincipales().subscribe({
+        next: (Data) => {
+          this.productsPrincipales = Data
+          console.log(Data)
+        },
+        error: (errorData) => {
+          console.error(errorData);
+        }
+      })
+
+
+      /*** fin de principales  ***/
+
+
+
   }
 
 
@@ -53,6 +85,7 @@ export class CartaComponent implements OnInit {
       this.productsOnCart = [...this.products_service.getProduct()]
       console.log(this.productsOnCart)
       this.subtotal = product.precio;
+      alert("agregado correctamente")
     }
   }
 
