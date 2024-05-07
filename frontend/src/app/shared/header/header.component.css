@@ -1,8 +1,12 @@
  /* BARRA DE NAVEGACION */
  header {
-    width: 100%;
-    z-index: 1;
-  }
+  width: 100%;
+  position: sticky;
+  top: 0; /* Esto asegura que se pegue al borde superior */
+  background-color: var(--color5); /* Ajusta el color de fondo según sea necesario */
+  z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+}
+
 
   .checkbox {
     opacity: 0;
@@ -128,6 +132,7 @@
     .wrap-footer {
       grid-template-columns: 55% 15% 15% 20%;
     }
+  
   }
 
   /* MENÚ */
