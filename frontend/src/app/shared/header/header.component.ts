@@ -23,8 +23,7 @@ export class HeaderComponent implements OnInit{
     const themeToggle = document.getElementById('themeToggle') as HTMLInputElement;
     themeToggle.checked = newTheme === 'oscuro';
   }
-
-
+  
   constructor() { }
   
 
