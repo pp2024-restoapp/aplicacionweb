@@ -18,6 +18,20 @@ import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
 
 const routes: Routes = [
 
+
+  {path: '', redirectTo:'/home', pathMatch:'full'},
+  {path: 'home', component:HomeComponent},
+  {path: 'nosotros', component:NosotrosComponent},
+  {path: 'contactanos', component:ContactanosComponent},
+  {path: 'carta', component:CartaComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'signup', component:SignupComponent},
+  {path: 'productos', component:ProductosComponent, canActivate:[authGuard]},
+  {path: 'pago', component:PagoComponent},
+  {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
+  { path: 'shows', component: ShowsComponent },
+  { path: 'app-movil', component: AppMovilComponent }
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'nosotros', component: NosotrosComponent },
@@ -35,7 +49,9 @@ const routes: Routes = [
   { path: 'pago', component: PagoComponent },
   { path: 'pedidos', component: PedidosComponent, canActivate: [authGuard] },
   { path: 'shows', component: ShowsComponent },
+
   { path: 'nuestraApp', component: NuestraAppComponent }
+
 
 ];
 
