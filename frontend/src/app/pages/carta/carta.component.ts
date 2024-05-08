@@ -4,6 +4,10 @@ import { GetProductsService } from 'src/app/services/get-products.service';
 import { GetProductsEntradasService } from 'src/app/services/get-products-entradas.service';
 import { GetProductsBebidasService } from 'src/app/services/get-products-bebidas.service';
 import { GetProductsPrincipalesService } from 'src/app/services/get-products-principales.service';
+import { GetProductsPostresService } from 'src/app/services/get-products-postres.service';
+import { GetProductsPastasService } from 'src/app/services/get-products-pastas.service';
+import { GetProductsEnsaladasService } from 'src/app/services/get-products-ensaladas.service';
+import { GetProductsPromocionesService } from 'src/app/services/get-products-promociones.service';
 
 @Component({
   selector: 'app-carta',
@@ -15,10 +19,14 @@ export class CartaComponent implements OnInit {
   productsEntradas: any;
   productsBebidas : any;
   productsPrincipales : any;
+  productsPostres : any;
+  productsPastas : any;
+  productsEnsaladas : any;
+  productsPromociones : any;
   productsOnCart: any[] = [];
   subtotal: any;
 
-  constructor(private products_service: GetProductsService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService , private router: Router) {
+  constructor(private products_service: GetProductsService, private products_promociones_service: GetProductsPromocionesService,private products_ensaladas_service: GetProductsEnsaladasService ,private products_pastas_service: GetProductsPastasService,private products_postres_service: GetProductsPostresService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService , private router: Router) {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
         this.products = productsData
@@ -64,6 +72,55 @@ export class CartaComponent implements OnInit {
 
 
       /*** fin de principales  ***/
+
+      /*** inicio de postres  ***/
+      this.products_postres_service.getProductsPostres().subscribe({
+        next: (Data) => {
+          this.productsPostres = Data
+          console.log(Data)
+        },
+        error: (errorData) => {
+          console.error(errorData);
+        }
+      })
+
+
+      /*** fin de postres  ***/
+      /*** inicio pastas */
+      this.products_pastas_service.getProductsPastas().subscribe({
+        next: (Data) => {
+          this.productsPastas = Data
+          console.log(Data)
+        },
+        error: (errorData) => {
+          console.error(errorData);
+        }
+      })
+      /** fin pastas  */
+      /** inicio ensaladas */
+      this.products_ensaladas_service.getProductsEnsaladas().subscribe({
+        next: (Data) => {
+          this.productsEnsaladas = Data
+          console.log(Data)
+        },
+        error: (errorData) => {
+          console.error(errorData);
+        }
+      })
+      /** fin ensaladas */
+      /** inicio promociones */
+      this.products_promociones_service.getProductsPromociones().subscribe({
+        next: (Data) => {
+          this.productsPromociones = Data
+          console.log(Data)
+        },
+        error: (errorData) => {
+          console.error(errorData);
+        }
+      })
+
+      /** fin promociones */
+
 
 
 

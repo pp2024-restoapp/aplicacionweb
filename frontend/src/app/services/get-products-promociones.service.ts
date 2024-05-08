@@ -5,42 +5,43 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GetProductsPastasService {
+export class GetProductsPromocionesService {
+
   products: any[] = [];
   url: string = "http://127.0.0.1:8000/";
-  productUrl: string = "http://127.0.0.1:8000/productosCategoriaPastas"
+  productUrl: string = "http://127.0.0.1:8000/productosCategoriaPromociones"
   constructor(private http: HttpClient) { }
 
-  getProductsPastas(): Observable<any> {
-    return this.http.get(this.url + "productosCategoriaPastas?format=json")
+  getProductsPromociones(): Observable<any> {
+    return this.http.get(this.url + "productosCategoriaPromociones?format=json")
   }
 
-  getProductPastas() {
+  getProductPromociones() {
     return this.products;
   }
 
   
-  editProductPastas(product: any): Observable<any> {
+  editProductPromociones(product: any): Observable<any> {
     const url = `${this.productUrl}/${product.id}`;
     return this.http.put<any>(url, product);
   }
 
-  deleteProductPastas(productId: number): Observable<any> {
+  deleteProductPromociones(productId: number): Observable<any> {
     const url = `${this.productUrl}/${productId}?format=json`;
     return this.http.delete<any>(url);
   }
 
-  createProductPastas(productData: any): Observable<any> {
+  createProductPromociones(productData: any): Observable<any> {
     return this.http.post(this.productUrl, productData);
   }
 
-  saveProductsPastas() {
+  saveProductsPromociones() {
     localStorage.setItem('productos_carrito', JSON.stringify(this.products));
   }
 
-  addProductToCartPastas(product: any) {
+  addProductToCartPromociones(product: any) {
     this.products.push(product);
-    this.saveProductsPastas();
+    this.saveProductsPromociones();
   }
 
   loadProductsInCart() {
@@ -51,18 +52,19 @@ export class GetProductsPastasService {
     return this.products.findIndex((x: any) => x.id === product.id) > -1;
   }
 
-  removeProductPastas(product: any) {
+  removeProductPromociones(product: any) {
     const index = this.products.findIndex((x: any) => x.id === product.id)
 
     if (index > -1) {
       this.products.splice(index, 1);
-      this.saveProductsPastas();
+      this.saveProductsPromociones();
     }
   }
 
-  clearProductsPastas() {
+  clearProductsPromociones() {
     this.products = [];
     localStorage.clear();
   }
+
 
 }
