@@ -4,7 +4,6 @@
   width: 100%;
 }
 
-
 .accordion-item {
   border-radius: 25px; /* Redondea los bordes de cada elemento */
   border: 1px solid #ccc; /* Añade un borde para resaltar los elementos */
@@ -15,9 +14,6 @@
   background-color: #f0f0f0; /* Color de fondo para el encabezado */
   cursor: pointer;
 }
-
-
-
 
 /* MAIN */
 .main-menu {
@@ -97,14 +93,11 @@
   font-size: 1.5rem !important;
   font-weight: bold;
   display: flex;
- 
-
 }
 
 .img-card {
   height: 90%;
   width: 90%;
- 
 }
 
 /* CARRITO */
@@ -117,9 +110,9 @@
   padding: 1rem;
   border: 1px solid #000000;
   border-radius: 20px 20px;
-  box-shadow: 1px 1px 0px var(--color1), 2px 2px 0px var(--color1), 3px 3px 0px var(--color2), 4px 4px 0px var(--color2),
+  box-shadow: 1px 1px 0px var(--color1), 2px 2px 0px var(--color1),
+    3px 3px 0px var(--color2), 4px 4px 0px var(--color2),
     5px 5px 0px var(--color3);
-   
 }
 .cart-products {
   height: 100%;
@@ -138,7 +131,6 @@
 .cart-img {
   width: 25%;
   border-radius: 10px 10px 10px 10px;
-  
 }
 
 .cart-trash {
@@ -341,7 +333,6 @@
     text-align: center;
   }
 }
-
 
 @media only screen and (max-width: 425px) {
   /* CARTA */

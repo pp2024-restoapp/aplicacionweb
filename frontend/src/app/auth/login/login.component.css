@@ -1,76 +1,74 @@
-  .main-profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color4);
-    padding-top: 15vh;
-  }
-  
+.main-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color4);
+  padding-top: 15vh;
+  height: 77vh;
+}
+
+.form-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1.5rem;
+  width: 35%;
+  margin-top: 3vh;
+  background-color: var(--color3);
+  box-shadow: 4px 4px 4px #666;
+  margin-bottom: 2em;
+}
+
+.login-alert {
+  padding: 0.3em;
+  background-color: #a94442;
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 0.5em 0;
+}
+
+.input-form {
+  border: 0 !important;
+  border-bottom: 2px solid #000000 !important;
+  background-color: #ffd8a9 !important;
+  margin: 1vh 0 1vh 0;
+}
+
+form .form-buttons .btn:active {
+  background-color: #e38b29 !important;
+}
+
+.footer {
+  margin: 0;
+}
+
+/* MEDIA QUERIES */
+
+/* TABLET */
+
+@media only screen and (max-width: 768px) {
   .form-profile {
+    width: 60%;
+  }
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 425px) {
+  /* PERFILES */
+  .form-profile {
+    width: 85%;
+    margin-bottom: 2em;
+  }
+
+  .form-buttons {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 1.5rem;
-    width: 35%;
-    margin-top: 3vh;
-    background-color: var(--color3);
-    box-shadow: 4px 4px 4px #666;
-    margin-bottom: 2em;
-    
   }
 
-  .login-alert {
-    padding: .3em;
-    background-color:#a94442;
-    color: white;
-    display: inline-block;
-    border-radius: 5px;
-    margin: .5em 0;
+  form .form-buttons .btn {
+    margin: 1vh !important;
   }
-  
-  .input-form {
-    border: 0 !important;
-    border-bottom: 2px solid #000000 !important;
-    background-color: #ffd8a9 !important;
-    margin: 1vh 0 1vh 0;
-  }
-  
-  form .form-buttons .btn:active {
-    background-color: #e38b29 !important;
-  }
-  
-  .footer {
-    margin: 0;
-  }
- 
-
-  /* MEDIA QUERIES */
-  
-  /* TABLET */
-  
-  @media only screen and (max-width: 768px) {
-    .form-profile {
-      width: 60%;
-    }
-  }
-  
-  /* MOBILE */
-  
-  @media only screen and (max-width: 425px) {
-  
-    /* PERFILES */
-    .form-profile {
-      width: 85%;
-      margin-bottom: 2em;
-    }
-  
-    .form-buttons {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    form .form-buttons .btn {
-      margin: 1vh !important;
-    }
-  }
+}
