@@ -1,11 +1,20 @@
 /* HOME */
-
 .home-container {
   display: flex;
   flex-direction: column;
   font-family: var(--font-family1);
   margin: auto;
   width: 100vm;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color semi-transparente */
 }
 
 .welcome-home {
@@ -25,6 +34,10 @@
   font-size: 4rem;
   padding: 1rem;
   border-radius: 40px;
+}
+
+.download-button a{
+  color: black !important;
 }
 
 .welcome-home h3 {
@@ -52,6 +65,7 @@
   width: 25%;
   margin: 8vh 0 2vh 0;
 }
+
 .delivery-button::before {
   content: "";
   width: 0;
@@ -71,7 +85,8 @@
 }
 
 .local-button {
-  padding: 0.8em 1.8em;
+  padding: 1.8em;
+  margin: .5em;
   border: none;
   box-shadow: 4px 4px 4px #000000;
   position: relative;
@@ -85,7 +100,6 @@
   font-family: inherit;
   color: #000000;
   font-weight: bold;
-  width: 25%;
 }
 
 .local-button::before {
@@ -116,8 +130,11 @@
 
 /* CAROUSEL */
 
+.carousel{
+  max-width: 100%;
+}
+
 .carousel-item {
-  z-index: -1;
   position: relative;
 }
 
@@ -162,4 +179,10 @@
 
 .floating-button .download-button a {
   color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .local-button{
+    padding: 1em;
+  }
 }
