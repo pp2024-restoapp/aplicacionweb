@@ -144,6 +144,43 @@
 }
 
 
+
+.download-button {
+  display: inline-block;
+  background-color: #ff5722;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.download-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.download-button:hover {
+  background-color: #e64a19;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.floating-button .download-button {
+  position: relative;
+  z-index: 1000;
+}
+
+.floating-button .download-button a {
+  color: #fff;
+}
+
 @media only screen and (max-width: 768px) {
   .local-button{
     padding: 1em;
