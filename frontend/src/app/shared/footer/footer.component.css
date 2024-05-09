@@ -5,36 +5,37 @@ footer{
     align-items: center;
     background-color: #0c0f0e;
     color:#ffffff;
-    font-weight: bold;
-    
-   
+    font-weight: bold; 
 }
 
 .pre-footer{
     display: flex;
-    justify-content: space-around;
-    align-items:flex-end;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
     padding-top: 3vh;
     width: 100%;
 }
 .pre-footer p{
-    margin: 0;
+    margin: auto;
 }
+
 .logo{
-    height: 10vh;
-    width: 5vw;
+    width: 3%;
+    margin: 0 1em;
 }
+
 .icons i{
     font-size: 20px;
     color: #ffffff;
     margin-right: 2vw;
+
 }
 
 .legales{
    text-align: end;
    padding: 1vh 0 1vh 0;
    width: 100%;
-
 }
 
 .legales a {
@@ -44,4 +45,34 @@ footer{
 
 hr{
     width: 90%;
+}
+
+@media only screen and (max-width: 768px) {
+    .pre-footer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pre-footer > * {
+        margin: 0 .5em;
+    }
+
+    .pre-footer p {
+        font-size: .8em;
+        text-align: center;
+    }
+
+    .icons {
+        display: flex;
+    }
+
+    .logo{
+        width: 10%
+    }
+
+    .legales{
+        text-align: center;
+     }
+
+
 }
