@@ -1,5 +1,5 @@
 .text-rojo {
-  color: red;
+  color: #600000;
 }
 
 .accordion {
@@ -95,7 +95,7 @@
 }
 
 .accordion-button {
-  background-color: var(--color2) !important;
+  background-color: var(--color9) !important;
   height: 10vh;
   min-width: 0%;
   font-size: 1.5rem !important;
@@ -104,10 +104,14 @@
   color: var(--accordion-button-text-color);
 }
 
+
+
 .img-card {
   height: 90%;
   width: 90%;
 }
+
+
 
 /* CARRITO */
 .cart-container {
@@ -482,12 +486,30 @@
 }
 
 .accordion-button {
-  background-color: var(--color2) !important;
+  background-color: var(--color9) !important;
   height: 12vh;
   font-size: 1.5rem !important;
   font-weight: bold;
   display: flex;
 }
+
+
+.accordion-button:not(.collapsed){
+  color: #1C2833;
+  
+}
+
+.btn.btn-outline-buscar {
+  background-color: var(--color9);
+  color: #000000;
+  font-weight: bold;
+}
+.btn.btn-outline-buscar:hover {
+  background-color:var(--btn-outline-buscar-background-hover) ;
+  color: var(--color9);
+  font-weight: bold;
+}
+
 
 .img-card {
   height: 90%;
