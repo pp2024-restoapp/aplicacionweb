@@ -13,7 +13,6 @@ header {
   position: absolute;
 }
 
-<<<<<<< HEAD
   .checkbox {
     opacity: 0;
     position: absolute;
@@ -70,6 +69,8 @@ header {
     border-radius: 5px;
   }
 
+  
+
   .nav-item a:hover {
     color: var(--color1) !important;
   }
@@ -81,7 +82,6 @@ header {
   .navbar-toggler {
     background-color: var(--color1) !important;
   }
-=======
 .checkbox-label {
   background-color: #424242;
   width: 50px;
@@ -95,7 +95,6 @@ header {
   align-items: center;
   margin-left: 1rem;
 }
->>>>>>> 6b5ce45ceda8a988303bd5021f2fabdc883c854d
 
 .fa-moon {
   color: #f1c40f;
@@ -143,7 +142,9 @@ header {
 .navbar-toggler {
   background-color: var(--color1) !important;
 }
-
+.button-app:hover a {
+  color: #000000 !important;
+}
 @media only screen and (max-width: 768px) {
   /* BARRA DE NAVEGACION */
 

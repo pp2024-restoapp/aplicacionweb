@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: 'pago', component:PagoComponent},
   {path: 'pedidos', component:PedidosComponent, canActivate:[authGuard]},
   { path: 'shows', component: ShowsComponent },
-  { path: 'app-movil', component: AppMovilComponent }
+  { path: 'app-movil', component: AppMovilComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
