@@ -68,9 +68,7 @@ header {
     border: none;
     border-radius: 5px;
   }
-
-  
-
+ 
   .nav-item a:hover {
     color: var(--color1) !important;
   }
@@ -82,6 +80,7 @@ header {
   .navbar-toggler {
     background-color: var(--color1) !important;
   }
+  
 .checkbox-label {
   background-color: #424242;
   width: 50px;
