@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse 
 from rest_framework import generics
 from cartadigital.models import Categoria, Producto, Pedido
-from cartadigital.serializers import CategoriaSerializer, ProductoSerializer, PedidoSerializer
+from cartadigital.serializers import *
 from authentication.models import CustomUser
 from authentication.serializers import UserSerializer
 from rest_framework.views import APIView
@@ -84,3 +84,31 @@ class ProcessPaymentAPIView(APIView):
             return Response(data={"body": status, "statusCode": payment_response["status"]}, status=201)
         except Exception as e:
             return Response(data={"body": payment_response}, status=400)
+
+class Producto_Categoria_Promociones(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 1)
+    serializer_class = Producto_Categoria
+
+class Producto_Categoria_Entradas(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 2 )
+    serializer_class = Producto_Categoria
+
+class Producto_Categoria_Bebidas(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 3 )
+    serializer_class = Producto_Categoria
+
+class Producto_Categoria_Principal(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 4 )
+    serializer_class = Producto_Categoria
+
+class Producto_Categoria_Postres(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 5 )
+    serializer_class = Producto_Categoria
+
+class Producto_Categoria_Pastas(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 6 )
+    serializer_class = Producto_Categoria
+
+class Producto_Categoria_Ensaladas(generics.ListCreateAPIView):
+    queryset = Producto.objects.filter(categoria = 7 )
+    serializer_class = Producto_Categoria
