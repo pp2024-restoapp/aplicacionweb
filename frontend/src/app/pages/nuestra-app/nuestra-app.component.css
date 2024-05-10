@@ -1,265 +1,395 @@
-.nuestra-app-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.nuestra-app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* BANNER */
 
 .banner {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../../../assets/img/PageNuestraApp/banner.png');
-    background-size:contain;
-    background-position: center;
-    background-color:#F26333;
-    color: white;
-    text-align: left;
-    padding: 100px 100px;
-    background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../assets/img/PageNuestraApp/banner.png");
+  background-size: contain;
+  background-position: center;
+  background-color: #f26333;
+  color: white;
+  text-align: left;
+  padding: 100px 100px;
+  background-repeat: no-repeat;
 }
 
-.parte h2{
-    font-size: 24px;
+.parte h2 {
+  font-size: 24px;
 }
 
-.parte p{
-    font-size: 24px;
+.parte p {
+  font-size: 24px;
 }
 
-.datos-app{
-    display: flex;
-    align-items: center;
-    margin: 20px;
-
+.datos-app {
+  display: flex;
+  align-items: center;
+  margin: 20px;
 }
 
-.datos-app h3{
-    font-size: 50px;
+.datos-app h3 {
+  font-size: 50px;
 }
 
 .logo {
-    width: 100px !important; 
-    height: 100px !important;
-    border-radius: 15px;
-    margin-right: 2vw;
+  width: 10% !important;
+  height: 10% !important;
+  border-radius: 15px;
+  margin-right: 2vw;
 }
 
-.boton{
-    margin-top: 5vh;
+.boton {
+  margin-top: 5vh;
 }
 
 .boton-descarga {
-    background-color: #fff; 
-    color: #F26333 !important;
-    font-weight: bold;
-    padding: 15px 25px;
-    height: 8vh;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  background-color: #fff;
+  color: #f26333 !important;
+  font-weight: bold;
+  padding: 15px 25px;
+  height: 8vh;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.boton-descarga:hover{
-    background-color: #f2f2f2;
-    color: #d3582f;
+.boton-descarga:hover {
+  background-color: #f2f2f2;
+  color: #d3582f;
 }
 
-.logo{
-    height: 50px;
-    width: 50px;
+.logo {
+  height: 50px;
+  width: 50px;
 }
 
 /* RESERVAS */
 
 .reservation-section {
-    padding: 50px 0;
-    text-align: center;
+  padding: 50px 0;
+  text-align: center;
 }
 
 .reservation-content {
-    max-width: 80%;
-    margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .reservation-content h2 {
-    font-size: 36px;
+  font-size: 36px;
 }
 
 .reservation-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
 .reservation-features {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
 }
 
-.feature {
-    flex: 1;
+.feature,
+.feature-2 {
+  flex: 1;
 }
 
-.feature img {
-    height: 60vh;
-    width: 60%;
-    margin-bottom: 20px;
+.feature img,
+.feature-2 img {
+  height: 60vh;
+  width: 60%;
+  margin-bottom: 20px;
 }
 
-.feature h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.feature h3,
+.feature-2 h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.feature p {
-    font-size: 16px;
+.feature p,
+.feature-2 p {
+  font-size: 16px;
 }
 
 /* CARDS */
 
 .cards {
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    height: 35vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.cards p{
+    margin-bottom: 0;
+}
 .slide-in-left {
-    opacity: 1;
-    transform: translateX(-10%);
-    transition: opacity 0.5s, transform 1.5s;
+  opacity: 1;
+  transform: translateX(-10%);
+  transition: opacity 0.5s, transform 1.5s;
 }
 
 .slide-in-right {
-    opacity: 1;
-    transform: translateX(10%);
-    transition: opacity 0.5s, transform 1.5s;
+  opacity: 1;
+  transform: translateX(10%);
+  transition: opacity 0.5s, transform 1.5s;
 }
 
 /* CATEGORIAS */
 
 .categorias-container {
-    display: flex;
-    height: 400px;
-    align-items: center;
-    width: 70%;
+  display: flex;
+  height: 400px;
+  align-items: center;
+  width: 70%;
 }
 
 .categorias-content {
-    flex: 2;
-    padding: 20px;
-    background-color: #F26333;
-    border-radius: 10px;
-    color: #fff;
+  flex: 2;
+  padding: 20px;
+  background-color: #f26333;
+  border-radius: 10px;
+  color: #fff;
 }
-.categorias-content p{
-    width: 80%;
+.categorias-content p {
+  width: 80%;
 }
 
 .image {
-    flex: 1;
+  flex: 1;
 }
 
 .image img {
-    height: 60vh;
-    width: 250px;
+  height: 60vh;
+  width: 250px;
 }
-
 
 /* SUCURSALES */
 
 .sucursales-container {
-    display: flex;
-    height: 400px;
-    align-items: center;
-    width: 70%;
+  display: flex;
+  height: 400px;
+  align-items: center;
+  width: 70%;
 }
 
 .sucursales-content {
-    flex: 2;
-    padding: 20px;
-    background-color: #F26333;
-    border-radius: 10px;
-    color: #fff;
-
+  flex: 2;
+  padding: 20px;
+  background-color: #f26333;
+  border-radius: 10px;
+  color: #fff;
 }
-.sucursales-content p{
-    width: 80%;
+.sucursales-content p {
+  width: 80%;
 }
 
-.image-sucursales{
-    width: 210px !important;
+.image-sucursales {
+  width: 210px !important;
 }
 
 /* CONTACTO */
 
 .contacto-container {
-    display: flex;
-    height: 400px;
-    align-items: center;
-    width: 70%;
+  display: flex;
+  height: 400px;
+  align-items: center;
+  width: 70%;
 }
 
 .contacto-content {
-    flex: 2;
-    padding: 20px;
-    background-color: #F26333;
-    border-radius: 10px;
-    color: #fff;
-    margin-right: 2vw;
+  flex: 2;
+  padding: 20px;
+  background-color: #f26333;
+  border-radius: 10px;
+  color: #fff;
 }
-.contacto-content p{
-    width: 80%;
-}
-
-.image-contact{
-    width: 200px !important;
+.contacto-content p {
+  width: 80%;
 }
 
+.image-contact {
+  width: 200px !important;
+}
 
 /* CTO */
 
-.cto-container{
-    background-color: #F26333;
-    width: 100%;
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10vh;
-
+.cto-container {
+  background-color: #f26333;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
 }
 
-.cto-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 10vh;
-    width: 50%;
+.cto-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  width: 50%;
 }
 
-.cto-content p{
-    margin: 0;
+.cto-content p {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.qr-image {
+  height: 12vh;
+  width: 6vw;
+}
+
+.boton-descarga a {
+  color: #f26333 !important;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 425px) {
+  /* BANNER */
+
+  .banner {
+    background-position: bottom;
+    padding-left: 40px;
+  }
+
+  .parte h2 {
     font-size: 20px;
-    color: #fff;
+  }
+
+  .parte p {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .datos-app h3 {
+    font-size: 30px;
+  }
+
+  .boton-descarga {
+    padding: 15px 20px;
+  }
+
+  /* RESERVAS */
+
+  .reservation-content p {
+    margin-top: 5vh;
+  }
+
+  .reservation-features {
+    flex-direction: column;
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .feature img {
+    width: 70%;
+    margin-bottom: 10vh;
+  }
+
+  .feature p,
+  .feature-2 p {
+    margin-top: 10px;
+  }
+
+  .slide-in-left {
+    opacity: 1;
+    transform: translateY(5%);
+    transition: opacity 0.5s, transform 1.5s;
+  }
+  
+  .slide-in-right {
+    opacity: 1;
+    transform: translateY(5%);
+    transition: opacity 0.5s, transform 1.5s;
+  }
+
+
+.categorias-container,
+.contacto-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-end;
+    padding-right: 2vw;
+  }
+
+.categorias-content,
+.image{
+    flex: 1;
 }
 
-.qr-image{
-    height: 12vh;
-    width: 6vw;
-}
 
-.boton-descarga a{
-    color:#F26333 !important;
+
+  /* SUCURSALES */
+
+.sucursales-container {
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: flex-start;
+    margin: 45vh 0 10vh 0;
+    padding-left: 2vw;
+  }
+
+  .image img{
+    margin-top: 5vh;
+  }
+
+  /* CONTACTO */
+
+  .contacto-container{
+    margin-bottom: 15vh;
+  }
+ 
+  .cards{
+    width: 90%;
+  }
+
+  /* CTO */
+
+  .cto-content{
+    width: 95%;
+  }
+
+  .cto-content p{
+    font-size: 15px;
+    width: 35%;
+  }
+
+  .cto-content .boton-descarga{
+    width: 40%;
+    padding: 5px;
+  }
+
+  .qr-image{
+    width: 12vw;
+  }
 }
