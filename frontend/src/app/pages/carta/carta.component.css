@@ -23,6 +23,14 @@
   cursor: pointer;
 }
 
+.accordion-flush .accordion-item .accordion-button {
+  border-radius: 25px !important;
+}
+
+.accordion-button img {
+  margin: 25px;
+}
+
 /* MAIN */
 .main-menu {
   display: flex;
@@ -375,6 +383,10 @@
 
   .main-menu {
     padding: 0;
+  }
+
+  .accordion-button img {
+    margin: 20px;
   }
 
   .filter-container {
