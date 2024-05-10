@@ -139,6 +139,7 @@
 
 .cards p{
     margin-bottom: 0;
+    width: 100%;
 }
 .slide-in-left {
   opacity: 1;
@@ -168,9 +169,6 @@
   border-radius: 10px;
   color: #fff;
 }
-.categorias-content p {
-  width: 80%;
-}
 
 .image {
   flex: 1;
@@ -197,9 +195,6 @@
   border-radius: 10px;
   color: #fff;
 }
-.sucursales-content p {
-  width: 80%;
-}
 
 .image-sucursales {
   width: 210px !important;
@@ -221,9 +216,7 @@
   border-radius: 10px;
   color: #fff;
 }
-.contacto-content p {
-  width: 80%;
-}
+
 
 .image-contact {
   width: 200px !important;
