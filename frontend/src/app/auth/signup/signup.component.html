@@ -22,7 +22,7 @@
       </div>
 
       <div class="col-md-6">
-        <input formControlName="username" type="text" class="form-control" id="inputUsername" placeholder="Username">
+        <input formControlName="username" type="text" class="form-control" id="inputUsername" placeholder="Nombre de usuario">
         <div *ngIf="username.invalid && (username.dirty || username.touched)" class="singup-alert">
           <div *ngIf="username.errors?.['required']">
             El nombre de usuario es obligatorio
@@ -33,7 +33,7 @@
 
     <div class="row">
       <div class="col-md-6">
-        <input formControlName="first_name" type="text" class="form-control" id="inputFirstname" placeholder="Firstname">
+        <input formControlName="first_name" type="text" class="form-control" id="inputFirstname" placeholder="Primer Nombre">
         <div *ngIf="first_name.invalid && (first_name.dirty || first_name.touched)" class="singup-alert">
           <div *ngIf="first_name.errors?.['required']">
             El nombre es obligatorio
@@ -42,7 +42,7 @@
       </div>
 
       <div class="col-md-6">
-        <input formControlName="last_name" type="text" class="form-control" id="inputLastname" placeholder="Lastname">
+        <input formControlName="last_name" type="text" class="form-control" id="inputLastname" placeholder="Apellido">
         <div *ngIf="last_name.invalid && (last_name.dirty || last_name.touched)" class="singup-alert">
           <div *ngIf="last_name.errors?.['required']">
             El apellido es obligatorio
@@ -55,7 +55,7 @@
 <div>
   <div class="col-sm-12">
     <div class="input-group">
-      <input formControlName="password" [type]="passwordFieldType" class="form-control" id="inputPassword" placeholder="Password" maxlength="10">
+      <input formControlName="password" [type]="passwordFieldType" class="form-control" id="inputPassword" placeholder="Contraseña" maxlength="10">
       <div class="input-group-append">
         <span class="input-group-text" style="height: 38px;" (click)="togglePasswordVisibility()">
           <i class="fa" [ngClass]="{'fa-eye': passwordVisible, 'fa-eye-slash': !passwordVisible}"></i>
@@ -74,7 +74,7 @@
 <div>
   <div class="col-sm-12">
     <div class="input-group">
-      <input formControlName="confirmPassword" [type]="confirmPasswordFieldType" class="form-control" id="inputPassword2" placeholder="Confirm password" maxlength="10">
+      <input formControlName="confirmPassword" [type]="confirmPasswordFieldType" class="form-control" id="inputPassword2" placeholder="Confirmar contraseña" maxlength="10">
       <div class="input-group-append">
         <span class="input-group-text" style="height: 38px;" (click)="toggleConfirmPasswordVisibility()">
           <i class="fa" [ngClass]="{'fa-eye': confirmPasswordVisible, 'fa-eye-slash': !confirmPasswordVisible}"></i>
