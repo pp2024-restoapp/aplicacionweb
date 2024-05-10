@@ -68,9 +68,7 @@ header {
     border: none;
     border-radius: 5px;
   }
-
-  
-
+ 
   .nav-item a:hover {
     color: var(--color1) !important;
   }
@@ -82,8 +80,7 @@ header {
   .navbar-toggler {
     background-color: var(--color1) !important;
   }
-<<<<<<< HEAD
-=======
+  
 .checkbox-label {
   background-color: #424242;
   width: 50px;
@@ -97,7 +94,6 @@ header {
   align-items: center;
   margin-left: 1rem;
 }
->>>>>>> 768d534260290dae2a310bc0a12e17c4635d96b9
 
 .fa-moon {
   color: #f1c40f;
