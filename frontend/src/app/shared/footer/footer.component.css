@@ -18,6 +18,7 @@ footer{
 }
 .pre-footer p{
     margin: auto;
+    font-family: 'PoetsenOne-Regular';
 }
 
 .logo{
@@ -40,7 +41,7 @@ footer{
 
 .legales a {
     margin-right: 2vw;
-   
+    font-family: 'PoetsenOne-Regular';
 }
 
 hr{
