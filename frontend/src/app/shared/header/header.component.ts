@@ -1,11 +1,18 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
+
+  form: FormGroup = new FormGroup({
+    email: new FormControl("", [Validators.required, this.customEmailValidator])
+  });
+
+  constructor() { }
 
   ngOnInit() {
     const themeToggle = document.getElementById('checkbox') as HTMLInputElement;
@@ -23,8 +30,22 @@ export class HeaderComponent implements OnInit{
     const themeToggle = document.getElementById('themeToggle') as HTMLInputElement;
     themeToggle.checked = newTheme === 'oscuro';
   }
-  
-  constructor() { }
-  
 
+  getError(control: any): string {
+    if (control.errors?.required && control.touched)
+      return 'This field is required!';
+    else if (control.errors?.emailError && control.touched)
+      return 'Please enter a valid email address!';
+    else return '';
+  }
+
+  customEmailValidator(control: AbstractControl) {
+    const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/;
+    const value = control.value;
+    if (!pattern.test(value) && control.touched)
+      return {
+        emailError: true
+      };
+    else return null;
+  }
 }
