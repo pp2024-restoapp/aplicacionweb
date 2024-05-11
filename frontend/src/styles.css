@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'PoetsenOne-Regular';
+  src: url('./assets/fonts/PoetsenOne-Regular.ttf');
+}
+
 :root {
   --color1: #e38b29;
   --color2: #f1a661;

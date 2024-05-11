@@ -127,7 +127,8 @@ header {
 
 .nav-item a {
   color: white !important;
-  font-weight: bold;
+  font-family: 'PoetsenOne-Regular';
+  font-size: 17px;
 }
 
 .nav-item a:hover {
