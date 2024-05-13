@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetProductsService } from 'src/app/services/get-products.service';
 import { GetProductsEntradasService } from 'src/app/services/get-products-entradas.service';
@@ -26,7 +26,7 @@ export class CartaComponent implements OnInit {
   productsOnCart: any[] = [];
   subtotal: any;
 
-  constructor(private products_service: GetProductsService, private products_promociones_service: GetProductsPromocionesService,private products_ensaladas_service: GetProductsEnsaladasService ,private products_pastas_service: GetProductsPastasService,private products_postres_service: GetProductsPostresService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService , private router: Router) {
+  constructor(private products_service: GetProductsService, private products_promociones_service: GetProductsPromocionesService,private products_ensaladas_service: GetProductsEnsaladasService ,private products_pastas_service: GetProductsPastasService,private products_postres_service: GetProductsPostresService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService, private router: Router) {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
         this.products = productsData
@@ -125,10 +125,7 @@ export class CartaComponent implements OnInit {
 
 
   }
-
-
-
-
+  
   ngOnInit(): void {
     this.products_service.loadProductsInCart();
     this.productsOnCart = this.products_service.getProduct();

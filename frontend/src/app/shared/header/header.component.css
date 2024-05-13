@@ -2,22 +2,23 @@
 header {
   width: 100%;
   position: fixed;
-  top: 0; 
+  top: 0;
   background-color: var(
     --color5
   );
-  z-index: 10; 
+  z-index: 10;
 }
 .checkbox {
   opacity: 0;
   position: absolute;
 }
 
+
   .checkbox {
     opacity: 0;
     position: absolute;
   }
-  
+ 
   .checkbox-label {
     background-color: #424242;
     width: 50px;
@@ -31,11 +32,11 @@ header {
     align-items: center;
     margin-left: 1rem;
   }
-  
+ 
   .fa-moon {color: #f1c40f;}
-  
+ 
   .fa-sun {color: #f39c12;}
-  
+ 
   .checkbox-label .ball {
     background-color: #fff;
     width: 22px;
@@ -46,41 +47,58 @@ header {
     border-radius: 50%;
     transition: transform 0.2s linear;
   }
-  
+ 
   .checkbox:checked + .checkbox-label .ball {
     transform: translateX(24px);
   }
-  
+ 
   .navbar {
     background-color: var(--color5);
     box-shadow: 2px 2px 10px #000000;
     position: fixed;
     width: 100%;
   }
-  
+ 
   .nav-item a {
     color: white !important;
     font-weight: bold;
   }
+
+
+  .botones-accion{
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+  }
+
+
+  #largoCarrito{
+    border: solid 1px red;
+  }
+
+
   .button-app{
     background-color: #F26333;
     color: #fff;
     border: none;
     border-radius: 5px;
+    padding: 0 .6em;
   }
- 
+
+
   .nav-item a:hover {
     color: var(--color1) !important;
   }
-  
-  .navbar-collapse {
-    justify-content: flex-end;
+
+
+  .navbar-nav{
+    margin: auto;
   }
-  
+ 
   .navbar-toggler {
     background-color: var(--color1) !important;
   }
-  
+ 
 .checkbox-label {
   background-color: #424242;
   width: 50px;
@@ -92,16 +110,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 1rem;
+  margin: auto;
 }
+
+
+#btn-carrito{
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+
+
 
 .fa-moon {
   color: #f1c40f;
 }
 
+
 .fa-sun {
   color: #f39c12;
 }
+
 
 .checkbox-label .ball {
   background-color: #fff;
@@ -114,9 +143,11 @@ header {
   transition: transform 0.2s linear;
 }
 
+
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
+
 
 .navbar {
   background-color: var(--color5);
@@ -125,19 +156,23 @@ header {
   width: 100%;
 }
 
+
 .nav-item a {
   color: white !important;
   font-family: 'PoetsenOne-Regular';
   font-size: 17px;
 }
 
+
 .nav-item a:hover {
   color: var(--color1) !important;
 }
 
+
 .navbar-collapse {
   justify-content: flex-end;
 }
+
 
 .navbar-toggler {
   background-color: var(--color1) !important;
@@ -148,26 +183,32 @@ header {
 @media only screen and (max-width: 768px) {
   /* BARRA DE NAVEGACION */
 
+
   /* span.navbar-toggler-icon{
       background-image: none;
     } */
 
+
   .navbar {
     box-shadow: none;
   }
+
 
   .container-fluid {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
 
+
   .navbar-brand {
     margin-left: 20px;
   }
 
+
   .navbar-toggler {
     margin-right: 30px;
   }
+
 
   .navbar-collapse {
     text-align: center;
@@ -175,20 +216,25 @@ header {
     background-color: var(--color5);
   }
 
+
   .nav-item .nav-link {
     font-size: 18px;
   }
 
+
   /* CARTA */
+
 
   .cart-container {
     display: none;
   }
 
+
   /* index */
   .welcome-home h1 {
     font-size: 32px;
   }
+
 
   .welcome-home h3 {
     font-size: 14px;
@@ -204,16 +250,20 @@ header {
     font-size: 10px;
   }
 
+
   .wrap-footer {
     grid-template-columns: 55% 15% 15% 20%;
   }
 }
 
+
 /* MENÚ */
+
 
 .logo {
   width: 50px;
 }
+
 
 .fecha-label {
   color: gray;
@@ -223,6 +273,7 @@ header {
   top: 10px;
   transition: all 0.3s ease;
 }
+
 
 .form-control:focus + .fecha-label,
 .form-control:valid + .fecha-label {
@@ -237,6 +288,7 @@ header {
   transition: all 0.3s ease;
 }
 
+
 .form-control:focus + .hora-label,
 .form-control:valid + .hora-label {
   display: none;
@@ -249,6 +301,7 @@ header {
   top: 10px;
   transition: all 0.3s ease;
 }
+
 
 .form-control:focus + .nombre-label,
 .form-control:valid + .nombre-label {
@@ -263,6 +316,7 @@ header {
   transition: all 0.3s ease;
 }
 
+
 .form-control:focus + .fecha-label,
 .form-control:valid + .fecha-label {
   display: none;
@@ -276,31 +330,35 @@ header {
   transition: all 0.3s ease;
 }
 
+
 .form-control:focus + .comensales-label,
 .form-control:valid + .comensales-label {
   display: none;
 }
 .form-group {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
-  
+ 
   .btn-cancelar {
     color: white;
-    background-color: rgba(255, 0, 0, 0.3); 
-    border-color: transparent; 
+    background-color: rgba(255, 0, 0, 0.3);
+    border-color: transparent;
   }
+
 
   .btn-cancelar:hover,
   .btn-cancelar:focus {
-    background-color: rgba(255, 0, 0, 0.8); 
+    background-color: rgba(255, 0, 0, 0.8);
   }
   .btn-confirmar {
     color: black;
-    background-color: #ffc107; 
-    transition: background-color 0.3s ease; 
+    background-color: #ffc107;
+    transition: background-color 0.3s ease;
   }
+
 
   .btn-confirmar:hover,
   .btn-confirmar:focus {
-    background-color: #ffcd38; 
+    background-color: #ffcd38;
   }
+
