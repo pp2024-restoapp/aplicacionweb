@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^productosCategoriaPostres$', views.Producto_Categoria_Postres.as_view()),
     url(r'^productosCategoriaPastas$', views.Producto_Categoria_Pastas.as_view()),
     url(r'^productosCategoriaEnsaladas$', views.Producto_Categoria_Ensaladas.as_view()),
-     
+    url(r'^reservas$', views.Reservas.as_view()), 
 
 	]
 
