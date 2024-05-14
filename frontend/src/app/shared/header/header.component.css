@@ -80,6 +80,10 @@ header {
   .navbar-toggler {
     background-color: var(--color1) !important;
   }
+
+  .container-fluid .btn {
+    font-family: 'PoetsenOne-Regular';
+  }
   
 .checkbox-label {
   background-color: #424242;
@@ -207,6 +211,14 @@ header {
   .wrap-footer {
     grid-template-columns: 55% 15% 15% 20%;
   }
+}
+
+h5 {
+  font-family: 'PoetsenOne-Regular';
+}
+
+.modal-footer {
+  font-family: 'PoetsenOne-Regular';
 }
 
 /* MENÚ */
