@@ -80,6 +80,10 @@ header {
   .navbar-toggler {
     background-color: var(--color1) !important;
   }
+
+  .container-fluid .btn {
+    font-family: 'PoetsenOne-Regular';
+  }
   
 .checkbox-label {
   background-color: #424242;
@@ -209,8 +213,106 @@ header {
   }
 }
 
+h5 {
+  font-family: 'PoetsenOne-Regular';
+}
+
+.modal-footer {
+  font-family: 'PoetsenOne-Regular';
+}
+
 /* MENÚ */
 
 .logo {
   width: 50px;
 }
+
+.fecha-label {
+  color: gray;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus + .fecha-label,
+.form-control:valid + .fecha-label {
+  display: none;
+}
+.hora-label {
+  color: gray;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus + .hora-label,
+.form-control:valid + .hora-label {
+  display: none;
+}
+.nombre-label {
+  color: gray;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus + .nombre-label,
+.form-control:valid + .nombre-label {
+  display: none;
+}
+.fecha-label {
+  color: gray;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus + .fecha-label,
+.form-control:valid + .fecha-label {
+  display: none;
+}
+.comensales-label {
+  color: gray;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus + .comensales-label,
+.form-control:valid + .comensales-label {
+  display: none;
+}
+.form-group {
+  margin-bottom: 20px; 
+}
+  
+  .btn-cancelar {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.3); 
+    border-color: transparent; 
+  }
+
+  .btn-cancelar:hover,
+  .btn-cancelar:focus {
+    background-color: rgba(255, 0, 0, 0.8); 
+  }
+  .btn-confirmar {
+    color: black;
+    background-color: #ffc107; 
+    transition: background-color 0.3s ease; 
+  }
+
+  .btn-confirmar:hover,
+  .btn-confirmar:focus {
+    background-color: #ffcd38; 
+  }

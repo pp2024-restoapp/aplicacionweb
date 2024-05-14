@@ -3,6 +3,9 @@
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="./"
         ><img src="./assets/img/logo.png" alt="Logo" class="logo" style="max-height: 58px; width: auto;" /></a>
+        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#detalleModal">
+          Reservas
+        </button>
       <button
         class="navbar-toggler"
         type="button"
@@ -53,3 +56,137 @@
     </div>
   </nav>
 </header>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Modal -->
+<div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-content-wrapper" style="background-image: url('/assets/img/fondo.jpg'); background-size: cover;">
+      <div class="modal-header" style="position: relative;">
+        <h5 class="modal-title" id="detalleModalLabel" style="font-weight: 900; color: yellow; font-style: italic; display: inline-block;">Reserva tu lugar !!</h5>
+       
+        <img src="/assets/img/usuario.png" alt="Usuario" style="width: 40px; height: 40px; position: absolute; top: 50%; transform: translateY(-50%); right: 20px;">
+      </div>
+      <div class="modal-body">
+   
+        <form>
+          <div class="form-group" style="position: relative;">
+            <input type="text" class="form-control w-50" id="nombre" required>
+            <label for="nombre" class="nombre-label">Nombre completo</label>
+          </div>
+        
+          <script>
+              document.getElementById('nombre').addEventListener('input', function() {
+              var label = document.querySelector('.nombre-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              } else {
+                label.style.display = 'block';
+              }
+            });
+        
+            document.getElementById('nombre').addEventListener('change', function() {
+              var label = document.querySelector('.nombre-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              }
+            });
+          </script>
+        
+          <div class="form-group" style="position: relative;">
+            <input type="date" class="form-control w-50" id="fecha" required>
+            <label for="fecha" class="fecha-label">.</label>
+          </div>
+        
+          <script>
+              document.getElementById('fecha').addEventListener('input', function() {
+              var label = document.querySelector('.fecha-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              } else {
+                label.style.display = 'block';
+              }
+            });
+        
+            document.getElementById('fecha').addEventListener('change', function() {
+              var label = document.querySelector('.fecha-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              }
+            });
+          </script>
+        
+          <div class="form-group" style="position: relative;">
+            <input type="time" class="form-control w-50" id="hora" required>
+            <label for="hora" class="hora-label">Hora</label>
+          </div>
+        
+          <script>
+              document.getElementById('hora').addEventListener('input', function() {
+              var label = document.querySelector('.hora-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              } else {
+                label.style.display = 'block';
+              }
+            });
+        
+            document.getElementById('hora').addEventListener('change', function() {
+              var label = document.querySelector('.hora-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              }
+            });
+          </script>
+        
+          <div class="form-group" style="position: relative;">
+            <input type="number" class="form-control w-50" id="comensales" required>
+            <label for="comensales" class="comensales-label">Cantidad de personas?</label>
+          </div>
+        
+          <script>
+            
+            document.getElementById('comensales').addEventListener('input', function() {
+              var label = document.querySelector('.comensales-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              } else {
+                label.style.display = 'block';
+              }
+            });
+        
+            document.getElementById('comensales').addEventListener('change', function() {
+              var label = document.querySelector('.comensales-label');
+              if (this.value.trim() !== '') {
+                label.style.display = 'none';
+              }
+            });
+          </script>
+        
+       
+        <form [formGroup]="form">
+          <div class="form-group">
+            <input type="text" formControlName="email" placeholder="Correo electrónico" class="form-control w-75">
+            <label class="text-danger small" *ngIf="getError(form.get('email'))">{{getError(form.get('email'))}}</label>
+          </div>
+        </form>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn btn-confirmar">Confirmar Reserva</button>
+        </div>
+        <script>
+          
+          var btnConfirmar = document.querySelector('.btn-confirmar');
+        
+          
+          btnConfirmar.addEventListener('click', function() {
+            
+            alert('¡Su reserva fue confirmada!');
+          });
+        </script>
+        </form>
+        
