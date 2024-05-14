@@ -13,6 +13,18 @@
   flex-direction: column;
 }
 
+.premios-contenid p {
+  font-family: 'PoetsenOne-Regular';
+}
+
+h1 {
+  font-family: 'PoetsenOne-Regular';
+}
+
+h5 {
+  font-family: 'PoetsenOne-Regular';
+}
+
 .cards-container {
   display: flex;
   background-color: var(--color2);

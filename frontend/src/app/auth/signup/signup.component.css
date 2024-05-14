@@ -7,6 +7,10 @@
     padding-top: 15vh;
   }
   
+h2 {
+  font-family: 'PoetsenOne-Regular';
+}
+
   .form-profile {
     display: flex;
     flex-direction: column;
@@ -15,10 +19,15 @@
     background-color: var(--color3);
     box-shadow: 4px 4px 4px #666;
     margin-bottom: 2em;
+    font-family: 'PoetsenOne-Regular';
   }
 
   .form-profile input {
     margin: .5em 0;
+  }
+
+  form .form-buttons .btn {
+    font-family: 'PoetsenOne-Regular';
   }
 
   .singup-alert {
