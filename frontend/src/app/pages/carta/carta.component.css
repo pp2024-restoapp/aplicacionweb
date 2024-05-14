@@ -126,11 +126,16 @@
   gap: 1rem;
 }
 
+.img-accordion{
+  height:50px;
+}
+
 /*CARDS*/
 
 .card {
   width: 270px;
   height: 450px;
+  border: 2px solid #000;
 }
 
 .card-img-top{
@@ -153,12 +158,7 @@
   font-size: 30px;
   font-weight: 800;
   margin-left: auto; 
-  margin-top: 1rem;
-  /*text-shadow:-2px -2px 1px black,  
-  2px -2px 1px black,   
-  -2px 2px 1px black,   
-  2px 2px 1px black; */
-              
+  margin-top: 1rem;            
 }
 
 .card-buttons{
@@ -191,6 +191,27 @@
 .img-card {
   height: 90%;
   width: 90%;
+}
+
+/* MODAL */
+
+.modal-title{
+  font-size: 2rem;
+  text-align:center;
+  font-weight: 800;
+  display: block;
+}
+
+
+.modal-description{
+  margin-top: 13px;
+  font-style: italic;
+}
+
+.modal-content{
+  background-color: var(--color3);
+  width:100% 
+  ;
 }
 
 /* CARRITO */
@@ -317,7 +338,7 @@
     display: none;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 566px) {
   .main-menu {
     padding: 0;
   }
