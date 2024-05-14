@@ -8,6 +8,7 @@ import { GetProductsPostresService } from 'src/app/services/get-products-postres
 import { GetProductsPastasService } from 'src/app/services/get-products-pastas.service';
 import { GetProductsEnsaladasService } from 'src/app/services/get-products-ensaladas.service';
 import { GetProductsPromocionesService } from 'src/app/services/get-products-promociones.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-carta',
@@ -26,7 +27,7 @@ export class CartaComponent implements OnInit {
   productsOnCart: any[] = [];
   subtotal: any;
 
-  constructor(private products_service: GetProductsService, private products_promociones_service: GetProductsPromocionesService,private products_ensaladas_service: GetProductsEnsaladasService ,private products_pastas_service: GetProductsPastasService,private products_postres_service: GetProductsPostresService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService , private router: Router) {
+  constructor(private toastr: ToastrService, private products_service: GetProductsService, private products_promociones_service: GetProductsPromocionesService,private products_ensaladas_service: GetProductsEnsaladasService ,private products_pastas_service: GetProductsPastasService,private products_postres_service: GetProductsPostresService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService , private router: Router) {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
         this.products = productsData
@@ -134,6 +135,13 @@ export class CartaComponent implements OnInit {
     this.productsOnCart = this.products_service.getProduct();
   }
 
+  showSuccess(message = "") {
+    this.toastr.success(message, "",{
+      progressBar: true,
+      timeOut: 3000
+    })
+  }
+
   addToCart(product: any) {
     console.log(product)
     if (!this.products_service.productInCart(product)) {
@@ -142,7 +150,7 @@ export class CartaComponent implements OnInit {
       this.productsOnCart = [...this.products_service.getProduct()]
       console.log(this.productsOnCart)
       this.subtotal = product.precio;
-      alert("agregado correctamente")
+      this.showSuccess("Producto Agregado")
     }
   }
 
