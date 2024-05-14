@@ -29,6 +29,15 @@
 
 .parte p {
   font-size: 24px;
+  font-family: 'PoetsenOne-Regular';
+}
+
+h2 {
+  font-family: 'PoetsenOne-Regular';
+}
+
+h3 {
+  font-family: 'PoetsenOne-Regular';
 }
 
 .datos-app {
@@ -50,6 +59,10 @@
 
 .boton {
   margin-top: 5vh;
+}
+
+.boton a {
+  font-family: 'PoetsenOne-Regular';
 }
 
 .boton-descarga {
@@ -246,6 +259,7 @@
   margin: 0;
   font-size: 20px;
   color: #fff;
+  font-family: 'PoetsenOne-Regular';
 }
 
 .qr-image {
@@ -255,6 +269,7 @@
 
 .boton-descarga a {
   color: #f26333 !important;
+  font-family: 'PoetsenOne-Regular';
 }
 
 /* MEDIA QUERIES */
