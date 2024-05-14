@@ -219,24 +219,14 @@ class Mesa(models.Model):
  
 #CLASE RESERVA
 class Reserva(models.Model):
-    #id(primary_key lo genera por defecto el ORM de django)
-    fecha_hora = models.DateTimeField(default=datetime.now())
-    estado = models.CharField(max_length=100, blank=False) #(puede tomar los valores: 'solicitada','confirmada','cancelada')
-    detalle = models.CharField (max_length=45, blank=False)
-    #usuario_id = (ForeignKey lo genera por defecto para la relacion que se arma)
-    usuario = models.ForeignKey(
-        CustomUser,
-        related_name= "reserva_usuario",
-        on_delete=models.CASCADE
-    )
-    #mesa_id = (ForeignKey lo genera por defecto para la relacion que se arma)
-    mesa = models.ForeignKey(
-        Mesa,
-        related_name= "reserva_mesa",
-        on_delete=models.CASCADE
-    )
+    nombre = models.CharField(max_length=45)
+    fechaHora = models.DateTimeField(null=True)
+    cantPersonas = models.IntegerField(default= 1, blank=False)
+    email = models.EmailField(max_length=60, blank=True)
+    
+    
     def __unicode__(self):
-        return self.fecha_hora
+        return self.fechaHora
     def __str__(self):
         return str(self.pk)
     class Meta:
