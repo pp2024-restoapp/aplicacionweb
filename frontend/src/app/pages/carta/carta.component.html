@@ -66,13 +66,14 @@
                         <div
                           class="d-flex justify-content-between align-items-center"
                         >
-                          <button
-                            type="submit"
-                            class="btn btn-primary btn-block"
-                            (click)="addToCart(product)"
-                          >
-                            Agregar al Carrito
-                          </button>
+                        <button
+                        type="submit"
+                        class="btn btn-primary btn-block"
+                        [class.btn-success]="product.agregadoAlCarrito"
+                        (click)="addToCart(product)"
+                      >
+                      {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                      </button>
                           <button
                             type="button"
                             class="btn btn-danger btn-sm"
@@ -164,7 +165,7 @@
                       height="70"
                       alt="Entrada"
                     />
-                    <span>Entradas</span>
+                    Entradas
                   </button>
                 </div>
                 <div
@@ -205,12 +206,13 @@
                             <div
                               class="d-flex justify-content-between align-items-center"
                             >
-                              <button
+ <button
                                 type="submit"
                                 class="btn btn-primary btn-block"
+                                [class.btn-success]="product.agregadoAlCarrito"
                                 (click)="addToCart(product)"
                               >
-                                Agregar al Carrito
+                              {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                               </button>
                               <button
                                 type="button"
@@ -356,10 +358,16 @@
                               <button
                                 type="submit"
                                 class="btn btn-primary btn-block"
+                                [class.btn-success]="product.agregadoAlCarrito"
                                 (click)="addToCart(product)"
                               >
-                                Agregar al Carrito
+                                {{
+                                  product.agregadoAlCarrito
+                                    ? "En Carrito"
+                                    : "Agregar al Carrito"
+                                }}
                               </button>
+
                               <button
                                 type="button"
                                 class="btn btn-danger btn-sm"
@@ -505,9 +513,14 @@
                             <button
                               type="submit"
                               class="btn btn-primary btn-block"
+                              [class.btn-success]="product.agregadoAlCarrito"
                               (click)="addToCart(product)"
                             >
-                              Agregar al Carrito
+                              {{
+                                product.agregadoAlCarrito
+                                  ? "En Carrito"
+                                  : "Agregar al Carrito"
+                              }}
                             </button>
                             <button
                               type="button"
@@ -644,13 +657,14 @@
                             <div
                               class="d-flex justify-content-between align-items-center"
                             >
-                              <button
-                                type="submit"
-                                class="btn btn-primary btn-block"
-                                (click)="addToCart(product)"
-                              >
-                                Agregar al Carrito
-                              </button>
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block"
+                            [class.btn-success]="product.agregadoAlCarrito"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
                               <button
                                 type="button"
                                 class="btn btn-danger btn-sm"
@@ -790,13 +804,14 @@
                             <div
                               class="d-flex justify-content-between align-items-center"
                             >
-                              <button
-                                type="submit"
-                                class="btn btn-primary btn-block"
-                                (click)="addToCart(product)"
-                              >
-                                Agregar al Carrito
-                              </button>
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block"
+                            [class.btn-success]="product.agregadoAlCarrito"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
                               <button
                                 type="button"
                                 class="btn btn-danger btn-sm"
@@ -936,13 +951,14 @@
                             <div
                               class="d-flex justify-content-between align-items-center"
                             >
-                              <button
-                                type="submit"
-                                class="btn btn-primary btn-block"
-                                (click)="addToCart(product)"
-                              >
-                                Agregar al Carrito
-                              </button>
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block"
+                            [class.btn-success]="product.agregadoAlCarrito"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
                               <button
                                 type="button"
                                 class="btn btn-danger btn-sm"
