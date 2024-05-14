@@ -12,134 +12,146 @@ import { GetProductsPromocionesService } from 'src/app/services/get-products-pro
 @Component({
   selector: 'app-carta',
   templateUrl: './carta.component.html',
-  styleUrls: ['./carta.component.css']
+  styleUrls: ['./carta.component.css'],
 })
 export class CartaComponent implements OnInit {
   products: any;
   productsEntradas: any;
-  productsBebidas : any;
-  productsPrincipales : any;
-  productsPostres : any;
-  productsPastas : any;
-  productsEnsaladas : any;
-  productsPromociones : any;
+  productsBebidas: any;
+  productsPrincipales: any;
+  productsPostres: any;
+  productsPastas: any;
+  productsEnsaladas: any;
+  productsPromociones: any;
   productsOnCart: any[] = [];
   subtotal: any;
 
-  constructor(private products_service: GetProductsService, private products_promociones_service: GetProductsPromocionesService,private products_ensaladas_service: GetProductsEnsaladasService ,private products_pastas_service: GetProductsPastasService,private products_postres_service: GetProductsPostresService,private products_entradas_service: GetProductsEntradasService, private products_bebidas_service: GetProductsBebidasService,private products_principales_service: GetProductsPrincipalesService, private router: Router) {
+  constructor(
+    private products_service: GetProductsService,
+    private products_promociones_service: GetProductsPromocionesService,
+    private products_ensaladas_service: GetProductsEnsaladasService,
+    private products_pastas_service: GetProductsPastasService,
+    private products_postres_service: GetProductsPostresService,
+    private products_entradas_service: GetProductsEntradasService,
+    private products_bebidas_service: GetProductsBebidasService,
+    private products_principales_service: GetProductsPrincipalesService,
+    private router: Router
+  ) {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
-        this.products = productsData
-        console.log(productsData)
+        this.products = productsData;
+        console.log(productsData);
       },
       error: (errorData) => {
         console.error(errorData);
-      }
-    })
-     /*** inicio entradas  ***/
+      },
+    });
+    /*** inicio entradas  ***/
     this.products_entradas_service.getProductsEntradas().subscribe({
       next: (Data) => {
-        this.productsEntradas = Data
-        console.log(Data)
+        this.productsEntradas = Data;
+        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
-      }
-    })
-      /*** fin entradas  ***/
-       
-      /*** inicio bebidas  ***/
+      },
+    });
+    /*** fin entradas  ***/
+
+    /*** inicio bebidas  ***/
     this.products_bebidas_service.getProductsBebidas().subscribe({
       next: (Data) => {
-        this.productsBebidas = Data
-        console.log(Data)
+        this.productsBebidas = Data;
+        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
-      }
-    })
-      /*** fin bebidas  ***/
-      /*** inicio de principales  ***/
-      this.products_principales_service.getProductsPrincipales().subscribe({
-        next: (Data) => {
-          this.productsPrincipales = Data
-          console.log(Data)
-        },
-        error: (errorData) => {
-          console.error(errorData);
-        }
-      })
+      },
+    });
+    /*** fin bebidas  ***/
+    /*** inicio de principales  ***/
+    this.products_principales_service.getProductsPrincipales().subscribe({
+      next: (Data) => {
+        this.productsPrincipales = Data;
+        console.log(Data);
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      },
+    });
 
+    /*** fin de principales  ***/
 
-      /*** fin de principales  ***/
+    /*** inicio de postres  ***/
+    this.products_postres_service.getProductsPostres().subscribe({
+      next: (Data) => {
+        this.productsPostres = Data;
+        console.log(Data);
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      },
+    });
 
-      /*** inicio de postres  ***/
-      this.products_postres_service.getProductsPostres().subscribe({
-        next: (Data) => {
-          this.productsPostres = Data
-          console.log(Data)
-        },
-        error: (errorData) => {
-          console.error(errorData);
-        }
-      })
+    /*** fin de postres  ***/
+    /*** inicio pastas */
+    this.products_pastas_service.getProductsPastas().subscribe({
+      next: (Data) => {
+        this.productsPastas = Data;
+        console.log(Data);
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      },
+    });
+    /** fin pastas  */
+    /** inicio ensaladas */
+    this.products_ensaladas_service.getProductsEnsaladas().subscribe({
+      next: (Data) => {
+        this.productsEnsaladas = Data;
+        console.log(Data);
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      },
+    });
+    /** fin ensaladas */
+    /** inicio promociones */
+    this.products_promociones_service.getProductsPromociones().subscribe({
+      next: (Data) => {
+        this.productsPromociones = Data;
+        console.log(Data);
+      },
+      error: (errorData) => {
+        console.error(errorData);
+      },
+    });
 
-
-      /*** fin de postres  ***/
-      /*** inicio pastas */
-      this.products_pastas_service.getProductsPastas().subscribe({
-        next: (Data) => {
-          this.productsPastas = Data
-          console.log(Data)
-        },
-        error: (errorData) => {
-          console.error(errorData);
-        }
-      })
-      /** fin pastas  */
-      /** inicio ensaladas */
-      this.products_ensaladas_service.getProductsEnsaladas().subscribe({
-        next: (Data) => {
-          this.productsEnsaladas = Data
-          console.log(Data)
-        },
-        error: (errorData) => {
-          console.error(errorData);
-        }
-      })
-      /** fin ensaladas */
-      /** inicio promociones */
-      this.products_promociones_service.getProductsPromociones().subscribe({
-        next: (Data) => {
-          this.productsPromociones = Data
-          console.log(Data)
-        },
-        error: (errorData) => {
-          console.error(errorData);
-        }
-      })
-
-      /** fin promociones */
-
-
-
-
+    /** fin promociones */
   }
-  
+
   ngOnInit(): void {
     this.products_service.loadProductsInCart();
     this.productsOnCart = this.products_service.getProduct();
   }
 
   addToCart(product: any) {
-    console.log(product)
+    console.log(product);
     if (!this.products_service.productInCart(product)) {
       product.cantidad = 1;
       this.products_service.addProductToCart(product);
-      this.productsOnCart = [...this.products_service.getProduct()]
-      console.log(this.productsOnCart)
+      this.productsOnCart = [...this.products_service.getProduct()];
+      console.log(this.productsOnCart);
       this.subtotal = product.precio;
-      alert("agregado correctamente")
+      alert('Producto agregado correctamente');
+    }
+
+    // Verificar si el producto está en el carrito
+    const estaEnCarrito = this.products_service.productInCart(product);
+
+    // Si el producto está en el carrito, establecer la clase del botón en verde
+    if (estaEnCarrito) {
+      product.agregadoAlCarrito = true; // Establecer propiedad para aplicar estilo verde al botón
     }
   }
 
@@ -153,17 +165,27 @@ export class CartaComponent implements OnInit {
   }
 
   removeFromCart(product: any) {
+     // Encuentra el índice del producto eliminado en el arreglo productsOnCart
+    const index = this.productsOnCart.findIndex(
+      (item) => item.id === product.id
+    );
+
+    // Si se encontró el índice, establece la propiedad 'agregadoAlCarrito' del producto eliminado en false
+    if (index !== -1) {
+      this.productsOnCart[index].agregadoAlCarrito = false;
+    }
     this.products_service.removeProduct(product);
     this.productsOnCart = this.products_service.getProduct();
   }
 
   get total() {
-    return this.productsOnCart.reduce((sum, product) => ({
-      cantidad: 1,
-      precio: sum.precio + product.cantidad * product.precio
-    }),
+    return this.productsOnCart.reduce(
+      (sum, product) => ({
+        cantidad: 1,
+        precio: sum.precio + product.cantidad * product.precio,
+      }),
       { cantidad: 1, precio: 0 }
-    ).precio
+    ).precio;
   }
 
   checkout() {
@@ -172,6 +194,9 @@ export class CartaComponent implements OnInit {
   }
 
   clearCart() {
+    this.productsOnCart.forEach((product) => {
+      product.agregadoAlCarrito = false;
+    });
     this.products_service.clearProducts();
     this.productsOnCart = this.products_service.getProduct();
   }

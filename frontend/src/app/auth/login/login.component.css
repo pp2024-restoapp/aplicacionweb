@@ -8,6 +8,10 @@
   height: 100vh;
 }
 
+h2 {
+  font-family: 'PoetsenOne-Regular';
+}
+
 .form-profile {
   display: flex;
   flex-direction: column;
@@ -18,6 +22,7 @@
   background-color: var(--color3);
   box-shadow: 4px 4px 4px #666;
   margin-bottom: 2em;
+  font-family: 'PoetsenOne-Regular';
 }
 
 .login-alert {
@@ -38,6 +43,10 @@
 
 form .form-buttons .btn:active {
   background-color: #e38b29 !important;
+}
+
+form .form-buttons .btn {
+  font-family: 'PoetsenOne-Regular';
 }
 
 .footer {
