@@ -46,9 +46,9 @@ class MesaAdmin(admin.ModelAdmin):
     list_display = ['id','numero','estado','ubicacion','cant_personas']
 
 class ReservaAdmin(admin.ModelAdmin):
-    list_display = ['id','fecha_hora','estado','usuario','mesa']
-    search_fields = ['id','detalle']
-    list_filter = ['estado','usuario']
+    list_display = ['id','fechaHora','nombre','email']
+    search_fields = ['id','fechaHora','nombre']
+    list_filter = ['fechaHora','email']
 
 # Register your models here.
 admin.site.register(Categoria,CategoriaAdmin)
