@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetProductsService } from 'src/app/services/get-products.service';
 import { GetProductsEntradasService } from 'src/app/services/get-products-entradas.service';
@@ -8,6 +8,7 @@ import { GetProductsPostresService } from 'src/app/services/get-products-postres
 import { GetProductsPastasService } from 'src/app/services/get-products-pastas.service';
 import { GetProductsEnsaladasService } from 'src/app/services/get-products-ensaladas.service';
 import { GetProductsPromocionesService } from 'src/app/services/get-products-promociones.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-carta',
@@ -27,6 +28,7 @@ export class CartaComponent implements OnInit {
   subtotal: any;
 
   constructor(
+    private toastr: ToastrService,
     private products_service: GetProductsService,
     private products_promociones_service: GetProductsPromocionesService,
     private products_ensaladas_service: GetProductsEnsaladasService,
@@ -135,6 +137,13 @@ export class CartaComponent implements OnInit {
     this.productsOnCart = this.products_service.getProduct();
   }
 
+  showSuccess(message = '') {
+    this.toastr.success(message, '', {
+      progressBar: true,
+      timeOut: 3000,
+    });
+  }
+
   addToCart(product: any) {
     console.log(product);
     if (!this.products_service.productInCart(product)) {
@@ -143,7 +152,7 @@ export class CartaComponent implements OnInit {
       this.productsOnCart = [...this.products_service.getProduct()];
       console.log(this.productsOnCart);
       this.subtotal = product.precio;
-      alert('Producto agregado correctamente');
+      this.showSuccess('Producto Agregado');
     }
 
     // Verificar si el producto está en el carrito
@@ -165,7 +174,7 @@ export class CartaComponent implements OnInit {
   }
 
   removeFromCart(product: any) {
-     // Encuentra el índice del producto eliminado en el arreglo productsOnCart
+    // Encuentra el índice del producto eliminado en el arreglo productsOnCart
     const index = this.productsOnCart.findIndex(
       (item) => item.id === product.id
     );

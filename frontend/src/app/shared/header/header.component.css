@@ -68,12 +68,12 @@ header {
   .botones-accion{
     display: flex;
     justify-content: space-around;
-    gap: 1em;
+    gap: 1em  ;
   }
 
+  .botones-accion > * {
+    margin: auto;
 
-  #largoCarrito{
-    border: solid 1px red;
   }
 
 
