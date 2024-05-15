@@ -26,6 +26,7 @@
                   width="70"
                   height="70"
                   alt="promociones"
+                  class="img-accordion"
                 />
                 Promociones !!
               </button>
@@ -58,25 +59,25 @@
                           >
                             {{ product.descripcion }}
                           </p>
-                          <p class="card-text text-center text-rojo">
+                          <p class="card-text text-center text-precio">
                             $ {{ product.precio }}
                           </p>
                         </div>
 
                         <div
-                          class="d-flex justify-content-between align-items-center"
+                          class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                         >
                         <button
                         type="submit"
-                        class="btn btn-primary btn-block"
-                        [class.btn-success]="product.agregadoAlCarrito"
+                        class="btn btn-primary btn-block align-self-start btn-agregar-carrito"
+                        [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                         (click)="addToCart(product)"
                       >
                       {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                       </button>
                           <button
                             type="button"
-                            class="btn btn-danger btn-sm"
+                            class="btn btn-link btn-sm align-self-end"
                             data-bs-toggle="modal"
                             [attr.data-bs-target]="
                               '#detalleModal9' + product.id
@@ -119,16 +120,16 @@
                                   height="400"
                                 />
                               </div>
-                              <p class="text-dark">{{ product.descripcion }}</p>
+                              <p class="text-dark modal-description">{{ product.descripcion }}</p>
 
-                              <p class="text-rojo" id="modalPrecio">
-                                Precio: $ {{ product.precio }}
+                              <p class="text-precio" id="modalPrecio">
+                                 $ {{ product.precio }}
                               </p>
                             </div>
                             <div class="modal-footer">
                               <button
                                 type="button"
-                                class="btn btn-danger"
+                                class="btn btn-dark"
                                 data-bs-dismiss="modal"
                               >
                                 Cerrar
@@ -164,6 +165,7 @@
                       width="70"
                       height="70"
                       alt="Entrada"
+                      class="img-accordion"
                     />
                     Entradas
                   </button>
@@ -198,25 +200,25 @@
                               >
                                 {{ product.descripcion }}
                               </p>
-                              <p class="card-text text-center text-rojo">
+                              <p class="card-text text-center text-precio">
                                 $ {{ product.precio }}
                               </p>
                             </div>
 
                             <div
-                              class="d-flex justify-content-between align-items-center"
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
  <button
                                 type="submit"
-                                class="btn btn-primary btn-block"
-                                [class.btn-success]="product.agregadoAlCarrito"
+                                class="btn btn-primary btn-block btn-agregar-carrito"
+                                [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                                 (click)="addToCart(product)"
                               >
                               {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                               </button>
                               <button
                                 type="button"
-                                class="btn btn-danger btn-sm"
+                                class="btn btn-link btn-sm align-self-end"
                                 data-bs-toggle="modal"
                                 [attr.data-bs-target]="
                                   '#detalleModal9' + product.id
@@ -266,14 +268,14 @@
                                     {{ product.descripcion }}
                                   </p>
 
-                                  <p class="text-rojo" id="modalPrecio">
+                                  <p class="text-precio" id="modalPrecio">
                                     Precio: $ {{ product.precio }}
                                   </p>
                                 </div>
                                 <div class="modal-footer">
                                   <button
                                     type="button"
-                                    class="btn btn-danger"
+                                    class="btn btn-dark"
                                     data-bs-dismiss="modal"
                                   >
                                     Cerrar
@@ -312,6 +314,7 @@
                       width="70"
                       height="70"
                       alt="bebidas"
+                      class="img-accordion"
                     />
 
                     Bebidas
@@ -347,18 +350,18 @@
                               >
                                 {{ product.descripcion }}
                               </p>
-                              <p class="card-text text-center text-rojo">
+                              <p class="card-text text-center text-precio">
                                 $ {{ product.precio }}
                               </p>
                             </div>
 
                             <div
-                              class="d-flex justify-content-between align-items-center"
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
                               <button
                                 type="submit"
-                                class="btn btn-primary btn-block"
-                                [class.btn-success]="product.agregadoAlCarrito"
+                                class="btn btn-primary btn-block btn-agregar-carrito"
+                                [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                                 (click)="addToCart(product)"
                               >
                                 {{
@@ -370,7 +373,7 @@
 
                               <button
                                 type="button"
-                                class="btn btn-danger btn-sm"
+                                class="btn btn-link btn-sm align-self-end"
                                 data-bs-toggle="modal"
                                 [attr.data-bs-target]="
                                   '#detalleModal9' + product.id
@@ -420,14 +423,14 @@
                                     {{ product.descripcion }}
                                   </p>
 
-                                  <p class="text-rojo" id="modalPrecio">
+                                  <p class="text-precio" id="modalPrecio">
                                     Precio: $ {{ product.precio }}
                                   </p>
                                 </div>
                                 <div class="modal-footer">
                                   <button
                                     type="button"
-                                    class="btn btn-danger"
+                                    class="btn btn-dark"
                                     data-bs-dismiss="modal"
                                   >
                                     Cerrar
@@ -468,6 +471,7 @@
                     width="70"
                     height="70"
                     alt="principales"
+                    class="img-accordion"
                   />
                   Principales
                 </button>
@@ -502,18 +506,18 @@
                             >
                               {{ product.descripcion }}
                             </p>
-                            <p class="card-text text-center text-rojo">
+                            <p class="card-text text-center text-precio">
                               $ {{ product.precio }}
                             </p>
                           </div>
 
                           <div
-                            class="d-flex justify-content-between align-items-center"
+                            class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                           >
                             <button
                               type="submit"
-                              class="btn btn-primary btn-block"
-                              [class.btn-success]="product.agregadoAlCarrito"
+                              class="btn btn-primary btn-block btn-agregar-carrito"
+                              [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                               (click)="addToCart(product)"
                             >
                               {{
@@ -524,7 +528,7 @@
                             </button>
                             <button
                               type="button"
-                              class="btn btn-danger btn-sm"
+                              class="btn btn-link btn-sm align-self-end"
                               data-bs-toggle="modal"
                               [attr.data-bs-target]="
                                 '#detalleModal9' + product.id
@@ -571,14 +575,14 @@
                                   {{ product.descripcion }}
                                 </p>
 
-                                <p class="text-rojo" id="modalPrecio">
+                                <p class="text-precio" id="modalPrecio">
                                   Precio: $ {{ product.precio }}
                                 </p>
                               </div>
                               <div class="modal-footer">
                                 <button
                                   type="button"
-                                  class="btn btn-danger"
+                                  class="btn btn-dark"
                                   data-bs-dismiss="modal"
                                 >
                                   Cerrar
@@ -615,6 +619,7 @@
                       width="70"
                       height="70"
                       alt="postres"
+                      class="img-accordion"
                     />
                     Postres
                   </button>
@@ -649,25 +654,25 @@
                               >
                                 {{ product.descripcion }}
                               </p>
-                              <p class="card-text text-center text-rojo">
+                              <p class="card-text text-center text-precio">
                                 $ {{ product.precio }}
                               </p>
                             </div>
 
                             <div
-                              class="d-flex justify-content-between align-items-center"
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
                             <button
                             type="submit"
-                            class="btn btn-primary btn-block"
-                            [class.btn-success]="product.agregadoAlCarrito"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                             (click)="addToCart(product)"
                           >
                           {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                           </button>
                               <button
                                 type="button"
-                                class="btn btn-danger btn-sm"
+                                class="btn btn-link btn-sm align-self-end"
                                 data-bs-toggle="modal"
                                 [attr.data-bs-target]="
                                   '#detalleModal9' + product.id
@@ -716,14 +721,14 @@
                                     {{ product.descripcion }}
                                   </p>
 
-                                  <p class="text-rojo" id="modalPrecio">
+                                  <p class="text-precio" id="modalPrecio">
                                     Precio: $ {{ product.precio }}
                                   </p>
                                 </div>
                                 <div class="modal-footer">
                                   <button
                                     type="button"
-                                    class="btn btn-danger"
+                                    class="btn btn-dark"
                                     data-bs-dismiss="modal"
                                   >
                                     Cerrar
@@ -760,6 +765,7 @@
                       width="70"
                       height="70"
                       alt="pastas"
+                      class="img-accordion"
                     />
 
                     Pastas
@@ -796,25 +802,25 @@
                               >
                                 {{ product.descripcion }}
                               </p>
-                              <p class="card-text text-center text-rojo">
+                              <p class="card-text text-center text-precio ">
                                 $ {{ product.precio }}
                               </p>
                             </div>
 
                             <div
-                              class="d-flex justify-content-between align-items-center"
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
                             <button
                             type="submit"
-                            class="btn btn-primary btn-block"
-                            [class.btn-success]="product.agregadoAlCarrito"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                             (click)="addToCart(product)"
                           >
                           {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                           </button>
                               <button
                                 type="button"
-                                class="btn btn-danger btn-sm"
+                                class="btn btn-link btn-sm align-self-end"
                                 data-bs-toggle="modal"
                                 [attr.data-bs-target]="
                                   '#detalleModal9' + product.id
@@ -864,14 +870,14 @@
                                     {{ product.descripcion }}
                                   </p>
 
-                                  <p class="text-rojo" id="modalPrecio">
+                                  <p class="text-precio" id="modalPrecio">
                                     Precio: $ {{ product.precio }}
                                   </p>
                                 </div>
                                 <div class="modal-footer">
                                   <button
                                     type="button"
-                                    class="btn btn-danger"
+                                    class="btn btn-dark"
                                     data-bs-dismiss="modal"
                                   >
                                     Cerrar
@@ -908,6 +914,7 @@
                       width="70"
                       height="70"
                       alt="ensaladas"
+                      class="img-accordion"
                     />
                     Ensaladas
                   </button>
@@ -943,25 +950,25 @@
                               >
                                 {{ product.descripcion }}
                               </p>
-                              <p class="card-text text-center text-rojo">
+                              <p class="card-text text-center text-precio">
                                 $ {{ product.precio }}
                               </p>
                             </div>
 
                             <div
-                              class="d-flex justify-content-between align-items-center"
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
                             <button
                             type="submit"
-                            class="btn btn-primary btn-block"
-                            [class.btn-success]="product.agregadoAlCarrito"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                             (click)="addToCart(product)"
                           >
                           {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                           </button>
                               <button
                                 type="button"
-                                class="btn btn-danger btn-sm"
+                                class="btn btn-link btn-sm align-self-end"
                                 data-bs-toggle="modal"
                                 [attr.data-bs-target]="
                                   '#detalleModal9' + product.id
@@ -1010,14 +1017,14 @@
                                     {{ product.descripcion }}
                                   </p>
 
-                                  <p class="text-rojo" id="modalPrecio">
+                                  <p class="text-precio" id="modalPrecio">
                                     Precio: $ {{ product.precio }}
                                   </p>
                                 </div>
                                 <div class="modal-footer">
                                   <button
                                     type="button"
-                                    class="btn btn-danger"
+                                    class="btn btn-dark"
                                     data-bs-dismiss="modal"
                                   >
                                     Cerrar
@@ -1134,7 +1141,7 @@
                   <td class="border-0 align-middle">
                     <button
                       (click)="removeFromCart(cartProduct)"
-                      class="btn btn-danger borrar-carrito"
+                      class="btn btn-link borrar-carrito"
                       id="${_id}"
                     >
                       X
@@ -1157,7 +1164,7 @@
             (click)="clearCart()"
             id="borrar-todo"
             type="button"
-            class="btn btn-danger"
+            class="btn btn-dark"
             data-bs-dismiss="modal"
             id="borrar-todo"
           >

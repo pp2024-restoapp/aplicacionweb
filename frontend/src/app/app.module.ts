@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +39,8 @@ import { PremiosComponent } from './pages/premios/premios.component';
     LoginComponent,
     SignupComponent,
     ProductosComponent,
-    PagoComponent,
+    PagoComponent,  
+    PremiosComponent,
     PedidosComponent,
     AppMovilComponent,
     ShowsComponent,
@@ -48,7 +53,10 @@ import { PremiosComponent } from './pages/premios/premios.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
