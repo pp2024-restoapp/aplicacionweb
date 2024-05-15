@@ -30,8 +30,13 @@ footer{
     font-size: 20px;
     color: #ffffff;
     margin-right: 2vw;
-
 }
+.icons a{
+        margin-left: 10px; 
+      }
+  
+ 
+
 
 .legales{
    text-align: end;
@@ -40,7 +45,7 @@ footer{
 }
 
 .legales a {
-    margin-right: 2vw;
+    margin-right: 1vw;
     font-family: 'PoetsenOne-Regular';
 }
 
