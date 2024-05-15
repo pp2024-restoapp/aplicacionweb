@@ -24,6 +24,7 @@ import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { AppMovilComponent } from './pages/app-movil/app-movil.component';
 import { ShowsComponent } from './pages/shows/shows.component';
 import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
+import { PremiosComponent } from './pages/premios/premios.component';
 
 
 @NgModule({
@@ -38,11 +39,13 @@ import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
     LoginComponent,
     SignupComponent,
     ProductosComponent,
-    PagoComponent,
+    PagoComponent,  
+    PremiosComponent,
     PedidosComponent,
     AppMovilComponent,
     ShowsComponent,
-    NuestraAppComponent
+    NuestraAppComponent,
+    PremiosComponent
   ],
   imports: [
     BrowserModule,

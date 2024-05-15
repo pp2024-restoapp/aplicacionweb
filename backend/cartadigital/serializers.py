@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from cartadigital.models import Categoria, Producto, Pedido
+from cartadigital.models import Categoria, Producto, Pedido, Reserva
 
 class CategoriaSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -21,3 +21,8 @@ class Producto_Categoria(serializers.ModelSerializer):
 	class Meta:
 		model = Producto
 		fields = ('id','nombre','descripcion','precio','imagen','categoria')
+		
+class ReservasResto(serializers.ModelSerializer):
+	class Meta:
+		model = Reserva
+		fields = ('id','nombre','fechaHora','cantPersonas','email')
