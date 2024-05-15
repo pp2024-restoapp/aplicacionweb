@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit, Renderer2 } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { FormBuilder,AbstractControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -8,28 +9,71 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   modalOpen: any;
-  form: FormGroup = new FormGroup({
-    email: new FormControl("", [Validators.required, this.customEmailValidator])
-  });
+  form: FormGroup = new FormGroup({});
+  
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService
+  ) { }
+  
+  showSuccess(message = "") {
+    this.toastr.success(message, "",{
+      progressBar: true,
+      timeOut: 3000
+    })
+  }
 
-  constructor(private renderer: Renderer2) { }
+  showError(message = "") {
+    this.toastr.error(message, "",{
+      progressBar: true,
+      timeOut: 3000
+    })
+  }
 
   ngOnInit() {
     const themeToggle = document.getElementById('checkbox') as HTMLInputElement;
     themeToggle.addEventListener('change', () => this.toggleTheme());
+
+    this.initForm();
+  }
+
+  initForm(): void {
+    this.form = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      fecha: ['', Validators.required],
+      hora: ['', Validators.required],
+      comensales: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]]
+    });
+  }
+
+  onSubmit(): void {
+    
+    if (this.form.valid) {
+      // Si todos los campos están llenos, cerrar el modal
+      const detalleModal = document.getElementById('detalleModal');
+      detalleModal?.classList.remove('show');
+      const backdrop = document.querySelector('.modal-backdrop');
+      backdrop?.parentNode?.removeChild(backdrop);
+      this.form?.reset();
+      this.showSuccess("Reservado con éxito");
+   
+    } else {
+    
+      this.showError('Por favor complete todos los campos correctamente');
+    }
   }
 
   ngAfterViewInit(): void {
     const cancelButton = document.querySelector('.btn-cancelar');
     const detalleModal = document.getElementById('detalleModal');
-  
+    
     cancelButton?.addEventListener('click', () => {
-      // Ocultar el modal usando la clase de Bootstrap
       detalleModal?.classList.remove('show');
       const backdrop = document.querySelector('.modal-backdrop');
       backdrop?.parentNode?.removeChild(backdrop);
       this.form?.reset();
     });
+
+   
   }
   toggleTheme() {
     console.log('Toggle theme function called');
@@ -43,13 +87,20 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     themeToggle.checked = newTheme === 'oscuro';
   }
 
-  getError(control: any): string {
-    if (control.errors?.required && control.touched)
-      return 'This field is required!';
-    else if (control.errors?.emailError && control.touched)
-      return 'Please enter a valid email address!';
-    else return '';
+  getError(control: AbstractControl): void {
+  console.log(control.errors?.['email'])
+
+  if (!control) {
+    return;
   }
+  
+  if (control.errors?.['email'] && control.touched){
+    this.showError('Coloca un correo electronico válido')
+    control.markAsUntouched();
+  }
+  return;
+  
+}
 
   customEmailValidator(control: AbstractControl) {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/;
@@ -58,7 +109,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       return {
         emailError: true
       };
-    else return null;
+    else return false;
   }
 }
 
