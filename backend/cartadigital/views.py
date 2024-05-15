@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
 from rest_framework import generics
-from cartadigital.models import Categoria, Producto, Pedido
+from cartadigital.models import Categoria, Producto, Pedido, Reserva
 from cartadigital.serializers import *
 from authentication.models import CustomUser
 from authentication.serializers import UserSerializer
@@ -112,3 +112,7 @@ class Producto_Categoria_Pastas(generics.ListCreateAPIView):
 class Producto_Categoria_Ensaladas(generics.ListCreateAPIView):
     queryset = Producto.objects.filter(categoria = 7 )
     serializer_class = Producto_Categoria
+
+class Reservas(generics.ListCreateAPIView):
+    queryset = Reserva.objects.all()
+    serializer_class = ReservasResto
