@@ -67,13 +67,14 @@
                         <div
                           class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                         >
-                          <button
-                            type="submit"
-                            class="btn btn-primary btn-block align-self-start btn-agregar-carrito"
-                            (click)="addToCart(product)"
-                          >
-                            Agregar al Carrito
-                          </button>
+                        <button
+                        type="submit"
+                        class="btn btn-primary btn-block align-self-start btn-agregar-carrito"
+                        [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                        (click)="addToCart(product)"
+                      >
+                      {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                      </button>
                           <button
                             type="button"
                             class="btn btn-link btn-sm align-self-end"
@@ -207,12 +208,13 @@
                             <div
                               class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
-                              <button
+ <button
                                 type="submit"
                                 class="btn btn-primary btn-block btn-agregar-carrito"
+                                [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                                 (click)="addToCart(product)"
                               >
-                                Agregar al Carrito
+                              {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
                               </button>
                               <button
                                 type="button"
@@ -359,10 +361,16 @@
                               <button
                                 type="submit"
                                 class="btn btn-primary btn-block btn-agregar-carrito"
+                                [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                                 (click)="addToCart(product)"
                               >
-                                Agregar al Carrito
+                                {{
+                                  product.agregadoAlCarrito
+                                    ? "En Carrito"
+                                    : "Agregar al Carrito"
+                                }}
                               </button>
+
                               <button
                                 type="button"
                                 class="btn btn-link btn-sm align-self-end"
@@ -509,9 +517,14 @@
                             <button
                               type="submit"
                               class="btn btn-primary btn-block btn-agregar-carrito"
+                              [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
                               (click)="addToCart(product)"
                             >
-                              Agregar al Carrito
+                              {{
+                                product.agregadoAlCarrito
+                                  ? "En Carrito"
+                                  : "Agregar al Carrito"
+                              }}
                             </button>
                             <button
                               type="button"
@@ -649,13 +662,14 @@
                             <div
                               class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
-                              <button
-                                type="submit"
-                                class="btn btn-primary btn-block btn-agregar-carrito"
-                                (click)="addToCart(product)"
-                              >
-                                Agregar al Carrito
-                              </button>
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
                               <button
                                 type="button"
                                 class="btn btn-link btn-sm align-self-end"
@@ -796,13 +810,14 @@
                             <div
                               class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
-                              <button
-                                type="submit"
-                                class="btn btn-primary btn-block btn-agregar-carrito"
-                                (click)="addToCart(product)"
-                              >
-                                Agregar al Carrito
-                              </button>
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
                               <button
                                 type="button"
                                 class="btn btn-link btn-sm align-self-end"
@@ -943,13 +958,14 @@
                             <div
                               class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
                             >
-                              <button
-                                type="submit"
-                                class="btn btn-primary btn-block btn-agregar-carrito"
-                                (click)="addToCart(product)"
-                              >
-                                Agregar al Carrito
-                              </button>
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
                               <button
                                 type="button"
                                 class="btn btn-link btn-sm align-self-end"
@@ -1168,8 +1184,7 @@
     </div>
   </div>
 
-  <!-- BOTON CARRITO -->
-  <button
+  <!-- <button
     class="btn btn-warning rounded px-4 btn-xl ms-3 btn-carrito border border-3 border-secondary"
     type="button"
   >
@@ -1188,5 +1203,5 @@
     >
       1
     </span>
-  </button>
+  </button> -->
 </main>
