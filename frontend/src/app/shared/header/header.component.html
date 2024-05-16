@@ -29,7 +29,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" >
             <a class="nav-link" routerLink="/carta">CARTA</a>
           </li>
           <li class="nav-item">
@@ -42,10 +42,13 @@
             <a class="nav-link" routerLink="/premios">PREMIOS</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" routerLink="/shows">SHOWS</a>
+          </li>
+          <li class="nav-item" *ngIf="!isLoggedIn">
             <a class="nav-link" routerLink="/login">PERFIL</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/shows">SHOWS</a>
+          <li class="nav-item" *ngIf="isLoggedIn">
+            <a class="nav-link" (click)="logOut()">CERRAR SESION</a>
           </li>
         </ul>
         <div class="botones-accion">
