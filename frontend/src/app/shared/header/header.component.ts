@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { FormBuilder,AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { ReservasService } from 'src/app/services/reservas.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
