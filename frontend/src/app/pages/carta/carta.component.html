@@ -1,243 +1,448 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+  crossorigin="anonymous"
+/>
 
 <main class="main-menu">
   <div class="left-container">
-    <div class="filter-container">
-
-      <div class="search-container">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-          <button class="btn btn-outline-danger" type="submit">
-            Buscar
-          </button>
-        </form>
-      </div>
-      <div class="filter">
-        <select name="" id="">
-          <option value="">Filtrar</option>
-        </select>
-      </div>
-      <div class="order-container">
-        <h3>Ordenar por:</h3>
-        <select name="" id="">
-          <option value="">Mayor precio</option>
-          <option value="">Menor precio</option>
-        </select>
-      </div>
-    </div>
-    <div class="offcanvas-filters">
-      <button class="delivery-button" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-        Filtrar
-      </button>
-
-      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-        aria-labelledby="offcanvasWithBothOptionsLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-            Filtra tus productos favoritos
-          </h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="offcanvas-filter">
-            <select name="" id="">
-              <option value="">Filtrar</option>
-            </select>
-          </div>
-          <div class="offcanvas-order">
-            <h3>Ordenar por:</h3>
-            <select name="" id="">
-              <option value="">Mayor precio</option>
-              <option value="">Menor precio</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-    </div>
     <!-- PRODUCTOS -->
     <div class="accordion">
       <div class="product-container">
         <div class="accordion accordion-flush" id="accordionFlushExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                <img src="/assets/img/promociones.png" width="60" height="60">
-                Promociones
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                <img
+                  src="/assets/img/promos.png"
+                  width="70"
+                  height="70"
+                  alt="promociones"
+                  class="img-accordion"
+                />
+                Promociones !!
               </button>
-
             </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-              data-bs-parent="#accordionFlushExample">
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
               <div class="accordion-body">
-                <div *ngFor="let product of products" class="product-card mb-3">
-                  <div class="row g-0">
-                    <div class="col-md-3">
-                      <img [src]="product.imagen" class="img-card rounded-start" alt="burguer" />
-                    </div>
-                    <div class="col-md-7">
+                <!--aqui inicia -->
+                <div class="body-container">
+                  <div *ngFor="let product of productsPromociones" class="">
+                    <div class="card">
+                      <img
+                        [src]="product.imagen"
+                        class="card-img-top"
+                        alt="Mega Cuarto Deluxe"
+                        width="180"
+                        height="180"
+                      />
                       <div class="card-body">
-                        <h5 class="card-title">{{product.nombre}}</h5>
-                        <p class="card-text">
-                          {{product.descripcion}}
-                        </p>
+                        <div class="card-contenid">
+                          <h5 class="card-title text-center fw-bold text-dark">
+                            {{ product.nombre }}
+                          </h5>
+                          <p
+                            class="card-text text-center text-dark description"
+                          >
+                            {{ product.descripcion }}
+                          </p>
+                          <p class="card-text text-center text-precio">
+                            $ {{ product.precio }}
+                          </p>
+                        </div>
+
+                        <div
+                          class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                        >
+                        <button
+                        type="submit"
+                        class="btn btn-primary btn-block align-self-start btn-agregar-carrito"
+                        [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                        (click)="addToCart(product)"
+                      >
+                      {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                      </button>
+                          <button
+                            type="button"
+                            class="btn btn-link btn-sm align-self-end"
+                            data-bs-toggle="modal"
+                            [attr.data-bs-target]="
+                              '#detalleModal' + product.id
+                            "
+                            data-precio="$5.99"
+                          >
+                            Detalles
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                    <div class="product-buttons col-md-2">
-                      <button type="submit" class="btn btn-primary btn-block" (click)="addToCart(product)">
-                        Agregar al Carrito</button>
 
+                      <!-- Modal 3 -->
+                      <div
+                        class="modal fade"
+                        [attr.id]="'detalleModal' + product.id"
+                        tabindex="-1"
+                        aria-labelledby="detalleModalLabel9"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="detalleModalLabel9">
+                                {{ product.nombre }}
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body text-center">
+                              <div class="modal-image-container">
+                                <img
+                                  [src]="product.imagen"
+                                  class="img-fluid"
+                                  alt="Detalle de la tarjeta"
+                                  width="400"
+                                  height="400"
+                                />
+                              </div>
+                              <p class="text-dark modal-description">{{ product.descripcion }}</p>
 
-                      <button type="submit" class="btn btn-danger btn-block">
-                        Mostrar Detalles</button>
+                              <p class="text-precio" id="modalPrecio">
+                                 $ {{ product.precio }}
+                              </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-dark"
+                                data-bs-dismiss="modal"
+                              >
+                                Cerrar
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <!-- <div class="separator"></div> -->
-
+                <!-- aqui termina -->
               </div>
             </div>
           </div>
         </div>
+        <!-- Entradas-->
         <div class="accordion">
           <div class="product-container">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    <img src="/assets/img/entrada2.png" width="60" height="60">
+                <div class="accordion-header" id="flush-headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    <img
+                      src="/assets/img/entrada1.png"
+                      width="70"
+                      height="70"
+                      alt="Entrada"
+                      class="img-accordion"
+                    />
                     Entradas
                   </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                  data-bs-parent="#accordionFlushExample">
+                </div>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample"
+                >
                   <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
+                    <!--aqui inicia -->
+                    <div class="body-container">
+                      <div *ngFor="let product of productsEntradas" class="">
+                        <div class="card">
+                          <img
+                            [src]="product.imagen"
+                            class="card-img-top"
+                            alt="Mega Cuarto Deluxe"
+                            width="180"
+                            height="180"
+                          />
                           <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
+                            <div class="card-contenid">
+                              <h5
+                                class="card-title text-center fw-bold text-dark"
+                              >
+                                {{ product.nombre }}
+                              </h5>
+                              <p
+                                class="card-text text-center text-dark description"
+                              >
+                                {{ product.descripcion }}
+                              </p>
+                              <p class="card-text text-center text-precio">
+                                $ {{ product.precio }}
+                              </p>
+                            </div>
+
+                            <div
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                            >
+ <button
+                                type="submit"
+                                class="btn btn-primary btn-block btn-agregar-carrito"
+                                [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                                (click)="addToCart(product)"
+                              >
+                              {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-link btn-sm align-self-end"
+                                data-bs-toggle="modal"
+                                [attr.data-bs-target]="
+                                  '#detalleModal' + product.id
+                                "
+                                data-precio="$5.99"
+                              >
+                                Detalles
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
 
+                          <!-- Modal 3 -->
+                          <div
+                            class="modal fade"
+                            [attr.id]="'detalleModal' + product.id"
+                            tabindex="-1"
+                            aria-labelledby="detalleModalLabelE"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5
+                                    class="modal-title"
+                                    id="detalleModalLabelE"
+                                  >
+                                    {{ product.nombre }}
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                  <div class="modal-image-container">
+                                    <img
+                                      [src]="product.imagen"
+                                      class="img-fluid"
+                                      alt="Detalle de la tarjeta"
+                                      width="400"
+                                      height="400"
+                                    />
+                                  </div>
+                                  <p class="text-dark">
+                                    {{ product.descripcion }}
+                                  </p>
 
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
+                                  <p class="text-precio" id="modalPrecio">
+                                    Precio: $ {{ product.precio }}
+                                  </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-dark"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Cerrar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
-
-
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
-                        </div>
-                      </div>
-                    </div>
+                    <!-- aqui termina -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Bebidas -->
         <div class="accordion">
           <div class="product-container">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    <img src="/assets/img/bebida.png" width="60" height="60">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    <img
+                      src="/assets/img/bebida.png"
+                      width="70"
+                      height="70"
+                      alt="bebidas"
+                      class="img-accordion"
+                    />
 
                     Bebidas
                   </button>
                 </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                  data-bs-parent="#accordionFlushExample">
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample"
+                >
                   <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
+                    <!--aqui inicia -->
+                    <div class="body-container">
+                      <div *ngFor="let product of productsBebidas" class="">
+                        <div class="card">
+                          <img
+                            [src]="product.imagen"
+                            class="card-img-top"
+                            alt="Mega Cuarto Deluxe"
+                            width="180"
+                            height="180"
+                          />
                           <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
+                            <div class="card-contenid">
+                              <h5
+                                class="card-title text-center fw-bold text-dark"
+                              >
+                                {{ product.nombre }}
+                              </h5>
+                              <p
+                                class="card-text text-center text-dark description"
+                              >
+                                {{ product.descripcion }}
+                              </p>
+                              <p class="card-text text-center text-precio">
+                                $ {{ product.precio }}
+                              </p>
+                            </div>
+
+                            <div
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                            >
+                              <button
+                                type="submit"
+                                class="btn btn-primary btn-block btn-agregar-carrito"
+                                [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                                (click)="addToCart(product)"
+                              >
+                                {{
+                                  product.agregadoAlCarrito
+                                    ? "En Carrito"
+                                    : "Agregar al Carrito"
+                                }}
+                              </button>
+
+                              <button
+                                type="button"
+                                class="btn btn-link btn-sm align-self-end"
+                                data-bs-toggle="modal"
+                                [attr.data-bs-target]="
+                                  '#detalleModal' + product.id
+                                "
+                                data-precio="$5.99"
+                              >
+                                Detalles
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
 
+                          <!-- Modal 3 -->
+                          <div
+                            class="modal fade"
+                            [attr.id]="'detalleModal' + product.id"
+                            tabindex="-1"
+                            aria-labelledby="detalleModalLabelB"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5
+                                    class="modal-title"
+                                    id="detalleModalLabelB"
+                                  >
+                                    {{ product.nombre }}
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                  <div class="modal-image-container">
+                                    <img
+                                      [src]="product.imagen"
+                                      class="img-fluid"
+                                      alt="Detalle de la tarjeta"
+                                      width="400"
+                                      height="400"
+                                    />
+                                  </div>
+                                  <p class="text-dark">
+                                    {{ product.descripcion }}
+                                  </p>
 
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
+                                  <p class="text-precio" id="modalPrecio">
+                                    Precio: $ {{ product.precio }}
+                                  </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-dark"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Cerrar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
-                          </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
-
-
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
-                        </div>
-                      </div>
-                    </div>
+                    <!-- aqui termina -->
                   </div>
                 </div>
               </div>
@@ -245,116 +450,297 @@
           </div>
         </div>
       </div>
+
+      <!-- Principales -->
+
       <div class="accordion">
         <div class="product-container">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                  <img src="/assets/img/principall.png" width="60" height="60">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFour"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseFour"
+                >
+                  <img
+                    src="/assets/img/principall.png"
+                    width="70"
+                    height="70"
+                    alt="principales"
+                    class="img-accordion"
+                  />
                   Principales
                 </button>
               </h2>
-              <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-                data-bs-parent="#accordionFlushExample">
+              <div
+                id="flush-collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingFour"
+                data-bs-parent="#accordionFlushExample"
+              >
                 <div class="accordion-body">
-                  <div class="product-card mb-3">
-                    <div class="row g-0">
-                      <div class="col-md-3">
-                        <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                      </div>
-                      <div class="col-md-7">
+                  <!--aqui inicia -->
+                  <div class="body-container">
+                    <div *ngFor="let product of productsPrincipales" class="">
+                      <div class="card">
+                        <img
+                          [src]="product.imagen"
+                          class="card-img-top"
+                          alt="Mega Cuarto Deluxe"
+                          width="180"
+                          height="180"
+                        />
                         <div class="card-body">
-                          <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                          <p class="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content. This content
-                            is a little bit longer.
-                          </p>
+                          <div class="card-contenid">
+                            <h5
+                              class="card-title text-center fw-bold text-dark"
+                            >
+                              {{ product.nombre }}
+                            </h5>
+                            <p
+                              class="card-text text-center text-dark description"
+                            >
+                              {{ product.descripcion }}
+                            </p>
+                            <p class="card-text text-center text-precio">
+                              $ {{ product.precio }}
+                            </p>
+                          </div>
+
+                          <div
+                            class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                          >
+                            <button
+                              type="submit"
+                              class="btn btn-primary btn-block btn-agregar-carrito"
+                              [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                              (click)="addToCart(product)"
+                            >
+                              {{
+                                product.agregadoAlCarrito
+                                  ? "En Carrito"
+                                  : "Agregar al Carrito"
+                              }}
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-link btn-sm align-self-end"
+                              data-bs-toggle="modal"
+                              [attr.data-bs-target]="
+                                '#detalleModal' + product.id
+                              "
+                              data-precio="$5.99"
+                            >
+                              Detalles
+                            </button>
+                          </div>
                         </div>
-                      </div>
-                      <div class="product-buttons col-md-2">
-                        <button type="submit" class="btn btn-primary btn-block">
-                          Agregar al Carrito</button>
 
+                        <!-- Modal 3 -->
+                        <div
+                          class="modal fade"
+                          [attr.id]="'detalleModal' + product.id"
+                          tabindex="-1"
+                          aria-labelledby="detalleModalLabelP"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="detalleModalLabelP">
+                                  {{ product.nombre }}
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div class="modal-body text-center">
+                                <div class="modal-image-container">
+                                  <img
+                                    [src]="product.imagen"
+                                    class="img-fluid"
+                                    alt="Detalle de la tarjeta"
+                                    width="400"
+                                    height="400"
+                                  />
+                                </div>
+                                <p class="text-dark">
+                                  {{ product.descripcion }}
+                                </p>
 
-                        <button type="submit" class="btn btn-danger btn-block">
-                          Mostrar Detalles</button>
+                                <p class="text-precio" id="modalPrecio">
+                                  Precio: $ {{ product.precio }}
+                                </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-dark"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Cerrar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="separator"></div> -->
-                  <div class="product-card mb-3">
-                    <div class="row g-0">
-                      <div class="col-md-3">
-                        <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                      </div>
-                      <div class="col-md-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                          <p class="card-text">
-                            This is a wider card with supporting text below as a
-                            natural lead-in to additional content. This content
-                            is a little bit longer.
-                          </p>
-                        </div>
-                      </div>
-                      <div class="product-buttons col-md-2">
-                        <button type="submit" class="btn btn-primary btn-block">
-                          Agregar al Carrito</button>
-
-
-                        <button type="submit" class="btn btn-danger btn-block">
-                          Mostrar Detalles</button>
-                      </div>
-                    </div>
-                  </div>
+                  <!-- aqui termina -->
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div class="accordion">
           <div class="product-container">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingFive">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                    <img src="/assets/img/postres.png" width="60" height="60">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseFive"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseFive"
+                  >
+                    <img
+                      src="/assets/img/postres.png"
+                      width="70"
+                      height="70"
+                      alt="postres"
+                      class="img-accordion"
+                    />
                     Postres
                   </button>
                 </h2>
-                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
-                  data-bs-parent="#accordionFlushExample">
+                <div
+                  id="flush-collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingFive"
+                  data-bs-parent="#accordionFlushExample"
+                >
                   <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
+                    <!--aqui inicia -->
+                    <div class="body-container">
+                      <div *ngFor="let product of productsPostres" class="">
+                        <div class="card">
+                          <img
+                            [src]="product.imagen"
+                            class="card-img-top"
+                            alt="Mega Cuarto Deluxe"
+                            width="180"
+                            height="180"
+                          />
                           <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
+                            <div class="card-contenid">
+                              <h5
+                                class="card-title text-center fw-bold text-dark"
+                              >
+                                {{ product.nombre }}
+                              </h5>
+                              <p
+                                class="card-text text-center text-dark description"
+                              >
+                                {{ product.descripcion }}
+                              </p>
+                              <p class="card-text text-center text-precio">
+                                $ {{ product.precio }}
+                              </p>
+                            </div>
+
+                            <div
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                            >
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
+                              <button
+                                type="button"
+                                class="btn btn-link btn-sm align-self-end"
+                                data-bs-toggle="modal"
+                                [attr.data-bs-target]="
+                                  '#detalleModal' + product.id
+                                "
+                                data-precio="$5.99"
+                              >
+                                Detalles
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
+                          <!-- Modal 3 -->
+                          <div
+                            class="modal fade"
+                            [attr.id]="'detalleModal' + product.id"
+                            tabindex="-1"
+                            aria-labelledby="detalleModalLabelPo"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5
+                                    class="modal-title"
+                                    id="detalleModalLabelPo"
+                                  >
+                                    {{ product.nombre }}
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                  <div class="modal-image-container">
+                                    <img
+                                      [src]="product.imagen"
+                                      class="img-fluid"
+                                      alt="Detalle de la tarjeta"
+                                      width="400"
+                                      height="400"
+                                    />
+                                  </div>
+                                  <p class="text-dark">
+                                    {{ product.descripcion }}
+                                  </p>
 
-
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
+                                  <p class="text-precio" id="modalPrecio">
+                                    Precio: $ {{ product.precio }}
+                                  </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-dark"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Cerrar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <!-- <div class="separator"></div> -->
+                    <!-- aqui termina -->
                   </div>
                 </div>
               </div>
@@ -366,42 +752,144 @@
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingSix">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                    <img src="/assets/img/pastas.png" width="60" height="60">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSix"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseSix"
+                  >
+                    <img
+                      src="/assets/img/pastas.png"
+                      width="70"
+                      height="70"
+                      alt="pastas"
+                      class="img-accordion"
+                    />
+
                     Pastas
                   </button>
                 </h2>
 
-                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
-                  data-bs-parent="#accordionFlushExample">
+                <div
+                  id="flush-collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingSix"
+                  data-bs-parent="#accordionFlushExample"
+                >
                   <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
+                    <!--aqui inicia -->
+                    <div class="body-container">
+                      <div *ngFor="let product of productsPastas" class="">
+                        <div class="card">
+                          <img
+                            [src]="product.imagen"
+                            class="card-img-top"
+                            alt="Mega Cuarto Deluxe"
+                            width="180"
+                            height="180"
+                          />
                           <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
+                            <div class="card-contenid">
+                              <h5
+                                class="card-title text-center fw-bold text-dark"
+                              >
+                                {{ product.nombre }}
+                              </h5>
+                              <p
+                                class="card-text text-center text-dark description"
+                              >
+                                {{ product.descripcion }}
+                              </p>
+                              <p class="card-text text-center text-precio ">
+                                $ {{ product.precio }}
+                              </p>
+                            </div>
+
+                            <div
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                            >
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
+                              <button
+                                type="button"
+                                class="btn btn-link btn-sm align-self-end"
+                                data-bs-toggle="modal"
+                                [attr.data-bs-target]="
+                                  '#detalleModal' + product.id
+                                "
+                                data-precio="$5.99"
+                              >
+                                Detalles
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
 
+                          <!-- Modal 3 -->
+                          <div
+                            class="modal fade"
+                            [attr.id]="'detalleModal' + product.id"
+                            tabindex="-1"
+                            aria-labelledby="detalleModalLabelPa"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5
+                                    class="modal-title"
+                                    id="detalleModalLabelPa"
+                                  >
+                                    {{ product.nombre }}
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                  <div class="modal-image-container">
+                                    <img
+                                      [src]="product.imagen"
+                                      class="img-fluid"
+                                      alt="Detalle de la tarjeta"
+                                      width="400"
+                                      height="400"
+                                    />
+                                  </div>
+                                  <p class="text-dark">
+                                    {{ product.descripcion }}
+                                  </p>
 
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
+                                  <p class="text-precio" id="modalPrecio">
+                                    Precio: $ {{ product.precio }}
+                                  </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-dark"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Cerrar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <!-- <div class="separator"></div> -->
+                    <!-- aqui termina -->
                   </div>
                 </div>
               </div>
@@ -413,42 +901,142 @@
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingSeven">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                    <img src="/assets/img/ensaladas.png" width="60" height="60">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseSeven"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseSeven"
+                  >
+                    <img
+                      src="/assets/img/ensaladas.png"
+                      width="70"
+                      height="70"
+                      alt="ensaladas"
+                      class="img-accordion"
+                    />
                     Ensaladas
                   </button>
-
                 </h2>
 
-                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
-                  data-bs-parent="#accordionFlushExample">
+                <div
+                  id="flush-collapseSeven"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingSeven"
+                  data-bs-parent="#accordionFlushExample"
+                >
                   <div class="accordion-body">
-                    <div class="product-card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-3">
-                          <img src="./assets/img/1398768.png" class="img-card rounded-start" alt="burguer" />
-                        </div>
-                        <div class="col-md-7">
+                    <!--aqui inicia -->
+                    <div class="body-container">
+                      <div *ngFor="let product of productsEnsaladas" class="">
+                        <div class="card">
+                          <img
+                            [src]="product.imagen"
+                            class="card-img-top"
+                            alt="Mega Cuarto Deluxe"
+                            width="180"
+                            height="180"
+                          />
                           <div class="card-body">
-                            <h5 class="card-title">Mega Cuarto Deluxe</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as a
-                              natural lead-in to additional content. This content
-                              is a little bit longer.
-                            </p>
+                            <div class="card-contenid">
+                              <h5
+                                class="card-title text-center fw-bold text-dark"
+                              >
+                                {{ product.nombre }}
+                              </h5>
+                              <p
+                                class="card-text text-center text-dark description"
+                              >
+                                {{ product.descripcion }}
+                              </p>
+                              <p class="card-text text-center text-precio">
+                                $ {{ product.precio }}
+                              </p>
+                            </div>
+
+                            <div
+                              class="d-flex flex-column-reverse justify-content-between align-items-center card-buttons"
+                            >
+                            <button
+                            type="submit"
+                            class="btn btn-primary btn-block btn-agregar-carrito"
+                            [style.backgroundColor]="product.agregadoAlCarrito ? 'green' : 'var(--color9)'"
+                            (click)="addToCart(product)"
+                          >
+                          {{ product.agregadoAlCarrito ? 'En Carrito' : 'Agregar al Carrito' }}
+                          </button>
+                              <button
+                                type="button"
+                                class="btn btn-link btn-sm align-self-end"
+                                data-bs-toggle="modal"
+                                [attr.data-bs-target]="
+                                  '#detalleModal' + product.id
+                                "
+                                data-precio="$5.99"
+                              >
+                                Detalles
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                        <div class="product-buttons col-md-2">
-                          <button type="submit" class="btn btn-primary btn-block">
-                            Agregar al Carrito</button>
+                          <!-- Modal 3 -->
+                          <div
+                            class="modal fade"
+                            [attr.id]="'detalleModal' + product.id"
+                            tabindex="-1"
+                            aria-labelledby="detalleModalLabelEn"
+                            aria-hidden="true"
+                          >
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5
+                                    class="modal-title"
+                                    id="detalleModalLabelEn"
+                                  >
+                                    {{ product.nombre }}
+                                  </h5>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                  <div class="modal-image-container">
+                                    <img
+                                      [src]="product.imagen"
+                                      class="img-fluid"
+                                      alt="Detalle de la tarjeta"
+                                      width="400"
+                                      height="400"
+                                    />
+                                  </div>
+                                  <p class="text-dark">
+                                    {{ product.descripcion }}
+                                  </p>
 
-
-                          <button type="submit" class="btn btn-danger btn-block">
-                            Mostrar Detalles</button>
+                                  <p class="text-precio" id="modalPrecio">
+                                    Precio: $ {{ product.precio }}
+                                  </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-dark"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Cerrar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <!-- aqui termina -->
                   </div>
                 </div>
               </div>
@@ -460,15 +1048,32 @@
   </div>
 
   <!-- CARRITO -->
-  <div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="modal-1" aria-hidden="true">
+  <div
+    class="modal fade"
+    id="modal-1"
+    tabindex="-1"
+    aria-labelledby="modal-1"
+    aria-hidden="true"
+  >
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title d-flex align-items-center" id="exampleModalLabel">
+          <h5
+            class="modal-title d-flex align-items-center"
+            id="exampleModalLabel"
+          >
             <span class="text-info me-4">Tu Carrito</span>
-            <span class="badge bg-primary rounded-pill" id="largoCarrito"></span>
+            <span
+              class="badge bg-primary rounded-pill"
+              id="largoCarrito"
+            ></span>
           </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
         <div class="modal-body">
           <div class="table-responsive">
@@ -492,29 +1097,53 @@
                   </th>
                 </tr>
               </thead>
-              <tbody id="modal-tabla" *ngFor="let cartProduct of productsOnCart; let i = index">
+              <tbody
+                id="modal-tabla"
+                *ngFor="let cartProduct of productsOnCart; let i = index"
+              >
                 <tr>
                   <th class="border-0" scope="row">
                     <div class="p-6">
-                      <img class="img-fluid rounded shadow-sm me-1" [src]="cartProduct.imagen" alt="producto"
-                        width="70" />
+                      <img
+                        class="img-fluid rounded shadow-sm me-1"
+                        [src]="cartProduct.imagen"
+                        alt="producto"
+                        width="70"
+                      />
                       <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="title-cart">{{cartProduct.nombre}}</h5>
-                        <!-- <span class="text-muted font-weight-normal font-italic d-block">Categoria: Promociones</span> -->
+                        <h5 class="title-cart">{{ cartProduct.nombre }}</h5>
                       </div>
                     </div>
                   </th>
                   <td class="border-0 align-middle">
-                    <strong>${{cartProduct.precio}}</strong>
+                    <strong>${{ cartProduct.precio }}</strong>
                   </td>
                   <td class="border-0 align-middle">
-                    <input [(ngModel)]="cartProduct.cantidad" [ngModelOptions]="{standalone: true}" (change)="changeSubtotal(cartProduct, i)" min="1" type="number" value="1" name="" class="form-control w-30"/>
+                    <input
+                      [(ngModel)]="cartProduct.cantidad"
+                      [ngModelOptions]="{ standalone: true }"
+                      (change)="changeSubtotal(cartProduct, i)"
+                      min="1"
+                      type="number"
+                      value="1"
+                      name=""
+                      class="form-control w-30"
+                    />
                   </td>
                   <td class="border-0 align-middle">
-                    <strong>${{cartProduct.precio *  cartProduct.cantidad| number : '1.2-2'}}</strong>
+                    <strong
+                      >${{
+                        cartProduct.precio * cartProduct.cantidad
+                          | number : "1.2-2"
+                      }}</strong
+                    >
                   </td>
                   <td class="border-0 align-middle">
-                    <button (click)="removeFromCart(cartProduct)" class="btn btn-danger borrar-carrito" id="${_id}">
+                    <button
+                      (click)="removeFromCart(cartProduct)"
+                      class="btn btn-link borrar-carrito"
+                      id="${_id}"
+                    >
                       X
                     </button>
                   </td>
@@ -524,17 +1153,30 @@
                 <tr>
                   <td colspan="3"></td>
                   <td class="table-active fw-bold text-uppercase">Total</td>
-                  <td id="total-field">{{total | currency}}</td>
+                  <td id="total-field">{{ total | currency }}</td>
                 </tr>
               </tfoot>
             </table>
           </div>
         </div>
         <div class="modal-footer">
-          <button (click)="clearCart()" id="borrar-todo" type="button" class="btn btn-danger" data-bs-dismiss="modal" id="borrar-todo">
+          <button
+            (click)="clearCart()"
+            id="borrar-todo"
+            type="button"
+            class="btn btn-dark"
+            data-bs-dismiss="modal"
+            id="borrar-todo"
+          >
             Borrar Todo
           </button>
-          <button (click)="checkout()" type="button" class="btn btn-success" data-bs-dismiss="modal" id="btn-pago">
+          <button
+            (click)="checkout()"
+            type="button"
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+            id="btn-pago"
+          >
             Pagar
           </button>
         </div>
@@ -542,12 +1184,24 @@
     </div>
   </div>
 
-  <!-- BOTON CARRITO -->
-  <button class="btn btn-warning rounded px-4 btn-xl ms-3 btn-carrito border border-3 border-secondary" type="button">
-    <img src="/assets/img/carrito.png" height="40" width="50" data-bs-toggle="modal" data-bs-target="#modal-1">
+  <!-- <button
+    class="btn btn-warning rounded px-4 btn-xl ms-3 btn-carrito border border-3 border-secondary"
+    type="button"
+  >
+    <img
+      src="/assets/img/carrito.png"
+      height="40"
+      width="50"
+      data-bs-toggle="modal"
+      data-bs-target="#modal-1"
+      alt="carrito"
+    />
     <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" id="largoCarrito">
+    <span
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
+      id="largoCarrito"
+    >
       1
     </span>
-  </button>
+  </button> -->
 </main>

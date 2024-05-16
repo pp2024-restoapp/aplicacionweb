@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +21,11 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
-import { AppMovilComponent } from './app-movil/app-movil.component';
+import { AppMovilComponent } from './pages/app-movil/app-movil.component';
+import { ShowsComponent } from './pages/shows/shows.component';
+import { NuestraAppComponent } from './pages/nuestra-app/nuestra-app.component';
+import { PremiosComponent } from './pages/premios/premios.component';
+
 
 @NgModule({
   declarations: [
@@ -31,9 +39,13 @@ import { AppMovilComponent } from './app-movil/app-movil.component';
     LoginComponent,
     SignupComponent,
     ProductosComponent,
-    PagoComponent,
+    PagoComponent,  
+    PremiosComponent,
     PedidosComponent,
-    AppMovilComponent
+    AppMovilComponent,
+    ShowsComponent,
+    NuestraAppComponent,
+    PremiosComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +53,10 @@ import { AppMovilComponent } from './app-movil/app-movil.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,190 @@
+<div class="premios-container">
+  <div class="premios-contenid">
+    <div>
+      <h1>Canje de premios</h1>
+      <p>
+        Ahora, con cada compra, sumá beneficios exclusivos como nunca imaginaste
+        💰💥. Podés canjear tus puntos por cualquiera de nuestros productos.
+      </p>
+
+      <p>Cada $1.000 consumidos, ganas 100 puntos.</p>
+      <h5>A continuación les mostramos nuestra tienda de canje:</h5>
+    </div>
+
+    <div class="cards-container">
+      <div class="cards-contenid">
+        <div class="cards-img">
+          <img src="./../../../assets/img/20off.png" />
+        </div>
+        <div class="cards-text">
+          <b>6.000 PUNTOS</b>
+          <p>20% off en todos los productos.</p>
+        </div>
+      </div>
+
+      <div class="cards-contenid">
+        <div class="cards-img">
+          <img src="./../../../assets/img/40off.png" />
+        </div>
+        <div class="cards-text">
+          <b>10.000 PUNTOS</b>
+          <p>40% off en todos los productos.</p>
+        </div>
+      </div>
+
+      <div class="cards-contenid">
+        <div class="cards-img">
+          <img src="./../../../assets/img/ravioles.png" />
+        </div>
+        <div class="cards-text">
+          <b>15.000 PUNTOS</b>
+          <p>Válido para cualquier plato de pastas</p>
+        </div>
+      </div>
+
+      <div class="cards-contenid">
+        <div class="cards-img">
+          <img src="./../../../assets/img/chorrillana.jpg" />
+        </div>
+        <div class="cards-text">
+          <b>22.000 PUNTOS</b>
+          <p>Válido para cualquier plato principal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Carrito -->
+<div
+  class="modal fade"
+  id="modal-1"
+  tabindex="-1"
+  aria-labelledby="modal-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title d-flex align-items-center"
+          id="exampleModalLabel"
+        >
+          <span class="text-info me-4">Tu Carrito</span>
+          <span class="badge bg-primary rounded-pill" id="largoCarrito"></span>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="border-6 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Producto</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Precio Unidad</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Cantidad</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Subtotal</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Quitar</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="modal-tabla"
+              *ngFor="let cartProduct of productsOnCart; let i = index"
+            >
+              <tr>
+                <th class="border-0" scope="row">
+                  <div class="p-6">
+                    <img
+                      class="img-fluid rounded shadow-sm me-1"
+                      [src]="cartProduct.imagen"
+                      alt="producto"
+                      width="70"
+                    />
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="title-cart">{{ cartProduct.nombre }}</h5>
+                    </div>
+                  </div>
+                </th>
+                <td class="border-0 align-middle">
+                  <strong>${{ cartProduct.precio }}</strong>
+                </td>
+                <td class="border-0 align-middle">
+                  <input
+                    [(ngModel)]="cartProduct.cantidad"
+                    [ngModelOptions]="{ standalone: true }"
+                    (change)="changeSubtotal(cartProduct, i)"
+                    min="1"
+                    type="number"
+                    value="1"
+                    name=""
+                    class="form-control w-30"
+                  />
+                </td>
+                <td class="border-0 align-middle">
+                  <strong
+                    >${{
+                      cartProduct.precio * cartProduct.cantidad
+                        | number : "1.2-2"
+                    }}</strong
+                  >
+                </td>
+                <td class="border-0 align-middle">
+                  <button
+                    (click)="removeFromCart(cartProduct)"
+                    class="btn btn-danger borrar-carrito"
+                    id="${_id}"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot id="modal-foot">
+              <tr>
+                <td colspan="3"></td>
+                <td class="table-active fw-bold text-uppercase">Total</td>
+                <td id="total-field">{{ total | currency }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="clearCart()"
+          id="borrar-todo"
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          id="borrar-todo"
+        >
+          Borrar Todo
+        </button>
+        <button
+          (click)="checkout()"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          id="btn-pago"
+        >
+          Pagar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

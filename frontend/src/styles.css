@@ -1,58 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'PoetsenOne-Regular';
+  src: url('./assets/fonts/PoetsenOne-Regular.ttf');
+}
+
 :root {
-    --color1: #e38b29;
-    --color2: #f1a661;
-    --color3: #ffd8a9;
-    --color4: #fdeedc;
-    --color5: #0c0f0e;
-    --color7: #a1a0a4;
-    --color7: #f1b272;
-    --color8:#deac66;
-    --bg-opacity: rgba(255, 255, 0, 0.341);
-  }
+  --color1: #e38b29;
+  --color2: #f1a661;
+  --color3: #ffd8a9;
+  --color4: #fdeedc;
+  --color5: #0c0f0e;
+  --color6: #a1a0a4;
+  --color7: #f1b272;
+  --color8: #deac66;
+  --color9:#F26333;
+  --btn-outline-buscar-background-hover: #000000;
+  --accordion-bg-color: #f1e6ce;
+  --accordion-button-text-color: #fff;
+  --bg-opacity: rgba(255, 255, 0, 0.341);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background-color: var(--color4) !important;
+
+  color: var(--text-color)!important;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* LINKS */
+:root[data-theme="oscuro"] {
+  --color1: #e38b29;
+  --color2: #191b22;
+  --color3: #ffd8a9;
+  --color4: #222222;
+  --color5: #0c0f0e;
+  --color6: #a1a0a4;
+  --color7: #f1b272;
+  --color8: #deac66;
+  --text-color: #fff;
+  --bg-opacity: rgba(255, 255, 0, 0.341);
+  --accordion-header-bg: #222;
+  --accordion-text-color: #fff;
+  --accordion-bg-color: #222;
+  --accordion-button-text-color: #fff;
+  --btn-outline-buscar-background-hover:#fff;
   
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
-  }
+}
 
-  body {
-    background-color: var(--color4) !important;
-  }
+.accordion-header {
+  background-color: var(--accordion-header-bg);
+}
 
-  /* LINKS */
+.accordion-body {
+  color: var(--accordion-text-color);
+  background-color: var(--accordion-bg-color);
+}
 
 a {
-  text-decoration: none !important;
-  color: #000000 !important;
+text-decoration: none !important;
+color: var(--accordion-text-color);
 }
 
 a:hover {
-  text-decoration: none;
-  color: #000000;
+text-decoration: none;
+color: var(--accordion-text-color);
 }
 
 a:visited {
-  text-decoration: none;
-  color: #000000;
+text-decoration: none;
+color: var(--accordion-text-color);
 }
 
 .ng-valid:not(form).ng-touched {
-  border-left: 5px solid #42A948;
+  border-left: 5px solid #42a948;
 }
 
 .ng-invalid:not(form).ng-touched {
-  border-left: 5px solid #A94442;
+  border-left: 5px solid #a94442;
 }
-
-  
-  
-  
-  
- 
-  
-  
-  
-  

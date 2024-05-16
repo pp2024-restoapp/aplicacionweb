@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import { LoginRequest } from '../../services/auth/authRequest';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,17 @@ export class LoginComponent {
   loginForm = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
+    
   });
+
+  passwordVisible: boolean = false;
+  passwordFieldType: string = 'password';
   
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastr: ToastrService
   ) {}
 
   get email() {
@@ -28,15 +34,30 @@ export class LoginComponent {
     return this.loginForm.controls.password;
   }
 
+  showSuccess(message = "") {
+    this.toastr.success(message, "",{
+      progressBar: true,
+      timeOut: 3000
+    })
+  }
+
+  showError(message = "") {
+    this.toastr.error(message, "",{
+      progressBar: true,
+      timeOut: 3000
+    })
+  }
+
   login() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value as LoginRequest).subscribe({
         next: (data) => {
           localStorage.setItem('token', data.access);
           localStorage.setItem('is_staff', data.user.is_staff);
+          this.showSuccess("¡Inicio de sesión exitoso!")
         },
         error: (errorData) => {
-          alert('Email o Password erroneo.');
+          this.showError("Email o Password erroneo")
           console.error(errorData);
         },
         complete: () => {
@@ -45,7 +66,13 @@ export class LoginComponent {
       });
     } else {
       this.loginForm.markAllAsTouched();
-      alert('No se permiten campos vacios.');
+      this.showError("No se permiten campos vacios")
     }
   }
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+    this.passwordFieldType = this.passwordVisible ? 'text' : 'password';
+  }
+
 }

@@ -24,7 +24,7 @@
 <section class="history-section">
   <img src="./assets/img/img-historia.jpg" alt="" />
   <div class="text-container">
-    <h3>Nuestra historia</h3>
+    <h2 class="title-about">Nuestra historia</h2>
     <p class="history-paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus orci,
       auctor pretium eros nec, tincidunt tincidunt sapien. Duis tincidunt vitae
@@ -42,7 +42,7 @@
   </div>
 </section>
 <section class="team-section">
-  <p>Nuestro Equipo</p>
+  <h2 class="title-about">Nuestro Equipo</h2>
   <h3>Conocé Nuestros Chefs</h3>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem similique
@@ -55,7 +55,7 @@
       <div class="card-body">
         <h5 class="card-title">Martín Regrán</h5>
         <h6>Chef de cocina</h6>
-        <div class="icons-container">  
+        <div class="icons-container">
           <a href=""><i class="fa fa-facebook"></i></a>
           <a href=""><i class="fa fa-instagram"></i></a>
           <a href=""><i class="fa fa-linkedin"></i></a>
@@ -67,7 +67,7 @@
       <div class="card-body">
         <h5 class="card-title">Fernanda Simes</h5>
         <h6>Sous chef</h6>
-        <div class="icons-container">  
+        <div class="icons-container">
           <a href=""><i class="fa fa-facebook"></i></a>
           <a href=""><i class="fa fa-instagram"></i></a>
           <a href=""><i class="fa fa-linkedin"></i></a>
@@ -80,7 +80,7 @@
       <div class="card-body">
         <h5 class="card-title">Marco Villafañe</h5>
         <h6>Línea de cocina</h6>
-        <div class="icons-container">  
+        <div class="icons-container">
           <a href=""><i class="fa fa-facebook"></i></a>
           <a href=""><i class="fa fa-instagram"></i></a>
           <a href=""><i class="fa fa-linkedin"></i></a>
@@ -92,7 +92,7 @@
       <div class="card-body">
         <h5 class="card-title">Rocío Zárate</h5>
         <h6>Línea de cocina</h6>
-        <div class="icons-container">  
+        <div class="icons-container">
           <a href=""><i class="fa fa-facebook"></i></a>
           <a href=""><i class="fa fa-instagram"></i></a>
           <a href=""><i class="fa fa-linkedin"></i></a>
@@ -101,3 +101,137 @@
     </div>
   </div>
 </section>
+
+<!-- Carrito -->
+<div
+  class="modal fade"
+  id="modal-1"
+  tabindex="-1"
+  aria-labelledby="modal-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title d-flex align-items-center"
+          id="exampleModalLabel"
+        >
+          <span class="text-info me-4">Tu Carrito</span>
+          <span class="badge bg-primary rounded-pill" id="largoCarrito"></span>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="border-6 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Producto</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Precio Unidad</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Cantidad</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Subtotal</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Quitar</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="modal-tabla"
+              *ngFor="let cartProduct of productsOnCart; let i = index"
+            >
+              <tr>
+                <th class="border-0" scope="row">
+                  <div class="p-6">
+                    <img
+                      class="img-fluid rounded shadow-sm me-1"
+                      [src]="cartProduct.imagen"
+                      alt="producto"
+                      width="70"
+                    />
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="title-cart">{{ cartProduct.nombre }}</h5>
+                    </div>
+                  </div>
+                </th>
+                <td class="border-0 align-middle">
+                  <strong>${{ cartProduct.precio }}</strong>
+                </td>
+                <td class="border-0 align-middle">
+                  <input
+                    [(ngModel)]="cartProduct.cantidad"
+                    [ngModelOptions]="{ standalone: true }"
+                    (change)="changeSubtotal(cartProduct, i)"
+                    min="1"
+                    type="number"
+                    value="1"
+                    name=""
+                    class="form-control w-30"
+                  />
+                </td>
+                <td class="border-0 align-middle">
+                  <strong
+                    >${{
+                      cartProduct.precio * cartProduct.cantidad
+                        | number : "1.2-2"
+                    }}</strong
+                  >
+                </td>
+                <td class="border-0 align-middle">
+                  <button
+                    (click)="removeFromCart(cartProduct)"
+                    class="btn btn-danger borrar-carrito"
+                    id="${_id}"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot id="modal-foot">
+              <tr>
+                <td colspan="3"></td>
+                <td class="table-active fw-bold text-uppercase">Total</td>
+                <td id="total-field">{{ total | currency }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="clearCart()"
+          id="borrar-todo"
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          id="borrar-todo"
+        >
+          Borrar Todo
+        </button>
+        <button
+          (click)="checkout()"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          id="btn-pago"
+        >
+          Pagar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

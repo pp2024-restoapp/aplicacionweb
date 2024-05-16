@@ -1,0 +1,337 @@
+<div *ngIf="popupVisible" class="popup">
+  <div class="popup-content">
+    <img
+      [src]="popupImageSrc"
+      alt="Imagen del espectáculo"
+      class="popup-image"
+    />
+    <h3 class="popup-title">{{ popupTitle }}</h3>
+    <p class="popup-date">{{ popupDate }}</p>
+    <p class="popup-description">{{ popupDescription }}</p>
+    <button class="close-button" (click)="closePopup()">Cerrar</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="banner">
+    <img
+      src="./assets/img/image_hero.jpg"
+      alt="Chef cocinando"
+      class="aboutUs-img"
+    />
+    <h1>DISFRUTA DE NUESTROS SHOWS!</h1>
+  </div>
+
+  <h2 class="subtitulo">Próximos eventos en tu lugar favorito!</h2>
+
+  <div class="grid-container">
+    <!-- Show Acústico -->
+    <div class="show-card">
+      <img
+        src="assets/img/imagen_acustico.jpg"
+        alt="Imagen del Show Acústico"
+      />
+      <h3>Noche de acordes</h3>
+      <p>Fecha: 10 de junio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Noche de Acordes',
+            '10 de junio de 2024',
+            'Show Acústico a cargo de la banda &quot;Ese Trio&quot;',
+            'assets/img/imagen_acustico.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+
+    <!-- Show de Comedia -->
+    <div class="show-card">
+      <img
+        src="assets/img/imagen_comedia.jpg"
+        alt="Imagen del Show de Comedia"
+      />
+      <h3>Noche de risas</h3>
+      <p>Fecha: 15 de junio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Noche de Risas',
+            '15 de junio de 2024',
+            'Show De Comedia a cargo de Yayo',
+            'assets/img/imagen_comedia.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+
+    <!-- Show de Piano -->
+    <div class="show-card">
+      <img src="assets/img/imagen_piano.jpg" alt="Imagen del Show de Piano" />
+      <h3>Melodías de piano</h3>
+      <p>Fecha: 20 de junio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Melodías de Piano',
+            '20 de junio de 2024',
+            'Concierto de Piano de la mano de Bruno Gelber',
+            'assets/img/imagen_piano.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+
+    <!-- Show de Magia -->
+    <div class="show-card">
+      <img src="assets/img/imagen_magia.jpg" alt="Imagen del Show de Magia" />
+      <h3>Magia inmersiva</h3>
+      <p>Fecha: 25 de junio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Magia inmersiva',
+            '25 de junio de 2024',
+            'Sentite parte de la Magia con David Copperfield',
+            'assets/img/imagen_magia.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+      >
+    </div>
+
+    <!-- Show de Rock -->
+    <div class="show-card">
+      <img src="assets/img/imagen_rock.jpg" alt='Imagen del Show "Ultramar"' />
+      <h3>Rock en vivo!</h3>
+      <p>Fecha: 30 de junio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Rock en vivo!',
+            '30 de junio de 2024',
+            'Rock en vivo de la mano de la banda Ultramar',
+            'assets/img/imagen_rock.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+
+    <!-- Show de Flamenco -->
+    <div class="show-card">
+      <img
+        src="assets/img/imagen_flamenco.jpg"
+        alt="Imagen del Show de Flamenco"
+      />
+      <h3>Pasión flamenca</h3>
+      <p>Fecha: 5 de julio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Pasión Flamenca',
+            '5 de julio de 2024',
+            'Show De Flamenco a cargo del ballet de Sevilla',
+            'assets/img/imagen_flamenco.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+
+    <div class="show-card">
+      <img
+        src="assets/img/imagen_magia_comica.jpg"
+        alt="Imagen del magia comica"
+      />
+      <h3>Magia y comedia</h3>
+      <p>Fecha: 10 de julio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'magia y Comedia',
+            '10 de julio de 2024',
+            'Magia y risas con diferentes magos en ascenso',
+            'assets/img/imagen_magia_comica.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+
+    <div class="show-card">
+      <img
+        src="assets/img/imagen_danza_urbana.jpg"
+        alt="Imagen del show urbano"
+      />
+      <h3>Danza urbana</h3>
+      <p>Fecha: 15 de julio de 2024</p>
+      <button
+        class="details-button"
+        (click)="
+          openPopup(
+            'Danza Urbana',
+            '15 de julio de 2024',
+            'Show de Danza Urbana con el ballet &quot;Urbano Daance&quot; ',
+            'assets/img/imagen_danza_urbana.jpg'
+          )
+        "
+      >
+        Detalles
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Carrito -->
+<div
+  class="modal fade"
+  id="modal-1"
+  tabindex="-1"
+  aria-labelledby="modal-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          class="modal-title d-flex align-items-center"
+          id="exampleModalLabel"
+        >
+          <span class="text-info me-4">Tu Carrito</span>
+          <span class="badge bg-primary rounded-pill" id="largoCarrito"></span>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="border-6 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Producto</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Precio Unidad</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Cantidad</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Subtotal</div>
+                </th>
+                <th class="border-0 bg-light" scope="col">
+                  <div class="py-2 text-uppercase">Quitar</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              id="modal-tabla"
+              *ngFor="let cartProduct of productsOnCart; let i = index"
+            >
+              <tr>
+                <th class="border-0" scope="row">
+                  <div class="p-6">
+                    <img
+                      class="img-fluid rounded shadow-sm me-1"
+                      [src]="cartProduct.imagen"
+                      alt="producto"
+                      width="70"
+                    />
+                    <div class="ml-3 d-inline-block align-middle">
+                      <h5 class="title-cart">{{ cartProduct.nombre }}</h5>
+                    </div>
+                  </div>
+                </th>
+                <td class="border-0 align-middle">
+                  <strong>${{ cartProduct.precio }}</strong>
+                </td>
+                <td class="border-0 align-middle">
+                  <input
+                    [(ngModel)]="cartProduct.cantidad"
+                    [ngModelOptions]="{ standalone: true }"
+                    (change)="changeSubtotal(cartProduct, i)"
+                    min="1"
+                    type="number"
+                    value="1"
+                    name=""
+                    class="form-control w-30"
+                  />
+                </td>
+                <td class="border-0 align-middle">
+                  <strong
+                    >${{
+                      cartProduct.precio * cartProduct.cantidad
+                        | number : "1.2-2"
+                    }}</strong
+                  >
+                </td>
+                <td class="border-0 align-middle">
+                  <button
+                    (click)="removeFromCart(cartProduct)"
+                    class="btn btn-danger borrar-carrito"
+                    id="${_id}"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot id="modal-foot">
+              <tr>
+                <td colspan="3"></td>
+                <td class="table-active fw-bold text-uppercase">Total</td>
+                <td id="total-field">{{ total | currency }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="clearCart()"
+          id="borrar-todo"
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          id="borrar-todo"
+        >
+          Borrar Todo
+        </button>
+        <button
+          (click)="checkout()"
+          type="button"
+          class="btn btn-success"
+          data-bs-dismiss="modal"
+          id="btn-pago"
+        >
+          Pagar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
