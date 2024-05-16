@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isStaff: boolean = false;
 
   constructor(private formBuilder: FormBuilder,  private reservaService : ReservasService, private toastr: ToastrService, private authService: AuthService
-  ) { console.log(this.isLoggedIn)}
+  ) { }
   
   showSuccess(message = "") {
     this.toastr.success(message, "",{
@@ -47,7 +47,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     this.authService.isUserStaff().subscribe(status => {
       this.isStaff = status;
+      console.log(this.isStaff)
     });
+
   }
 
   initForm(): void {
