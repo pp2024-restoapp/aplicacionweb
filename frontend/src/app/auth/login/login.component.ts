@@ -49,24 +49,29 @@ export class LoginComponent {
   }
 
   login() {
+   
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value as LoginRequest).subscribe({
+      this.authService.login(this.loginForm.value).subscribe({
         next: (data) => {
-          localStorage.setItem('token', data.access);
-          localStorage.setItem('is_staff', data.user.is_staff);
-          this.showSuccess("¡Inicio de sesión exitoso!")
+          this.showSuccess("¡Inicio de sesión exitoso!");
         },
         error: (errorData) => {
-          this.showError("Email o Password erroneo")
+          this.showError("Email o Password erroneo");
           console.error(errorData);
         },
         complete: () => {
-          this.router.navigateByUrl('/productos');
+          this.authService.updateLoginStatus(true);
+          const isStaff = localStorage.getItem('is_staff') === 'true';
+          if (isStaff) {
+            this.router.navigateByUrl('/productos');
+          } else {
+            this.router.navigateByUrl('/carta');
+          }
         },
       });
     } else {
       this.loginForm.markAllAsTouched();
-      this.showError("No se permiten campos vacios")
+      this.showError("No se permiten campos vacios");
     }
   }
 
