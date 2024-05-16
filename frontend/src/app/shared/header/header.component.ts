@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { FormBuilder,AbstractControl, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 import { ReservasService } from 'src/app/services/reservas.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,9 +15,11 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   form: FormGroup = new FormGroup({});
   selectedReseva: any;
   reservas: any[] = [];
-  
-  constructor(private formBuilder: FormBuilder,  private reservaService : ReservasService, private toastr: ToastrService
-  ) { }
+  isLoggedIn: boolean = false;
+  isStaff: boolean = false;
+
+  constructor(private formBuilder: FormBuilder,  private reservaService : ReservasService, private toastr: ToastrService, private authService: AuthService
+  ) { console.log(this.isLoggedIn)}
   
   showSuccess(message = "") {
     this.toastr.success(message, "",{
@@ -36,6 +40,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     themeToggle.addEventListener('change', () => this.toggleTheme());
 
     this.initForm();
+
+    this.authService.isLoggedIn().subscribe((status: boolean) => {
+      this.isLoggedIn = status;
+    });
+
+    this.authService.isUserStaff().subscribe(status => {
+      this.isStaff = status;
+    });
   }
 
   initForm(): void {
@@ -124,6 +136,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         emailError: true
       };
     else return false;
+  }
+
+   logOut(): void {
+    this.authService.logOut();
   }
 }
 

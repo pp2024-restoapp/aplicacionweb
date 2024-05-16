@@ -42,7 +42,6 @@ export class CartaComponent implements OnInit {
     this.products_service.getProducts().subscribe({
       next: (productsData) => {
         this.products = productsData;
-        console.log(productsData);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -52,7 +51,6 @@ export class CartaComponent implements OnInit {
     this.products_entradas_service.getProductsEntradas().subscribe({
       next: (Data) => {
         this.productsEntradas = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -64,7 +62,6 @@ export class CartaComponent implements OnInit {
     this.products_bebidas_service.getProductsBebidas().subscribe({
       next: (Data) => {
         this.productsBebidas = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -75,7 +72,6 @@ export class CartaComponent implements OnInit {
     this.products_principales_service.getProductsPrincipales().subscribe({
       next: (Data) => {
         this.productsPrincipales = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -88,7 +84,6 @@ export class CartaComponent implements OnInit {
     this.products_postres_service.getProductsPostres().subscribe({
       next: (Data) => {
         this.productsPostres = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -100,7 +95,6 @@ export class CartaComponent implements OnInit {
     this.products_pastas_service.getProductsPastas().subscribe({
       next: (Data) => {
         this.productsPastas = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -111,7 +105,6 @@ export class CartaComponent implements OnInit {
     this.products_ensaladas_service.getProductsEnsaladas().subscribe({
       next: (Data) => {
         this.productsEnsaladas = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -122,7 +115,6 @@ export class CartaComponent implements OnInit {
     this.products_promociones_service.getProductsPromociones().subscribe({
       next: (Data) => {
         this.productsPromociones = Data;
-        console.log(Data);
       },
       error: (errorData) => {
         console.error(errorData);
@@ -145,12 +137,10 @@ export class CartaComponent implements OnInit {
   }
 
   addToCart(product: any) {
-    console.log(product);
     if (!this.products_service.productInCart(product)) {
       product.cantidad = 1;
       this.products_service.addProductToCart(product);
       this.productsOnCart = [...this.products_service.getProduct()];
-      console.log(this.productsOnCart);
       this.subtotal = product.precio;
       this.showSuccess('Producto Agregado');
     }
