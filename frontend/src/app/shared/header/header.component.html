@@ -32,16 +32,19 @@
           <li class="nav-item" >
             <a class="nav-link" routerLink="/carta">CARTA</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isStaff">
+            <a class="nav-link" routerLink="/productos">DASHBOARD</a>
+          </li>
+          <li class="nav-item" *ngIf="!isStaff">
             <a class="nav-link" routerLink="/nosotros">NOSOTROS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isStaff">
             <a class="nav-link" routerLink="/contactanos">CONTACTANOS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isStaff">
             <a class="nav-link" routerLink="/premios">PREMIOS</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isStaff">
             <a class="nav-link" routerLink="/shows">SHOWS</a>
           </li>
           <li class="nav-item" *ngIf="!isLoggedIn">
@@ -59,7 +62,7 @@
             <span class="ball"></span>
           </label>
 
-          <div class="imgCarrito">
+          <div class="imgCarrito" *ngIf="!isStaff">
             <img
               src="/assets/img/carrito.png"
               height="40"
@@ -75,7 +78,7 @@
               id="largoCarrito"
             ></span>
           </div>
-          <button class="button-app">
+          <button class="button-app" *ngIf="!isStaff">
             <a class="nav-link" routerLink="/nuestraApp">NUESTRA APP</a>
           </button>
         </div>
