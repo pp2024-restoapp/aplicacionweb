@@ -148,37 +148,27 @@
 
           <div class="form-group" style="position: relative">
             <input
-              type="date"
+              type="datetime-local"
               class="form-control w-50"
-              id="fecha"
-              formControlName="fecha"
+              id="fechaHora"
+              formControlName="fechaHora"
               required
             />
-            <label for="fecha" class="fecha-label"></label>
+            <label for="fechaHora" class="fechaHora-label"></label>
           </div>
 
-          <div class="form-group" style="position: relative">
-            <input
-              type="time"
-              class="form-control w-50"
-              id="hora"
-              formControlName="hora"
-              required
-            />
-            <label for="hora" class="hora-label"></label>
-          </div>
-
+         
           <div class="form-group" style="position: relative">
             <input
               type="number"
+              min="1" step="1" max="10"
               class="form-control w-50"
-              formControlName="comensales"
-              id="comensales"
+              formControlName="cantPersonas"
+              id="cantPersonas"
+              placeholder="Cantidad de personas"
               required
             />
-            <label for="comensales" class="comensales-label"
-              >Cantidad de personas</label
-            >
+            <label for="cantPersonas" class="cantPersonas-label"></label>
           </div>
 
           <div class="form-group">
