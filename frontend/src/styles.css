@@ -87,3 +87,7 @@ color: var(--accordion-text-color);
 .ng-invalid:not(form).ng-touched {
   border-left: 5px solid #a94442;
 }
+
+#toast-container{
+  position: fixed !important;
+}
