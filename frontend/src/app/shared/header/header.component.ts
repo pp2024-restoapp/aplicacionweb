@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { FormBuilder,AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { ReservasService } from 'src/app/services/reservas.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,10 @@ import { ToastrService } from 'ngx-toastr';
 export class HeaderComponent implements OnInit, AfterViewInit {
   modalOpen: any;
   form: FormGroup = new FormGroup({});
+  selectedReseva: any;
+  reservas: any[] = [];
   
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService
+  constructor(private formBuilder: FormBuilder,  private reservaService : ReservasService, private toastr: ToastrService
   ) { }
   
   showSuccess(message = "") {
@@ -38,9 +41,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   initForm(): void {
     this.form = this.formBuilder.group({
       nombre: ['', Validators.required],
-      fecha: ['', Validators.required],
-      hora: ['', Validators.required],
-      comensales: ['', Validators.required],
+      fechaHora: ['', Validators.required],
+      cantPersonas: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
   }
@@ -48,6 +50,18 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   onSubmit(): void {
     
     if (this.form.valid) {
+      // enviamos los datos a cargar en la bd a traves del servicio correspondiente
+
+      this.reservaService.createReserva(this.form.value).subscribe({
+        error: (errorData) => {
+          console.error(errorData);
+        },
+        complete: () => {
+          console.log("Producto creado");
+        }
+      })
+
+
       // Si todos los campos están llenos, cerrar el modal
       const detalleModal = document.getElementById('detalleModal');
       detalleModal?.classList.remove('show');
@@ -100,7 +114,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
   return;
   
-}
+ }
 
   customEmailValidator(control: AbstractControl) {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$/;
