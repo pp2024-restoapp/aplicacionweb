@@ -2,7 +2,6 @@ import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { FormBuilder,AbstractControl, FormGroup, Validators } from '@angular/forms';
 import { ReservasService } from 'src/app/services/reservas.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -19,7 +18,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isStaff: boolean = false;
 
   constructor(private formBuilder: FormBuilder,  private reservaService : ReservasService, private toastr: ToastrService, private authService: AuthService
-  ) { console.log(this.isLoggedIn)}
+  ) { }
   
   showSuccess(message = "") {
     this.toastr.success(message, "",{
@@ -47,7 +46,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     this.authService.isUserStaff().subscribe(status => {
       this.isStaff = status;
+      console.log(this.isStaff)
     });
+
   }
 
   initForm(): void {
