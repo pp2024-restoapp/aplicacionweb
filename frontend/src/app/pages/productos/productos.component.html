@@ -125,15 +125,15 @@
 
       <div class="card-body d-flex justify-content-between align-items-center">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-          data-bs-target="#modalEditarProducto">Editar</button>
+          data-bs-target="#modalEditarProducto" disabled>Editar</button>
         <!-- Modal -->
         <div class="modal fade productos" id="modalEditarProducto" tabindex="-1" role="dialog"
           aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Agrega un producto</h5>
-                <button type="button" class="close" data-bs-dismiss="modal1" aria-label="Close">
+                <h5 class="modal-title" id="exampleModalLongTitle">Editar producto</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
@@ -141,7 +141,7 @@
                 <form [formGroup]="productForm" class="form-profile" onsubmit="" novalidate>
                   <div class="row mb-3 mt-4 d-flex justify-content-center">
                     <div class="col-sm-10">
-                      <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Nombre">
+                      <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="{{product.nombre}}"  value="{{product.nombre}}">
                       <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger">
                         <div *ngIf="nombre.errors?.['required']">
                           Campo requerido.
@@ -226,8 +226,8 @@
                 </form>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal1">Cancelar</button>
-                <button type="button" class="btn btn-primary" (click)="crearProducto()">Crear</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="editProduct(product)">Guardar</button>
               </div>
             </div>
           </div>

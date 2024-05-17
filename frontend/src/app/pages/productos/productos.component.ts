@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Form, FormBuilder, Validators } from '@angular/forms';
 import { GetProductsService } from 'src/app/services/get-products.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-productos',
@@ -23,10 +24,25 @@ export class ProductosComponent {
   constructor(
     private formBuilder: FormBuilder,
     private productService : GetProductsService,
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit() {
     this.loadProducts();
+  }
+
+  showSuccess(message = '') {
+    this.toastr.success(message, '', {
+      progressBar: true,
+      timeOut: 3000,
+    });
+  }
+
+  showError(message = '') {
+    this.toastr.error(message, '', {
+      progressBar: true,
+      timeOut: 3000,
+    });
   }
 
   loadProducts() {
@@ -40,16 +56,16 @@ export class ProductosComponent {
     );
   }
   editProduct(product: any): void {
-    this.productService = product;
-    this.productForm.patchValue({
-      nombre: product.nombre,
-      descripcion: product.descripcion,
-      precio: product.precio,
-      stock: product.stock,
-      imagen: product.imagen,
-      activo: product.activo,
-      categoria: product.categoria
-    });
+    // this.productService = product;
+    // this.productForm.patchValue({
+    //   nombre: product.nombre,
+    //   descripcion: product.descripcion,
+    //   precio: product.precio,
+    //   stock: product.stock,
+    //   imagen: product.imagen,
+    //   activo: product.activo,
+    //   categoria: product.categoria
+    // });
   }
 
   get nombre() {
@@ -81,12 +97,25 @@ export class ProductosComponent {
           console.error(errorData);
         },
         complete: () => {
-          console.log("Producto creado");
+          this.showSuccess("Producto creado");
+          this.loadProducts(); // actualiza el listado de productos
+          
+          //  cerrar el modal
+          const modalAdd = document.getElementById('modal-2');
+          modalAdd?.classList.remove('show');
+          this.productForm?.reset();
+               
+          const backdrop = document.querySelector('.modal-2');
+          backdrop?.parentNode?.removeChild(backdrop);
         }
       })
+
+    
+      // hasta aqui
+
     }else {
       this.productForm.markAllAsTouched();
-      alert('No se permiten campos vacios.');
+      this.showError('No se permiten campos vacios.');
     }
   }
 
@@ -102,7 +131,7 @@ export class ProductosComponent {
         // Realizar la validación después de la eliminación del producto
         if (!this.productForm.valid) {
           this.productForm.markAllAsTouched();
-          alert('Producto elimnado');
+          this.showSuccess('Producto eliminado');
         }
       },
       (errorData) => {
