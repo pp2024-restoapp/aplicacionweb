@@ -8,7 +8,7 @@
 
 .productosButton {
   width: fit-content;
-  margin: auto;
+  margin-top: 10vh;
 }
 /* Estilo del riel de la barra de desplazamiento */
 ::-webkit-scrollbar-track {
@@ -43,7 +43,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   overflow-y: auto;
-  margin-top: 20px;
+  margin: 20px;
 }
 
 .card {
