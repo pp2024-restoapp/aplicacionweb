@@ -82,8 +82,21 @@ export class ProductosComponent {
         },
         complete: () => {
           console.log("Producto creado");
+          this.loadProducts(); // actualiza el listado de productos
+          
         }
       })
+
+      //  cerrar el modal
+      const modalAdd = document.getElementById('modal-2');
+      modalAdd?.classList.remove('show');
+      this.productForm?.reset();
+           
+      const backdrop = document.querySelector('.modal-2');
+      backdrop?.parentNode?.removeChild(backdrop);
+    
+      // hasta aqui
+
     }else {
       this.productForm.markAllAsTouched();
       alert('No se permiten campos vacios.');
